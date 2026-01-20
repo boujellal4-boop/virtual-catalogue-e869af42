@@ -15,17 +15,17 @@ const brandIcons: Record<string, React.ElementType> = {
 };
 
 const brandColors: Record<string, string> = {
-  'kidde-commercial': 'from-red-500/20 to-orange-500/10 border-red-500/30 hover:border-red-500/50',
-  'airsense': 'from-blue-500/20 to-cyan-500/10 border-blue-500/30 hover:border-blue-500/50',
-  'ems': 'from-green-500/20 to-emerald-500/10 border-green-500/30 hover:border-green-500/50',
-  'edwards': 'from-purple-500/20 to-violet-500/10 border-purple-500/30 hover:border-purple-500/50',
+  'kidde-commercial': 'from-brand-kidde/20 to-brand-kidde/10 border-brand-kidde/30 hover:border-brand-kidde/50',
+  'airsense': 'from-brand-airsense/20 to-brand-airsense/10 border-brand-airsense/30 hover:border-brand-airsense/50',
+  'ems': 'from-brand-ems/20 to-brand-ems/10 border-brand-ems/30 hover:border-brand-ems/50',
+  'edwards': 'from-brand-edwards/20 to-brand-edwards/10 border-brand-edwards/30 hover:border-brand-edwards/50',
 };
 
 const brandTextColors: Record<string, string> = {
-  'kidde-commercial': 'text-red-400',
-  'airsense': 'text-blue-400',
-  'ems': 'text-green-400',
-  'edwards': 'text-purple-400',
+  'kidde-commercial': 'text-brand-kidde',
+  'airsense': 'text-brand-airsense',
+  'ems': 'text-brand-ems',
+  'edwards': 'text-brand-edwards',
 };
 
 export function BrandSelection({ onSelect }: BrandSelectionProps) {

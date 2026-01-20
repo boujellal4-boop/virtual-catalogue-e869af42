@@ -50,9 +50,14 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: 'spring', delay: 0.1 }}
-              className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-2 mb-6"
+              className={`inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6`}
+              style={{
+                backgroundColor: `hsl(var(--${brand.color}) / 0.1)`,
+                borderWidth: '1px',
+                borderColor: `hsl(var(--${brand.color}) / 0.2)`,
+              }}
             >
-              <span className="text-sm font-medium text-primary">{brand.name}</span>
+              <span className="text-sm font-medium" style={{ color: `hsl(var(--${brand.color}))` }}>{brand.name}</span>
             </motion.div>
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-foreground mb-4">
               Select Detection System
@@ -76,22 +81,41 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => onSelect(system.id)}
-                  className="group relative overflow-hidden rounded-xl bg-secondary/50 border border-white/10 p-6 text-left transition-all duration-300 hover:bg-secondary hover:border-primary/30 hover:shadow-xl"
+                  className="group relative overflow-hidden rounded-xl bg-secondary/50 border border-white/10 p-6 text-left transition-all duration-300 hover:bg-secondary hover:shadow-xl"
+                  style={{
+                    '--brand-color': `var(--${brand.color})`,
+                  } as React.CSSProperties}
                 >
                   {/* Hover glow effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
+                    <div 
+                      className="absolute top-0 right-0 h-24 w-24 rounded-full blur-2xl" 
+                      style={{ backgroundColor: `hsl(var(--${brand.color}) / 0.1)` }}
+                    />
                   </div>
 
                   <div className="relative flex items-start gap-4">
                     {/* Icon */}
-                    <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <div 
+                      className="flex-shrink-0 h-12 w-12 rounded-lg flex items-center justify-center transition-colors"
+                      style={{
+                        backgroundColor: `hsl(var(--${brand.color}) / 0.1)`,
+                        borderWidth: '1px',
+                        borderColor: `hsl(var(--${brand.color}) / 0.2)`,
+                        color: `hsl(var(--${brand.color}))`,
+                      }}
+                    >
                       <Icon className="h-6 w-6" />
                     </div>
 
                     {/* Content */}
                     <div className="flex-grow">
-                      <h3 className="font-semibold text-lg text-foreground mb-1 group-hover:text-primary transition-colors">
+                      <h3 
+                        className="font-semibold text-lg text-foreground mb-1 transition-colors group-hover:opacity-90"
+                        style={{ 
+                          color: `hsl(var(--${brand.color}))` 
+                        }}
+                      >
                         {system.name}
                       </h3>
                       <p className="text-sm text-muted-foreground">
@@ -100,7 +124,10 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
                     </div>
 
                     {/* Arrow */}
-                    <div className="flex-shrink-0 self-center text-muted-foreground group-hover:text-primary transition-all group-hover:translate-x-1">
+                    <div 
+                      className="flex-shrink-0 self-center transition-all group-hover:translate-x-1"
+                      style={{ color: `hsl(var(--${brand.color}))` }}
+                    >
                       <ArrowRight className="h-5 w-5" />
                     </div>
                   </div>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Flame } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { catalogueConfig } from '@/config/catalogue.config';
 
@@ -44,19 +44,18 @@ export function CatalogueCover({ onStart }: CatalogueCoverProps) {
 
       {/* Content */}
       <div className="relative flex min-h-screen flex-col items-center justify-center px-6">
-        {/* Logo placeholder */}
+        {/* Logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
-          <div className="flex items-center gap-3 rounded-full bg-secondary/50 px-6 py-3 backdrop-blur-sm border border-white/10">
-            <Flame className="h-6 w-6 text-primary" />
-            <span className="font-sans text-sm font-medium tracking-wider uppercase text-foreground/80">
-              {catalogueConfig.company.name}
-            </span>
-          </div>
+          <img 
+            src={catalogueConfig.company.logo} 
+            alt={catalogueConfig.company.name}
+            className="h-24 sm:h-32 md:h-40 w-auto object-contain"
+          />
         </motion.div>
 
         {/* Main title */}
