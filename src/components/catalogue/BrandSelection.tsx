@@ -1,18 +1,11 @@
 import { motion } from 'framer-motion';
-import { Building2, ArrowRight, Flame, Wind, Radio, Cpu } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { catalogueConfig } from '@/config/catalogue.config';
 import { useCatalogue } from '@/context/CatalogueContext';
 
 interface BrandSelectionProps {
   onSelect: (brandId: string) => void;
 }
-
-const brandIcons: Record<string, React.ElementType> = {
-  'kidde-commercial': Flame,
-  'airsense': Wind,
-  'ems': Radio,
-  'edwards': Cpu,
-};
 
 const brandColors: Record<string, string> = {
   'kidde-commercial': 'from-brand-kidde/20 to-brand-kidde/10 border-brand-kidde/30 hover:border-brand-kidde/50',
@@ -62,10 +55,8 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
             </p>
           </motion.div>
 
-          {/* Brand grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {catalogueConfig.brands.map((brand, index) => {
-              const Icon = brandIcons[brand.id] || Building2;
               const colorClass = brandColors[brand.id] || 'from-primary/20 to-accent/10 border-primary/30';
               const textColor = brandTextColors[brand.id] || 'text-primary';
 
@@ -86,9 +77,13 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                   </div>
 
                   <div className="relative">
-                    {/* Icon */}
-                    <div className={`inline-flex h-14 w-14 items-center justify-center rounded-xl bg-white/5 border border-white/10 mb-6 ${textColor}`}>
-                      <Icon className="h-7 w-7" />
+                    {/* Brand Logo */}
+                    <div className="mb-6 h-16 flex items-center">
+                      <img 
+                        src={brand.logo} 
+                        alt={brand.name}
+                        className="h-full w-auto max-w-[180px] object-contain"
+                      />
                     </div>
 
                     {/* Content */}
