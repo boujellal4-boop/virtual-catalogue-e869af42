@@ -14,7 +14,7 @@ export const catalogueConfig = {
   // Cover page settings
   cover: {
     title: "KGS Product Catalogue",
-    subtitle: "2024 Edition",
+    subtitle: "2026",
     backgroundImage: "", // Optional: Add background image URL
   },
 
