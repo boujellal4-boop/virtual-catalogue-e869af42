@@ -8,7 +8,7 @@ export const catalogueConfig = {
   company: {
     name: "Fire Detection Solutions",
     tagline: "Protecting What Matters Most",
-    logo: "/logo.svg", // Replace with your logo path
+    logo: "/logo-kgs.png",
   },
 
   // Cover page settings
@@ -29,7 +29,7 @@ export const catalogueConfig = {
       name: "Kidde Commercial",
       description: "Industry-leading fire detection and suppression solutions",
       color: "brand-kidde",
-      logo: "/brands/kidde.svg",
+      logo: "/brands/kidde.png",
       systems: [
         { id: "addressable", name: "Addressable System", icon: "circuit" },
         { id: "conventional", name: "Conventional System", icon: "layers" },
@@ -43,7 +43,7 @@ export const catalogueConfig = {
       name: "AirSense",
       description: "Advanced smoke detection technology",
       color: "brand-airsense",
-      logo: "/brands/airsense.svg",
+      logo: "/brands/airsense.png",
       systems: [
         { id: "asd", name: "ASD (Aspirating Smoke Detection)", icon: "wind" },
       ],
@@ -53,7 +53,7 @@ export const catalogueConfig = {
       name: "EMS",
       description: "Flexible wireless fire detection systems",
       color: "brand-ems",
-      logo: "/brands/ems.svg",
+      logo: "/brands/ems.png",
       systems: [
         { id: "hybrid-wireless", name: "Hybrid Wireless", icon: "radio" },
         { id: "full-wireless", name: "Full Wireless", icon: "wifi" },
@@ -64,7 +64,7 @@ export const catalogueConfig = {
       name: "Edwards",
       description: "Premium high-end detection solutions",
       color: "brand-edwards",
-      logo: "/brands/edwards.svg",
+      logo: "/brands/edwards.png",
       systems: [
         { id: "high-end-addressable", name: "High-End Addressable System", icon: "cpu" },
         { id: "asd", name: "ASD (Aspirating Smoke Detection)", icon: "wind" },
