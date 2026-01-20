@@ -8,7 +8,7 @@ export const catalogueConfig = {
   company: {
     name: "Fire Detection Solutions",
     tagline: "Protecting What Matters Most",
-    logo: "/logo-kgs.png",
+    logo: "/logo-kgs-white.png",
   },
 
   // Cover page settings
