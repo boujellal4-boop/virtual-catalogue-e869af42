@@ -65,10 +65,10 @@ export function CatalogueCover({ onStart }: CatalogueCoverProps) {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center"
         >
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-4 glow-text">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-4 glow-text">
             {catalogueConfig.cover.title}
           </h1>
-          <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-primary font-medium mb-4">
+          <p className="text-2xl sm:text-3xl md:text-4xl text-primary font-medium mb-4">
             {catalogueConfig.cover.subtitle}
           </p>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">

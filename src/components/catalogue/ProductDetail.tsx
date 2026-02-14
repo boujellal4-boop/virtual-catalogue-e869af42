@@ -79,7 +79,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                     {product.sku}
                   </span>
                 </div>
-                <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                   {product.name}
                 </h1>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-8">
@@ -138,7 +138,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               transition={{ delay: 0.3 }}
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
-              <h2 className="font-serif text-xl font-semibold text-foreground mb-6">
+              <h2 className="text-xl font-semibold text-foreground mb-6">
                 Main Features
               </h2>
               <ul className="space-y-3">
@@ -166,7 +166,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               transition={{ delay: 0.4 }}
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
-              <h2 className="font-serif text-xl font-semibold text-foreground mb-6">
+              <h2 className="text-xl font-semibold text-foreground mb-6">
                 Specifications
               </h2>
               <div className="space-y-3">
@@ -193,7 +193,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <h2 className="font-serif text-2xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl font-semibold text-foreground mb-6">
                 Similar Products
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

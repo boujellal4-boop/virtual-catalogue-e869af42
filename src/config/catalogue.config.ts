@@ -35,6 +35,7 @@ export const catalogueConfig = {
         { id: "conventional", name: "Conventional System", icon: "layers" },
         { id: "wireless", name: "Wireless System", icon: "wifi" },
         { id: "linear-heat", name: "Linear Heat Detection", icon: "thermometer" },
+        { id: "asd", name: "Aspirating Smoke Detection", icon: "wind" },
       ],
     },
     {

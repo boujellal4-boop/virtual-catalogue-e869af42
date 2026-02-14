@@ -61,7 +61,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                 {system?.name}
               </span>
             </div>
-            <h1 className="font-serif text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
               Products
             </h1>
             <p className="text-muted-foreground">
@@ -126,7 +126,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 + categoryIndex * 0.1 }}
               >
-                <h2 className="font-serif text-xl font-semibold text-foreground mb-4 pl-2 border-l-2 border-primary">
+                <h2 className="text-xl font-semibold text-foreground mb-4 pl-2 border-l-2 border-primary">
                   {category}
                 </h2>
                 <div className="space-y-3">
