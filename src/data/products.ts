@@ -543,7 +543,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Notification",
-    image: "",
+    image: "/products/ke-as3010w.png",
+    pictures: ["/products/ke-as3010w.png"],
     description: "The KE-AS3010W is a WHITE bodied addressable sounder for Excellence series fire systems.",
     features: [
       "Standard first fix base shared with point detectors",
@@ -562,7 +563,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Notification",
-    image: "",
+    image: "/products/ke-as3010r-ip.png",
+    pictures: ["/products/ke-as3010r-ip.png"],
     description: "The KE-AS3010R-IP is a RED bodied, weatherproof addressable sounder for Excellence series fire systems.",
     features: [
       "IP65 rated surface mount base accessory",
@@ -582,7 +584,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Notification",
-    image: "",
+    image: "/products/ke-as3010w-ip.png",
+    pictures: ["/products/ke-as3010w-ip.png"],
     description: "The KE-AS3010W-IP is a WHITE bodied, weatherproof addressable sounder for Excellence series fire systems.",
     features: [
       "IP65 rated surface mount base accessory",
@@ -600,7 +603,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Notification",
-    image: "",
+    image: "/products/ke-as3011w.png",
+    pictures: ["/products/ke-as3011w.png"],
     description: "Addressable sounder & visual indicator (VID) for Excellence series fire systems.",
     features: [
       "Loop powered with battery assisted activation allowing up to 128 devices per loop",
@@ -619,7 +623,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Notification",
-    image: "",
+    image: "/products/ke-as3011r-ip.png",
+    pictures: ["/products/ke-as3011r-ip.png"],
     description: "The KE-AS3011R-IP is a RED bodied, weatherproof addressable sounder & visual indicator (VID) for Excellence series fire systems.",
     features: [
       "IP65 rated surface mount base accessory",
@@ -638,7 +643,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Notification",
-    image: "",
+    image: "/products/ke-as3015r-wm.png",
+    pictures: ["/products/ke-as3015r-wm.png"],
     description: "The KE-AS3015R-WM is a RED bodied, addressable wall mount sounder & visual alarm device (VAD) for Excellence series fire systems.",
     features: [
       "Loop powered with battery assisted activation allowing up to 128 devices per loop",
@@ -657,7 +663,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Notification",
-    image: "",
+    image: "/products/ke-as3115w-wmip.png",
+    pictures: ["/products/ke-as3115w-wmip.png"],
     description: "The KE-AS3115W-WMIP is a WHITE bodied, weatherproof addressable wall mount sounder & VAD with integrated isolation.",
     features: [
       "IP65 rated surface mount base accessory",
@@ -677,7 +684,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Notification",
-    image: "",
+    image: "/products/ke-as3111r-ip.png",
+    pictures: ["/products/ke-as3111r-ip.png"],
     description: "The KE-AS3111R-IP is a RED bodied, weatherproof addressable sounder & visual indicator with integrated isolation.",
     features: [
       "IP65 rated surface mount base accessory",
@@ -699,7 +707,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/nc-dpm-w.png",
+    pictures: ["/products/nc-dpm-w.png"],
     description: "The NC-DPM-W is an optical and heat multisensor detector. It combines photoelectric (optical) detection, fixed temperature and rate-of-rise detection technology.",
     features: [
       "Supports drift compensation",
@@ -721,7 +730,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/nc-dbo.png",
+    pictures: ["/products/nc-dbo.png"],
     description: "The NC-DBO is a reflective infrared beam smoke detector for use in conventional fire detection systems. Being microprocessor based, the detector offers extensive algorithms for analysis and decision making.",
     features: [
       "Wide operating voltage range",
