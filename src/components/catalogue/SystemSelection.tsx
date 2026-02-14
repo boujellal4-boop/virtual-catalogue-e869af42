@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, CircuitBoard, Layers, Wifi, Volume2, Wind, Radio, Cpu, Thermometer } from 'lucide-react';
+import { ArrowRight, CircuitBoard, Layers, Wifi, Volume2, Wind, Radio, Cpu, Cable } from 'lucide-react';
 import { catalogueConfig } from '@/config/catalogue.config';
 import { useCatalogue } from '@/context/CatalogueContext';
 
@@ -11,11 +11,11 @@ const systemIcons: Record<string, React.ElementType> = {
   'addressable': CircuitBoard,
   'conventional': Layers,
   'wireless': Wifi,
-  'linear-heat': Thermometer,
+  'linear-heat': Cable,
   'pava': Volume2,
   'asd': Wind,
   'firecell': Wifi,
-  'fusion': Radio,
+  'fusion': Wifi,
   'smartcell': Wifi,
   'high-end-addressable': Cpu,
 };
