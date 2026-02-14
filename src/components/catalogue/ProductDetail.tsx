@@ -7,28 +7,6 @@ import { useCatalogue } from '@/context/CatalogueContext';
 
 // Maps keywords in feature text to meaningful icons
 function getFeatureIcon(feature: string): LucideIcon {
-  const lower = feature.toLowerCase();
-  if (lower.includes('wireless') || lower.includes('wifi') || lower.includes('rf')) return Wifi;
-  if (lower.includes('zone') || lower.includes('dual zone')) return Layers;
-  if (lower.includes('certified') || lower.includes('approval') || lower.includes('ul') || lower.includes('listed') || lower.includes('ce ') || lower.includes('en54') || lower.includes('rohs')) return Award;
-  if (lower.includes('ip6') || lower.includes('ip65') || lower.includes('ip66') || lower.includes('waterproof') || lower.includes('enclosure')) return Shield;
-  if (lower.includes('temperature') || lower.includes('heat') || lower.includes('thermal')) return Thermometer;
-  if (lower.includes('cable') || lower.includes('wiring') || lower.includes('sheath')) return Cable;
-  if (lower.includes('lock') || lower.includes('tamper') || lower.includes('secure')) return Lock;
-  if (lower.includes('voltage') || lower.includes('current') || lower.includes('power') || lower.includes('supply')) return Zap;
-  if (lower.includes('alarm') || lower.includes('alert') || lower.includes('false alarm')) return AlertTriangle;
-  if (lower.includes('sounder') || lower.includes('tone') || lower.includes('audio') || lower.includes('db') || lower.includes('sound')) return Volume2;
-  if (lower.includes('led') || lower.includes('vad') || lower.includes('flash') || lower.includes('visual') || lower.includes('indicator') || lower.includes('beacon')) return Eye;
-  if (lower.includes('battery') || lower.includes('lithium')) return Battery;
-  if (lower.includes('modbus') || lower.includes('protocol') || lower.includes('network') || lower.includes('loop')) return Server;
-  if (lower.includes('location') || lower.includes('address') || lower.includes('install') || lower.includes('mount')) return MapPin;
-  if (lower.includes('speed') || lower.includes('fast') || lower.includes('quick') || lower.includes('response')) return Timer;
-  if (lower.includes('program') || lower.includes('config') || lower.includes('setting') || lower.includes('interface') || lower.includes('easy')) return Settings;
-  if (lower.includes('maintain') || lower.includes('service') || lower.includes('cost')) return Wrench;
-  if (lower.includes('signal') || lower.includes('range') || lower.includes('distance')) return Signal;
-  if (lower.includes('design') || lower.includes('unique') || lower.includes('compact')) return Radio;
-  if (lower.includes('monitor') || lower.includes('display')) return MonitorSpeaker;
-  if (lower.includes('gauge') || lower.includes('meter') || lower.includes('measure')) return Gauge;
   return Check;
 }
 
