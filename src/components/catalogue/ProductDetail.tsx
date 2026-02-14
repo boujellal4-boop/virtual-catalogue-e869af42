@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
-import { Package, Play, QrCode, Check } from 'lucide-react';
+import { Package, Play, QrCode, Zap, Shield, Wifi, Settings, Bell, Radio, Check } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { getProductById, getRelatedProducts } from '@/data/products';
 import { useCatalogue } from '@/context/CatalogueContext';
+
+const featureIcons = [Zap, Shield, Wifi, Settings, Bell, Radio];
 
 interface ProductDetailProps {
   onSelectProduct: (productId: string) => void;
@@ -38,81 +40,92 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
             className="mb-12"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-              {/* Product image area */}
+              {/* Product image + Video/VR side by side */}
               <div className="space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.1 }}
-                  className="relative aspect-square rounded-2xl bg-secondary/50 border border-white/10 overflow-hidden"
-                >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Package className="h-32 w-32 text-muted-foreground/30" />
-                  </div>
-                </motion.div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Product image */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 }}
+                    className="relative aspect-square rounded-2xl bg-secondary/50 border border-white/10 overflow-hidden"
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Package className="h-24 w-24 text-muted-foreground/30" />
+                    </div>
+                  </motion.div>
 
-                {/* Video / VR QR Code section */}
-                {hasMedia && (
+                  {/* Video / VR QR Code section next to image */}
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="rounded-xl bg-secondary/30 border border-white/10 overflow-hidden"
+                    className="rounded-xl bg-secondary/30 border border-white/10 overflow-hidden flex flex-col"
                   >
                     {/* Toggle buttons */}
                     <div className="flex border-b border-white/10">
-                      {hasVideo && (
-                        <button
-                          onClick={() => setMediaMode('video')}
-                          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium transition-colors ${
-                            mediaMode === 'video'
-                              ? 'bg-primary/10 text-primary border-b-2 border-primary'
-                              : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
-                          }`}
-                        >
-                          <Play className="h-4 w-4" />
-                          Video
-                        </button>
-                      )}
-                      {hasQR && (
-                        <button
-                          onClick={() => setMediaMode('qr')}
-                          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium transition-colors ${
-                            mediaMode === 'qr'
-                              ? 'bg-primary/10 text-primary border-b-2 border-primary'
-                              : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
-                          }`}
-                        >
-                          <QrCode className="h-4 w-4" />
-                          VR QR Code
-                        </button>
-                      )}
+                      <button
+                        onClick={() => setMediaMode('video')}
+                        className={`flex-1 flex items-center justify-center gap-2 px-3 py-2.5 text-xs font-medium transition-colors ${
+                          mediaMode === 'video'
+                            ? 'bg-primary/10 text-primary border-b-2 border-primary'
+                            : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                        }`}
+                      >
+                        <Play className="h-3.5 w-3.5" />
+                        Video
+                      </button>
+                      <button
+                        onClick={() => setMediaMode('qr')}
+                        className={`flex-1 flex items-center justify-center gap-2 px-3 py-2.5 text-xs font-medium transition-colors ${
+                          mediaMode === 'qr'
+                            ? 'bg-primary/10 text-primary border-b-2 border-primary'
+                            : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                        }`}
+                      >
+                        <QrCode className="h-3.5 w-3.5" />
+                        VR QR
+                      </button>
                     </div>
 
                     {/* Media content */}
-                    <div className="p-4">
-                      {mediaMode === 'video' && hasVideo ? (
-                        <div className="relative aspect-video rounded-lg overflow-hidden bg-background/50">
-                          <iframe
-                            src={product.videoUrl}
-                            className="absolute inset-0 w-full h-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          />
-                        </div>
-                      ) : mediaMode === 'qr' && hasQR ? (
-                        <div className="flex flex-col items-center py-6">
-                          <p className="text-muted-foreground text-sm mb-4">
-                            Scan this QR code for a virtual reality experience
-                          </p>
-                          <div className="w-40 h-40 bg-foreground rounded-lg flex items-center justify-center">
-                            <QrCode className="h-24 w-24 text-background" />
+                    <div className="flex-1 flex items-center justify-center p-4">
+                      {mediaMode === 'video' ? (
+                        hasVideo ? (
+                          <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-background/50">
+                            <iframe
+                              src={product.videoUrl}
+                              className="absolute inset-0 w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
                           </div>
-                        </div>
-                      ) : null}
+                        ) : (
+                          <div className="flex flex-col items-center text-center py-4">
+                            <Play className="h-12 w-12 text-muted-foreground/30 mb-2" />
+                            <p className="text-muted-foreground text-xs">Video coming soon</p>
+                          </div>
+                        )
+                      ) : (
+                        hasQR ? (
+                          <div className="flex flex-col items-center py-4">
+                            <p className="text-muted-foreground text-xs mb-3 text-center">
+                              Scan for VR experience
+                            </p>
+                            <div className="w-28 h-28 bg-foreground rounded-lg flex items-center justify-center">
+                              <QrCode className="h-16 w-16 text-background" />
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="flex flex-col items-center text-center py-4">
+                            <QrCode className="h-12 w-12 text-muted-foreground/30 mb-2" />
+                            <p className="text-muted-foreground text-xs">QR code coming soon</p>
+                          </div>
+                        )
+                      )}
                     </div>
                   </motion.div>
-                )}
+                </div>
               </div>
 
               {/* Product info */}
@@ -136,9 +149,9 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
             </div>
           </motion.div>
 
-          {/* General Overview & Specifications */}
+          {/* Quick Features & Specifications */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* General Overview (description text) */}
+            {/* Quick Features with icons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -148,17 +161,28 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               <h2 className="text-xl font-semibold text-foreground mb-6">
                 Quick Features
               </h2>
-              <ul className="space-y-2">
-                {product.features.slice(0, 6).map((feature, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span className="text-muted-foreground text-sm">{feature}</span>
-                  </li>
-                ))}
+              <ul className="space-y-3">
+                {product.features.slice(0, 6).map((feature, index) => {
+                  const IconComponent = featureIcons[index % featureIcons.length];
+                  return (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4 + index * 0.05 }}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="flex-shrink-0 h-6 w-6 rounded-md bg-primary/15 flex items-center justify-center mt-0.5">
+                        <IconComponent className="h-3.5 w-3.5 text-primary" />
+                      </div>
+                      <span className="text-muted-foreground text-sm">{feature}</span>
+                    </motion.li>
+                  );
+                })}
               </ul>
             </motion.div>
 
-            {/* Specifications (feature details) */}
+            {/* Specifications */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
