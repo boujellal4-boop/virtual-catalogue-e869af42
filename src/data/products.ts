@@ -1078,7 +1078,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Door Controller",
-    image: "",
+    image: "/products/SC-44-0200-0001-99.png",
+    pictures: ["/products/SC-44-0200-0001-99.png"],
     description: "SmartDoor is an intelligent wireless door controller in white. It combines industry proven mechanics and SmartCell wireless technology.",
     features: [
       "Fully wireless",
@@ -1096,7 +1097,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Door Controller",
-    image: "",
+    image: "/products/SC-44-0300-0001-99.png",
+    pictures: ["/products/SC-44-0300-0001-99.png", "/products/SC-44-0300-0001-99-2.png"],
     description: "SmartDoor is an intelligent wireless door controller in black. It combines industry proven mechanics and SmartCell wireless technology.",
     features: [
       "Fully wireless",
@@ -1114,8 +1116,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Detectors",
-    image: "/products/SH-22-0200-0001-99.png",
-    pictures: ["/products/SH-22-0200-0001-99.png"],
+    image: "/products/SC-22-0200-0001-18.png",
+    pictures: ["/products/SC-22-0200-0001-18.png"],
     description: "The SmartCell Dual Smoke / Heat Detector with Sounder is quick and easy to install and offers individual addressing at the Excellence Control Panel or Gateway.",
     features: [
       "Fully wireless",
@@ -1136,8 +1138,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Notification",
-    image: "/products/SH-31-0100-0001-99.png",
-    pictures: ["/products/SH-31-0100-0001-99.png"],
+    image: "/products/SC-31-0100-0001-18.png",
+    pictures: ["/products/SC-31-0100-0001-18.png"],
     description: "The SmartCell Sounder offers 32 sounder tones, bidirectional 868 MHz communication and an anti-tamper locking mechanism.",
     features: [
       "Fully wireless",
@@ -1156,8 +1158,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Manual Call Points",
-    image: "/products/SH-51-0100-0001-99.png",
-    pictures: ["/products/SH-51-0100-0001-99.png"],
+    image: "/products/SC-51-0100-0001-18.png",
+    pictures: ["/products/SC-51-0100-0001-18.png"],
     description: "The SmartCell Call Point is quick and easy to install and offers individual addressing at the Excellence Control Panel or Gateway.",
     features: [
       "Quick and easy to install",
@@ -1176,7 +1178,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/SC-21-0200-0001-99.png",
+    pictures: ["/products/SC-21-0200-0001-99.png"],
     description: "The SmartCell Dual Smoke / Heat Detector is quick and easy to install and offers individual addressing.",
     features: [
       "Fully wireless",
@@ -1256,7 +1259,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Input/Output Device",
-    image: "",
+    image: "/products/SC-41-0200-0001-99.png",
+    pictures: ["/products/SC-41-0200-0001-99.png"],
     description: "The SmartCell Input / Output Device offers two resistor monitored inputs, two voltage free outputs and bidirectional 868 MHz communication.",
     features: [
       "Full wireless communication with panel",
