@@ -743,7 +743,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Panels",
-    image: "",
+    image: "/products/nc-pf2-sc.png",
+    pictures: ["/products/nc-pf2-sc.png"],
     description: "The New Conventional fire control panels offer state of the art architecture delivering an uncomplicated solution for small to mid-sized conventional applications.",
     features: [
       "Modern, elegant design with basic and intuitive user interface with icons",
@@ -764,7 +765,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Panels",
-    image: "",
+    image: "/products/dsc_0201.png",
+    pictures: ["/products/dsc_0201.png"],
     description: "The New Conventional fire control panels offer state of the art architecture delivering an uncomplicated solution for small to mid-sized conventional applications.",
     features: [
       "Modern, elegant design with intuitive user interface",
@@ -784,7 +786,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Panels",
-    image: "",
+    image: "/products/nc-pf4_7.png",
+    pictures: ["/products/nc-pf4_7.png"],
     description: "The New Conventional fire control panels offer state of the art architecture delivering an uncomplicated solution for small to mid-sized conventional applications.",
     features: [
       "Modern, elegant design with intuitive user interface",
@@ -802,7 +805,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Panels",
-    image: "",
+    image: "/products/nc-pf8_10.png",
+    pictures: ["/products/nc-pf8_10.png"],
     description: "The New Conventional fire control panels offer state of the art architecture delivering an uncomplicated solution for small to mid-sized conventional applications.",
     features: [
       "Modern, elegant design with intuitive user interface",
@@ -840,7 +844,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Panels",
-    image: "",
+    image: "/products/nc-pf4-sc.png",
+    pictures: ["/products/nc-pf4-sc.png"],
     description: "The New Conventional fire control panels offer state of the art architecture delivering an uncomplicated solution for small to mid-sized conventional applications.",
     features: [
       "Modern, elegant design with intuitive user interface",
@@ -858,7 +863,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/nc-mc-0-g.png",
+    pictures: ["/products/nc-mc-0-g.png"],
     description: "The NC-MC-0-G is a green manual call point for recess mount applications on most industry standard wall boxes.",
     features: [
       "Specifically designed for door security and evacuation",
@@ -878,7 +884,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/nc-mc-100-r.png",
+    pictures: ["/products/nc-mc-100-r.png"],
     description: "The NC-MC-100-R is a red manual call point for recess mount applications.",
     features: [
       "Specifically designed for manual fire alarm activation",
@@ -898,7 +905,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/nc-mc-470-r.png",
+    pictures: ["/products/nc-mc-470-r.png"],
     description: "The NC-MC-470-R is a red manual call point for recess mount applications.",
     features: [
       "Specifically designed for manual fire alarm activation",
@@ -917,7 +925,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/nc-dpo-b.png",
+    pictures: ["/products/nc-dpo-b.png"],
     description: "The NC-DPO-B is a graphite black, photoelectric (optical) detector suitable for use in residential applications.",
     features: [
       "Supports drift compensation",
