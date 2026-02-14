@@ -207,7 +207,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/ke-dm3010us99.png",
+    pictures: ["/products/ke-dm3010us99.png"],
     description: "The KE-DM3000 Series is an intelligent range of addressable, Excellence Series manual call points. The KE-DM3010US99 is a blue, single action indoor MCP with an \"EVACUATION ALARM\" functional indication.",
     features: [
       "Reliable single action manual call point for recess or surface mounting",
@@ -225,7 +226,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/ke-dm3010w.png",
+    pictures: ["/products/ke-dm3010w.png", "/products/ke-dm3010w-2.png"],
     description: "The KE-DM3000 Series is an intelligent range of addressable, Excellence Series manual call points. The KE-DM3010W is a white, single action indoor MCP with no functional indication.",
     features: [
       "Reliable single action manual call point for recess or surface mounting",
@@ -243,7 +245,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/ke-dm3010ys99.png",
+    pictures: ["/products/ke-dm3010ys99.png"],
     description: "The KE-DM3000 Series is an intelligent range of addressable, Excellence Series manual call points. The KE-DM3010YS99 is a yellow, single action indoor MCP with an \"EXTINGUISHING RELEASE\" functional indication.",
     features: [
       "Reliable single action manual call point for recess or surface mounting",
@@ -426,7 +429,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Input/Output Modules",
-    image: "",
+    image: "/products/ke-iu3110.png",
+    pictures: ["/products/ke-iu3110.png"],
     description: "The Excellence series input/output devices are designed to provide much needed flexibility to input monitoring and output switching.",
     features: [
       "Loop powered, saving external supply and installation cost",
@@ -446,7 +450,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Input/Output Modules",
-    image: "",
+    image: "/products/ke-io3101.png",
+    pictures: ["/products/ke-io3101.png"],
     description: "The Excellence series input/output devices are designed to provide much needed flexibility to input monitoring and output switching.",
     features: [
       "Loop powered",
@@ -465,7 +470,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Input/Output Modules",
-    image: "",
+    image: "/products/ke-io3144.png",
+    pictures: ["/products/ke-io3144.png"],
     description: "The Excellence series input/output devices are designed to provide much needed flexibility to input monitoring and output switching.",
     features: [
       "Loop powered",
@@ -484,7 +490,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Input/Output Modules",
-    image: "",
+    image: "/products/ke-io3101-m.png",
+    pictures: ["/products/ke-io3101-m.png"],
     description: "The Excellence series input/output devices are designed to provide much needed flexibility to input monitoring and output switching.",
     features: [
       "Loop powered",
@@ -502,7 +509,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Input/Output Modules",
-    image: "",
+    image: "/products/ke-iu3111-zme.png",
+    pictures: ["/products/ke-iu3111-zme.png"],
     description: "The Excellence series input/output devices are designed to provide much needed flexibility to input monitoring and output switching.",
     features: [
       "Externally powered for maximum number of devices on the loop",
@@ -522,7 +530,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Notification",
-    image: "",
+    image: "/products/ke-as3010r.png",
+    pictures: ["/products/ke-as3010r.png"],
     description: "The KE-AS3010R is a RED bodied addressable sounder for Excellence series fire systems. They are connected over a 2-wire loop and are loop powered.",
     features: [
       "Standard first fix base shared with point detectors",
