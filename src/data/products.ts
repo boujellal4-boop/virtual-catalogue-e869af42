@@ -274,7 +274,7 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/KE-DP3120W.png",
     description: "The DP3120W is a Kidde Excellence series, traffic white addressable dual optical detector with integrated short circuit isolation. It combines a low profile design with tri-colour status indication with 360° visibility.",
     features: [
       "Integrated loop short circuit isolation",
@@ -298,7 +298,7 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/KE-DP3121W.png",
     description: "The DP3121W is a Kidde Excellence series, traffic white addressable dual optical and heat detector with integrated short circuit isolation.",
     features: [
       "Integrated loop short circuit isolation",
@@ -319,7 +319,7 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/KE-DP3121B.png",
     description: "The DP3121B is a Kidde Excellence series, graphite black addressable dual optical and heat detector with integrated short circuit isolation.",
     features: [
       "Integrated loop short circuit isolation",
@@ -929,7 +929,7 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "asd",
     subcategory: "Display Module",
-    image: "",
+    image: "/products/9-30781-KID.png",
     description: "ModuLaser is a scalable aspirating smoke detection solution that makes installation easier, maintenance quicker, and takes applications further than traditional air sampling detectors.",
     features: [
       "Modular Design: Separate centrally-controllable detector modules",
@@ -949,7 +949,7 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "asd",
     subcategory: "Detector Module",
-    image: "",
+    image: "/products/9-30783-KID.png",
     description: "ModuLaser detector module. Each detector module can accommodate up to 250 m of combined sampling pipe.",
     features: [
       "Modular Design",
@@ -988,7 +988,7 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "asd",
     subcategory: "Command Module",
-    image: "",
+    image: "/products/9-30782-KID.png",
     description: "ModuLaser command display module. Similar to Standard but with added functionality to control various modules over SenseNET. Can support up to 127 modules.",
     features: [
       "Modular Design",
@@ -1526,7 +1526,7 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Display Module",
-    image: "",
+    image: "/products/9-30781-KID.png",
     description: "ModuLaser minimum display module with status LED's only.",
     features: [
       "Modular Design",
@@ -1546,7 +1546,7 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Command Module",
-    image: "",
+    image: "/products/9-30782-KID.png",
     description: "ModuLaser command display module with added SenseNET functionality. Can support up to 127 modules.",
     features: [
       "Modular Design",
@@ -1566,7 +1566,7 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Display Module",
-    image: "",
+    image: "/products/9-30781-KID.png",
     description: "ModuLaser standard display module with TFT color display, status LED's and navigation buttons.",
     features: [
       "Modular Design",
