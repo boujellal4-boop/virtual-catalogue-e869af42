@@ -1,11 +1,36 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Package, Play, QrCode, Image, Zap, Shield, Wifi, Settings, Bell, Radio, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Package, Play, QrCode, Image, Check, ChevronLeft, ChevronRight, Zap, Shield, Wifi, Settings, Bell, Radio, Thermometer, Cable, Lock, Gauge, Volume2, Eye, Battery, Server, MapPin, Timer, Wrench, Award, AlertTriangle, Layers, Signal, MonitorSpeaker, type LucideIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { getProductById, getRelatedProducts } from '@/data/products';
 import { useCatalogue } from '@/context/CatalogueContext';
 
-const featureIcons = [Zap, Shield, Wifi, Settings, Bell, Radio];
+// Maps keywords in feature text to meaningful icons
+function getFeatureIcon(feature: string): LucideIcon {
+  const lower = feature.toLowerCase();
+  if (lower.includes('wireless') || lower.includes('wifi') || lower.includes('rf')) return Wifi;
+  if (lower.includes('zone') || lower.includes('dual zone')) return Layers;
+  if (lower.includes('certified') || lower.includes('approval') || lower.includes('ul') || lower.includes('listed') || lower.includes('ce ') || lower.includes('en54') || lower.includes('rohs')) return Award;
+  if (lower.includes('ip6') || lower.includes('ip65') || lower.includes('ip66') || lower.includes('waterproof') || lower.includes('enclosure')) return Shield;
+  if (lower.includes('temperature') || lower.includes('heat') || lower.includes('thermal')) return Thermometer;
+  if (lower.includes('cable') || lower.includes('wiring') || lower.includes('sheath')) return Cable;
+  if (lower.includes('lock') || lower.includes('tamper') || lower.includes('secure')) return Lock;
+  if (lower.includes('voltage') || lower.includes('current') || lower.includes('power') || lower.includes('supply')) return Zap;
+  if (lower.includes('alarm') || lower.includes('alert') || lower.includes('false alarm')) return AlertTriangle;
+  if (lower.includes('sounder') || lower.includes('tone') || lower.includes('audio') || lower.includes('db') || lower.includes('sound')) return Volume2;
+  if (lower.includes('led') || lower.includes('vad') || lower.includes('flash') || lower.includes('visual') || lower.includes('indicator') || lower.includes('beacon')) return Eye;
+  if (lower.includes('battery') || lower.includes('lithium')) return Battery;
+  if (lower.includes('modbus') || lower.includes('protocol') || lower.includes('network') || lower.includes('loop')) return Server;
+  if (lower.includes('location') || lower.includes('address') || lower.includes('install') || lower.includes('mount')) return MapPin;
+  if (lower.includes('speed') || lower.includes('fast') || lower.includes('quick') || lower.includes('response')) return Timer;
+  if (lower.includes('program') || lower.includes('config') || lower.includes('setting') || lower.includes('interface') || lower.includes('easy')) return Settings;
+  if (lower.includes('maintain') || lower.includes('service') || lower.includes('cost')) return Wrench;
+  if (lower.includes('signal') || lower.includes('range') || lower.includes('distance')) return Signal;
+  if (lower.includes('design') || lower.includes('unique') || lower.includes('compact')) return Radio;
+  if (lower.includes('monitor') || lower.includes('display')) return MonitorSpeaker;
+  if (lower.includes('gauge') || lower.includes('meter') || lower.includes('measure')) return Gauge;
+  return Check;
+}
 
 interface ProductDetailProps {
   onSelectProduct: (productId: string) => void;
@@ -92,7 +117,9 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                   <div className="relative aspect-square flex items-center justify-center">
                     {mediaMode === 'picture' && (
                       (() => {
-                        const pictures = product.pictures?.length ? product.pictures : (product.image ? [product.image] : []);
+                        const pictures = product.pictures?.length
+                          ? [...new Set(product.pictures)]
+                          : (product.image ? [product.image] : []);
                         if (pictures.length === 0) {
                           return <Package className="h-32 w-32 text-muted-foreground/30" />;
                         }
@@ -215,7 +242,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               </h2>
               <ul className="space-y-3">
                 {product.features.slice(0, 6).map((feature, index) => {
-                  const IconComponent = featureIcons[index % featureIcons.length];
+                  const IconComponent = getFeatureIcon(feature);
                   return (
                     <motion.li
                       key={index}
@@ -245,20 +272,23 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                 Specifications
               </h2>
               <ul className="space-y-3">
-                {product.features.map((feature, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.5 + index * 0.03 }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
-                      <Check className="h-3 w-3 text-primary" />
-                    </div>
-                    <span className="text-foreground text-sm">{feature}</span>
-                  </motion.li>
-                ))}
+                {product.features.map((feature, index) => {
+                  const IconComponent = getFeatureIcon(feature);
+                  return (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5 + index * 0.03 }}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                        <IconComponent className="h-3 w-3 text-primary" />
+                      </div>
+                      <span className="text-foreground text-sm">{feature}</span>
+                    </motion.li>
+                  );
+                })}
               </ul>
             </motion.div>
           </div>
@@ -284,8 +314,12 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                     onClick={() => onSelectProduct(relatedProduct.id)}
                     className="group rounded-xl bg-secondary/30 border border-white/10 p-4 text-left transition-all hover:bg-secondary/50 hover:border-primary/30"
                   >
-                    <div className="h-24 rounded-lg bg-secondary/50 mb-4 flex items-center justify-center">
-                      <Package className="h-10 w-10 text-muted-foreground/30" />
+                    <div className="h-24 rounded-lg bg-secondary/50 mb-4 flex items-center justify-center overflow-hidden">
+                      {relatedProduct.image ? (
+                        <img src={relatedProduct.image} alt={relatedProduct.name} className="h-full w-full object-contain p-2" />
+                      ) : (
+                        <Package className="h-10 w-10 text-muted-foreground/30" />
+                      )}
                     </div>
                     <span className="text-xs font-mono text-primary">{relatedProduct.sku}</span>
                     <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors mt-1">
