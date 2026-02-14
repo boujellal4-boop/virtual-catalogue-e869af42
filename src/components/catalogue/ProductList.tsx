@@ -65,7 +65,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
               Products
             </h1>
             <p className="text-muted-foreground">
-              Browse our selection of {products.length} products
+              These are only a part of our products — many more are available to suit your needs.
             </p>
           </motion.div>
 
