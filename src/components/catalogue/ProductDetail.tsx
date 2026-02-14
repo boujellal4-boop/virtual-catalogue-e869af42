@@ -146,11 +146,16 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
               <h2 className="text-xl font-semibold text-foreground mb-6">
-                General Overview
+                Quick Features
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {product.description}
-              </p>
+              <ul className="space-y-2">
+                {product.features.slice(0, 6).map((feature, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span className="text-muted-foreground text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
 
             {/* Specifications (feature details) */}
