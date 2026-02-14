@@ -1904,6 +1904,7 @@ export const products: Product[] = [
     systemId: "fusion",
     subcategory: "Radio Loop Module",
     image: "/products/FCX-532-001.png",
+    pictures: ["/products/FCX-532-001.png", "/products/FCX-532-001-2.png"],
     description: "The award winning Fusion Radio Loop Module (RLM) connects to the FireCell Control Panel's XP95 loop and can accommodate up to 31 wireless FireCell devices.",
     features: [
       "Internal diversity aerials",
@@ -1927,6 +1928,7 @@ export const products: Product[] = [
     systemId: "smartcell",
     subcategory: "Control Panel",
     image: "/products/SC-11-1201-0001-99.png",
+    pictures: ["/products/SC-11-1201-0001-99.png", "/products/SC-11-1201-0001-99-2.png"],
     description: "SmartCell is a complete wireless fire detection system. Supports up to 64 wireless devices with maximum of 32 Fire Detection devices.",
     features: [
       "Fully wireless",
@@ -1947,6 +1949,7 @@ export const products: Product[] = [
     systemId: "smartcell",
     subcategory: "Control Panel",
     image: "/products/SC-11-2201-0001-09.png",
+    pictures: ["/products/SC-11-2201-0001-09.png", "/products/SC-11-2201-0001-09-2.png"],
     description: "SmartCell complete wireless fire detection system. Supports up to 64 wireless devices with maximum of 32 Fire Detection devices. Bidirectional 868MHz communication.",
     features: [
       "Fully wireless",
@@ -2218,6 +2221,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Display Module",
     image: "/products/FHSD8320.png",
+    pictures: ["/products/FHSD8320.png", "/products/FHSD8320-2.png"],
     description: "ModuLaser is a scalable aspirating smoke detection solution. Command display module with SenseNET functionality.",
     features: [
       "Modular Design",
@@ -2238,6 +2242,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Detector Module",
     image: "/products/FHSD8330.png",
+    pictures: ["/products/FHSD8330.png", "/products/FHSD8330-2.png"],
     description: "ModuLaser detector module. Each detector module can accommodate up to 250 m of combined sampling pipe.",
     features: [
       "Modular Design",
@@ -2257,6 +2262,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Display Module",
     image: "/products/FHSD8310.png",
+    pictures: ["/products/FHSD8310.png", "/products/FHSD8310-2.png"],
     description: "ModuLaser standard display module with TFT color display, status LED's and navigation buttons.",
     features: [
       "Modular Design",
@@ -2277,6 +2283,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Display Module",
     image: "/products/FHSD8300.png",
+    pictures: ["/products/FHSD8300.png", "/products/FHSD8300-2.png"],
     description: "ModuLaser minimum display module with status LED's only.",
     features: [
       "Modular Design",
@@ -2299,6 +2306,7 @@ export const products: Product[] = [
     systemId: "pava",
     subcategory: "PAVA Unit",
     image: "/products/EST-VES-8003-LN.png",
+    pictures: ["/products/EST-VES-8003-LN.png", "/products/EST-VES-8003-LN-2.png"],
     description: "EST-VES are scalable Public Address & Voice Alarm units suitable for multi-purpose architectures. Meet all requirements of EN 54-16 and EN 54-4.",
     features: [
       "Stand alone or TCP/IP network architecture",
@@ -2321,7 +2329,7 @@ export const products: Product[] = [
     systemId: "pava",
     subcategory: "PAVA Unit",
     image: "/products/EST-VES-4002-LNR.png",
-    pictures: ["/products/EST-VES-4002-LNR.png", "/products/EST-VES-4002-L-2.png"],
+    pictures: ["/products/EST-VES-4002-LNR.png", "/products/EST-VES-4002-L-2.png", "/products/EST-VES-4002-LNR-2.png"],
     description: "EST-VES scalable Public Address & Voice Alarm units. Rack-mounting version with 2x320W amplifiers.",
     features: [
       "Stand alone or TCP/IP network architecture",
@@ -2342,6 +2350,7 @@ export const products: Product[] = [
     systemId: "pava",
     subcategory: "Microphone",
     image: "/products/EST-M04.png",
+    pictures: ["/products/EST-M04.png", "/products/EST-M04-2.png"],
     description: "4 button analog microphone with built in gong, push to talk and bi-color LED indicating the ready-to-speak status.",
     features: [
       "Solid construction",
