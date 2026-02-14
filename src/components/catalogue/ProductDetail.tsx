@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { Package, Play, QrCode, Image, Zap, Shield, Wifi, Settings, Bell, Radio, Check } from 'lucide-react';
-import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Package, Play, QrCode, Image, Zap, Shield, Wifi, Settings, Bell, Radio, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { getProductById, getRelatedProducts } from '@/data/products';
 import { useCatalogue } from '@/context/CatalogueContext';
@@ -14,6 +14,9 @@ interface ProductDetailProps {
 export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
   const { selectedProduct } = useCatalogue();
   const [mediaMode, setMediaMode] = useState<'picture' | 'video' | 'qr'>('picture');
+  const [pictureIndex, setPictureIndex] = useState(0);
+
+  useEffect(() => { setPictureIndex(0); }, [selectedProduct]);
 
   const product = selectedProduct ? getProductById(selectedProduct) : null;
   const relatedProducts = selectedProduct ? getRelatedProducts(selectedProduct) : [];
@@ -88,7 +91,54 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                   {/* Content area */}
                   <div className="relative aspect-square flex items-center justify-center">
                     {mediaMode === 'picture' && (
-                      <Package className="h-32 w-32 text-muted-foreground/30" />
+                      (() => {
+                        const pictures = product.pictures?.length ? product.pictures : (product.image ? [product.image] : []);
+                        if (pictures.length === 0) {
+                          return <Package className="h-32 w-32 text-muted-foreground/30" />;
+                        }
+                        const safeIndex = pictureIndex % pictures.length;
+                        return (
+                          <div className="relative w-full h-full">
+                            <AnimatePresence mode="wait">
+                              <motion.img
+                                key={safeIndex}
+                                src={pictures[safeIndex]}
+                                alt={product.name}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="absolute inset-0 w-full h-full object-contain p-6"
+                              />
+                            </AnimatePresence>
+                            {pictures.length > 1 && (
+                              <>
+                                <button
+                                  onClick={() => setPictureIndex((safeIndex - 1 + pictures.length) % pictures.length)}
+                                  className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-background/80 border border-white/10 flex items-center justify-center hover:bg-background transition-colors"
+                                >
+                                  <ChevronLeft className="h-4 w-4 text-foreground" />
+                                </button>
+                                <button
+                                  onClick={() => setPictureIndex((safeIndex + 1) % pictures.length)}
+                                  className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-background/80 border border-white/10 flex items-center justify-center hover:bg-background transition-colors"
+                                >
+                                  <ChevronRight className="h-4 w-4 text-foreground" />
+                                </button>
+                                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                                  {pictures.map((_, i) => (
+                                    <button
+                                      key={i}
+                                      onClick={() => setPictureIndex(i)}
+                                      className={`h-2 w-2 rounded-full transition-colors ${i === safeIndex ? 'bg-primary' : 'bg-muted-foreground/30'}`}
+                                    />
+                                  ))}
+                                </div>
+                              </>
+                            )}
+                          </div>
+                        );
+                      })()
                     )}
                     {mediaMode === 'video' && (
                       hasVideo ? (

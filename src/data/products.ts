@@ -10,6 +10,7 @@ export interface Product {
   systemId: string;
   subcategory: string;
   image: string;
+  pictures?: string[];
   description: string;
   features: string[];
   specifications: Record<string, string>;
@@ -275,6 +276,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Detectors",
     image: "/products/KE-DP3120W.png",
+    pictures: ["/products/KE-DP3120W.png", "/products/KE-DP3120W-2.png"],
     description: "The DP3120W is a Kidde Excellence series, traffic white addressable dual optical detector with integrated short circuit isolation. It combines a low profile design with tri-colour status indication with 360° visibility.",
     features: [
       "Integrated loop short circuit isolation",
@@ -299,6 +301,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Detectors",
     image: "/products/KE-DP3121W.png",
+    pictures: ["/products/KE-DP3121W.png", "/products/KE-DP3121W-2.png"],
     description: "The DP3121W is a Kidde Excellence series, traffic white addressable dual optical and heat detector with integrated short circuit isolation.",
     features: [
       "Integrated loop short circuit isolation",
@@ -320,6 +323,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Detectors",
     image: "/products/KE-DP3121B.png",
+    pictures: ["/products/KE-DP3121B.png", "/products/KE-DP3121B-2.png"],
     description: "The DP3121B is a Kidde Excellence series, graphite black addressable dual optical and heat detector with integrated short circuit isolation.",
     features: [
       "Integrated loop short circuit isolation",
@@ -339,7 +343,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/KE-DP3120W-SN.png",
+    pictures: ["/products/KE-DP3120W-SN.png"],
     description: "The DP3120W-SN is a Kidde Excellence series, traffic white addressable dual optical detector with integrated short circuit isolation and sounder.",
     features: [
       "Integrated loop short circuit isolation",
@@ -358,7 +363,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/KE-DP3121W-SN.png",
+    pictures: ["/products/KE-DP3121W-SN.png"],
     description: "The DP3121W-SN is a Kidde Excellence series, traffic white addressable dual optical and heat detector with integrated short circuit isolation and sounder.",
     features: [
       "Integrated loop short circuit isolation",
@@ -376,7 +382,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/KE-DP3121W-SNV.png",
+    pictures: ["/products/KE-DP3121W-SNV.png"],
     description: "The DP3121W-SNV is a Kidde Excellence series, traffic white addressable dual optical and heat detector with integrated short circuit isolation, sounder and VAD (Visual Alarm Device).",
     features: [
       "Integrated loop short circuit isolation",
@@ -395,7 +402,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/KE-DP3121B-SNV.png",
+    pictures: ["/products/KE-DP3121B-SNV.png"],
     description: "The DP3121B-SNV is a Kidde Excellence series, graphite black addressable dual optical and heat detector with integrated short circuit isolation, sounder and VAD.",
     features: [
       "Integrated loop short circuit isolation",
@@ -930,6 +938,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Display Module",
     image: "/products/9-30781-KID.png",
+    pictures: ["/products/9-30781-KID.png", "/products/9-30781-KID-2.png"],
     description: "ModuLaser is a scalable aspirating smoke detection solution that makes installation easier, maintenance quicker, and takes applications further than traditional air sampling detectors.",
     features: [
       "Modular Design: Separate centrally-controllable detector modules",
@@ -950,6 +959,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Detector Module",
     image: "/products/9-30783-KID.png",
+    pictures: ["/products/9-30783-KID.png", "/products/9-30783-KID-2.png"],
     description: "ModuLaser detector module. Each detector module can accommodate up to 250 m of combined sampling pipe.",
     features: [
       "Modular Design",
@@ -989,6 +999,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Command Module",
     image: "/products/9-30782-KID.png",
+    pictures: ["/products/9-30782-KID.png", "/products/9-30782-KID-2.png"],
     description: "ModuLaser command display module. Similar to Standard but with added functionality to control various modules over SenseNET. Can support up to 127 modules.",
     features: [
       "Modular Design",
