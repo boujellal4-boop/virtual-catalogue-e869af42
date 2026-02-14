@@ -1290,7 +1290,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Notification",
-    image: "",
+    image: "/products/SH-32-0120-0001-99.png",
+    pictures: ["/products/SH-32-0120-0001-99.png"],
     description: "SmartCell Sounder Beacon red with EN54:23 certified VAD white flash.",
     features: [
       "Fully wireless",
@@ -1308,7 +1309,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Notification",
-    image: "",
+    image: "/products/SH-33-0210-0001-99.png",
+    pictures: ["/products/SH-33-0210-0001-99.png"],
     description: "SmartCell Sounder Beacon with EN54:23 certified VAD for ceiling mounting.",
     features: [
       "Fully wireless",
@@ -1326,7 +1328,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Notification",
-    image: "",
+    image: "/products/SH-33-0120-0001-99.png",
+    pictures: ["/products/SH-33-0120-0001-99.png"],
     description: "SmartCell Sounder Beacon red ceiling-mounted with EN54:23 certified VAD white flash.",
     features: [
       "Fully wireless",
@@ -1344,7 +1347,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "wireless",
     subcategory: "Remote Indicator",
-    image: "",
+    image: "/products/SH-62-0210-0001-99.png",
+    pictures: ["/products/SH-62-0210-0001-99.png"],
     description: "The SmartCell wireless remote indicator is quick and easy to install and offers individual addressing.",
     features: [
       "Fully wireless",
@@ -1365,7 +1369,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "linear-heat",
     subcategory: "Digital Control Unit",
-    image: "",
+    image: "/products/ADLCU-2.png",
+    pictures: ["/products/ADLCU-2.png"],
     description: "The digital location control unit is a dual zone module for monitoring up to two zones of AlarmLine Digital Linear Heat Detection Cable.",
     features: [
       "Dual Zone - used as Independent or Interlock",
@@ -1388,7 +1393,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "linear-heat",
     subcategory: "Digital Control Unit",
-    image: "",
+    image: "/products/ADELCU-2.png",
+    pictures: ["/products/ADELCU-2.png"],
     description: "Dual zone module for monitoring up to two zones of AlarmLine II Digital EN Linear Heat Detection Cable.",
     features: [
       "Dual Zone - used as Independent or Interlock",
@@ -1408,7 +1414,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "linear-heat",
     subcategory: "Cables",
-    image: "",
+    image: "/products/AA-0500.png",
+    pictures: ["/products/AA-0500.png"],
     description: "Analogue linear heat detection cable in a PVC outer sheath, supplied in 500m lengths. Suitable for indoor applications.",
     features: [
       "UL521 Approved, UL/ULC Listed, RoHS compliant and CE certified",
@@ -1428,7 +1435,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "linear-heat",
     subcategory: "Cables",
-    image: "",
+    image: "/products/AASS-0100.png",
+    pictures: ["/products/AASS-0100.png"],
     description: "Analogue linear heat detection cable in a PVC outer sheath with a Stainless Steel braid, supplied in 100m lengths.",
     features: [
       "RoHS compliant and CE certified",
@@ -1447,7 +1455,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "linear-heat",
     subcategory: "Cables",
-    image: "",
+    image: "/products/F3052-0500.png",
+    pictures: ["/products/F3052-0500.png"],
     description: "Analogue linear heat detection cable in a PVC outer sheath with a Stainless Steel braid, supplied in 500m lengths.",
     features: [
       "RoHS compliant and CE certified",
@@ -1465,7 +1474,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "linear-heat",
     subcategory: "Analogue Control Unit",
-    image: "",
+    image: "/products/AACUSP.png",
+    pictures: ["/products/AACUSP.png"],
     description: "Self programmable Analogue Linear Heat Detection cable control unit. Provides monitoring for any of the Alarmline II range of LHD sensor cable.",
     features: [
       "UL521 and CE approval, UL/ULC listed",
