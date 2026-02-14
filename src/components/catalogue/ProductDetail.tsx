@@ -42,90 +42,88 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               {/* Product image + Video/VR side by side */}
               <div className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Product image */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.1 }}
-                    className="relative aspect-square rounded-2xl bg-secondary/50 border border-white/10 overflow-hidden"
-                  >
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Package className="h-24 w-24 text-muted-foreground/30" />
-                    </div>
-                  </motion.div>
+                {/* Product image - full width */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.1 }}
+                  className="relative aspect-square rounded-2xl bg-secondary/50 border border-white/10 overflow-hidden"
+                >
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Package className="h-32 w-32 text-muted-foreground/30" />
+                  </div>
+                </motion.div>
 
-                  {/* Video / VR QR Code section next to image */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="rounded-xl bg-secondary/30 border border-white/10 overflow-hidden flex flex-col"
-                  >
-                    {/* Toggle buttons */}
-                    <div className="flex border-b border-white/10">
-                      <button
-                        onClick={() => setMediaMode('video')}
-                        className={`flex-1 flex items-center justify-center gap-2 px-3 py-2.5 text-xs font-medium transition-colors ${
-                          mediaMode === 'video'
-                            ? 'bg-primary/10 text-primary border-b-2 border-primary'
-                            : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
-                        }`}
-                      >
-                        <Play className="h-3.5 w-3.5" />
-                        Video
-                      </button>
-                      <button
-                        onClick={() => setMediaMode('qr')}
-                        className={`flex-1 flex items-center justify-center gap-2 px-3 py-2.5 text-xs font-medium transition-colors ${
-                          mediaMode === 'qr'
-                            ? 'bg-primary/10 text-primary border-b-2 border-primary'
-                            : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
-                        }`}
-                      >
-                        <QrCode className="h-3.5 w-3.5" />
-                        VR QR
-                      </button>
-                    </div>
+                {/* Video / VR QR Code section below image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="rounded-xl bg-secondary/30 border border-white/10 overflow-hidden"
+                >
+                  {/* Toggle buttons */}
+                  <div className="flex border-b border-white/10">
+                    <button
+                      onClick={() => setMediaMode('video')}
+                      className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium transition-colors ${
+                        mediaMode === 'video'
+                          ? 'bg-primary/10 text-primary border-b-2 border-primary'
+                          : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                      }`}
+                    >
+                      <Play className="h-4 w-4" />
+                      Video
+                    </button>
+                    <button
+                      onClick={() => setMediaMode('qr')}
+                      className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium transition-colors ${
+                        mediaMode === 'qr'
+                          ? 'bg-primary/10 text-primary border-b-2 border-primary'
+                          : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                      }`}
+                    >
+                      <QrCode className="h-4 w-4" />
+                      VR QR Code
+                    </button>
+                  </div>
 
-                    {/* Media content */}
-                    <div className="flex-1 flex items-center justify-center p-4">
-                      {mediaMode === 'video' ? (
-                        hasVideo ? (
-                          <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-background/50">
-                            <iframe
-                              src={product.videoUrl}
-                              className="absolute inset-0 w-full h-full"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                            />
-                          </div>
-                        ) : (
-                          <div className="flex flex-col items-center text-center py-4">
-                            <Play className="h-12 w-12 text-muted-foreground/30 mb-2" />
-                            <p className="text-muted-foreground text-xs">Video coming soon</p>
-                          </div>
-                        )
+                  {/* Media content */}
+                  <div className="p-4">
+                    {mediaMode === 'video' ? (
+                      hasVideo ? (
+                        <div className="relative aspect-video rounded-lg overflow-hidden bg-background/50">
+                          <iframe
+                            src={product.videoUrl}
+                            className="absolute inset-0 w-full h-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
                       ) : (
-                        hasQR ? (
-                          <div className="flex flex-col items-center py-4">
-                            <p className="text-muted-foreground text-xs mb-3 text-center">
-                              Scan for VR experience
-                            </p>
-                            <div className="w-28 h-28 bg-foreground rounded-lg flex items-center justify-center">
-                              <QrCode className="h-16 w-16 text-background" />
-                            </div>
+                        <div className="flex flex-col items-center text-center py-6">
+                          <Play className="h-12 w-12 text-muted-foreground/30 mb-2" />
+                          <p className="text-muted-foreground text-sm">Video coming soon</p>
+                        </div>
+                      )
+                    ) : (
+                      hasQR ? (
+                        <div className="flex flex-col items-center py-6">
+                          <p className="text-muted-foreground text-sm mb-4 text-center">
+                            Scan for VR experience
+                          </p>
+                          <div className="w-36 h-36 bg-foreground rounded-lg flex items-center justify-center">
+                            <QrCode className="h-20 w-20 text-background" />
                           </div>
-                        ) : (
-                          <div className="flex flex-col items-center text-center py-4">
-                            <QrCode className="h-12 w-12 text-muted-foreground/30 mb-2" />
-                            <p className="text-muted-foreground text-xs">QR code coming soon</p>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </motion.div>
-                </div>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col items-center text-center py-6">
+                          <QrCode className="h-12 w-12 text-muted-foreground/30 mb-2" />
+                          <p className="text-muted-foreground text-sm">QR code coming soon</p>
+                        </div>
+                      )
+                    )}
+                  </div>
+                </motion.div>
               </div>
 
               {/* Product info */}
