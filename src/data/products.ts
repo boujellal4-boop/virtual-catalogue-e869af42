@@ -1486,7 +1486,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "linear-heat",
     subcategory: "Analogue Control Unit",
-    image: "",
+    image: "/products/AACULP.png",
+    pictures: ["/products/AACULP.png"],
     description: "PC programmable Analogue Linear Heat Detection cable control unit.",
     features: [
       "Alarmline II Analogue LHD Control Unit - PC Programmable",
@@ -1501,7 +1502,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "linear-heat",
     subcategory: "Cables",
-    image: "",
+    image: "/products/AAE-0100.png",
+    pictures: ["/products/AAE-0100.png"],
     description: "Analogue linear heat detection cable in a PVC outer sheath, supplied in 100m lengths.",
     features: [
       "VdS EN54-22:2015/prA1:2007",
@@ -1542,7 +1544,8 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Display Module",
-    image: "/products/9-30781-KID.png",
+    image: "/products/9-30780.png",
+    pictures: ["/products/9-30780.png"],
     description: "ModuLaser minimum display module with status LED's only.",
     features: [
       "Modular Design",
@@ -1562,7 +1565,8 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Command Module",
-    image: "/products/9-30782-KID.png",
+    image: "/products/9-30782.png",
+    pictures: ["/products/9-30782.png"],
     description: "ModuLaser command display module with added SenseNET functionality. Can support up to 127 modules.",
     features: [
       "Modular Design",
@@ -1582,7 +1586,8 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Display Module",
-    image: "/products/9-30781-KID.png",
+    image: "/products/9-30781.png",
+    pictures: ["/products/9-30781.png"],
     description: "ModuLaser standard display module with TFT color display, status LED's and navigation buttons.",
     features: [
       "Modular Design",
@@ -1602,7 +1607,8 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Detector Module",
-    image: "",
+    image: "/products/9-30725.png",
+    pictures: ["/products/9-30725.png"],
     description: "The AirSense Micra 10 is designed to provide very high sensitivity smoke detection in a small package. ClassiFire Perceptive Artificial Intelligence ensures optimum sensitivity.",
     features: [
       "Ultra small low cost aspirating smoke detector",
@@ -1622,7 +1628,8 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Detector Module",
-    image: "",
+    image: "/products/9-30671.png",
+    pictures: ["/products/9-30671.png"],
     description: "The Stratos Micra 25 is designed to provide very high sensitivity smoke detection in a small package.",
     features: [
       "Ultra small low cost aspirating smoke detector",
@@ -1643,7 +1650,8 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Detector Module",
-    image: "",
+    image: "/products/9-30672.png",
+    pictures: ["/products/9-30672.png"],
     description: "The Stratos Micra 100 is designed to provide very high sensitivity smoke detection in a small package.",
     features: [
       "Small low cost aspirating smoke detector",
@@ -1666,7 +1674,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "firecell",
     subcategory: "Wireless Hub",
-    image: "",
+    image: "/products/FCX-500-444-V3.png",
+    pictures: ["/products/FCX-500-444-V3.png"],
     description: "The FireCell Radio Hub connects to the FireCell fire control panel's XP95 loop. Operating in conjunction with FireCell Radio Cluster Communicators (RCCs), it can accommodate up to 504 wireless FireCell devices.",
     features: [
       "Smart Cluster Technology",
@@ -1689,7 +1698,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "firecell",
     subcategory: "Radio Cluster Communicator",
-    image: "",
+    image: "/products/FC-555-024-V3.png",
+    pictures: ["/products/FC-555-024-V3.png"],
     description: "The 24 VDC FireCell RCC is a remote transceiver node that works within the FireCell wireless fire system. Accommodates up to 31 wireless FireCell devices.",
     features: [
       "Smart Cluster Technology",
