@@ -60,7 +60,7 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
             >
               <span className="text-sm font-medium" style={{ color: `hsl(var(--${brand.color}))` }}>{brand.name}</span>
             </motion.div>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
               Select Detection System
             </h1>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto">

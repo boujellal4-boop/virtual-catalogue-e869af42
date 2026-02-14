@@ -112,7 +112,7 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
             >
               <User className="h-8 w-8 text-primary" />
             </motion.div>
-            <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-3">
+            <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
               Welcome
             </h1>
             <p className="text-muted-foreground">
