@@ -140,9 +140,13 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                       onClick={() => onSelectProduct(product.id)}
                       className="group w-full flex items-center gap-4 rounded-xl bg-secondary/30 border border-white/5 p-4 text-left transition-all duration-300 hover:bg-secondary/50 hover:border-primary/20 hover:shadow-lg"
                     >
-                      {/* Product image placeholder */}
+                      {/* Product image */}
                       <div className="flex-shrink-0 h-16 w-16 rounded-lg bg-secondary border border-white/10 flex items-center justify-center overflow-hidden">
-                        <Package className="h-8 w-8 text-muted-foreground" />
+                        {product.image ? (
+                          <img src={product.image} alt={product.name} className="h-full w-full object-contain p-1" />
+                        ) : (
+                          <Package className="h-8 w-8 text-muted-foreground" />
+                        )}
                       </div>
 
                       {/* Product info */}
