@@ -148,7 +148,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/ke-dm3010g.png",
+    pictures: ["/products/ke-dm3010g.png"],
     description: "The KE-DM3000 Series is an intelligent range of addressable, Excellence Series manual call points. The KE-DM3010G is a green, single action indoor MCP with a Running-Man functional indication.",
     features: [
       "Reliable single action manual call point for recess or surface mounting",
@@ -170,7 +171,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/ke-dm3010os99.png",
+    pictures: ["/products/ke-dm3010os99.png"],
     description: "The KE-DM3000 Series is an intelligent range of addressable, Excellence Series manual call points. The KE-DM3010OS99 is an orange, single action indoor MCP with a \"SMOKE EXTRACTION\" functional indication.",
     features: [
       "Reliable single action manual call point for recess or surface mounting",
@@ -188,7 +190,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/ke-dm3110r.png",
+    pictures: ["/products/ke-dm3110r.png"],
     description: "The KE-DM3100 Series is an intelligent range of addressable, Excellence Series manual call points with integrated isolation. The KE-DM3110R is a red, single action indoor MCP.",
     features: [
       "Reliable single action manual call point for recess or surface mounting",
@@ -208,7 +211,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Manual Call Points",
     image: "/products/ke-dm3010us99.png",
-    pictures: ["/products/ke-dm3010us99.png"],
+    pictures: ["/products/ke-dm3010us99.png", "/products/ke-dm3010us99-2.png"],
     description: "The KE-DM3000 Series is an intelligent range of addressable, Excellence Series manual call points. The KE-DM3010US99 is a blue, single action indoor MCP with an \"EVACUATION ALARM\" functional indication.",
     features: [
       "Reliable single action manual call point for recess or surface mounting",
