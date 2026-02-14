@@ -1708,7 +1708,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "firecell",
     subcategory: "Notification",
-    image: "",
+    image: "/products/FC-323-WA2.png",
+    pictures: ["/products/FC-323-WA2.png"],
     description: "The FireCell Wireless Beacon is quick and easy to install. Works with FC-171-002 Red Wireless Sounder Base.",
     features: [
       "0.5 Hz / 1 Hz beacon flash selection",
@@ -1726,7 +1727,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "firecell",
     subcategory: "Notification",
-    image: "",
+    image: "/products/FC-323-WA1.png",
+    pictures: ["/products/FC-323-WA1.png"],
     description: "The FireCell Wireless Beacon is quick and easy to install. Works with FC-171-001 White Wireless Sounder Base.",
     features: [
       "0.5 Hz / 1 Hz beacon flash selection",
@@ -1744,7 +1746,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "firecell",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/FC-200-003.png",
+    pictures: ["/products/FC-200-003.png"],
     description: "RED addressable, wireless, resettable manual call point including batteries. Suitable for indoor use.",
     features: [
       "Dual band 868 MHz operation",
@@ -1766,7 +1769,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "fusion",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/FCX-177-001.png",
+    pictures: ["/products/FCX-177-001.png"],
     description: "The FCX-177-001 optical smoke detector is an addressable detector to be used with a wireless base. It works on the light scatter principle.",
     features: [
       "Fire indication LED",
@@ -1787,7 +1791,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "fusion",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/FCX-175-001.png",
+    pictures: ["/products/FCX-175-001.png"],
     description: "The FCX-175-001 heat detector uses a fixed temperature algorithm with an enhanced rate-of-rise component.",
     features: [
       "Fire indication LED",
@@ -1807,7 +1812,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "fusion",
     subcategory: "Detectors",
-    image: "",
+    image: "/products/FCX-176-001.png",
+    pictures: ["/products/FCX-176-001.png"],
     description: "The FCX-176-001 heat detector uses a fixed temperature alarm threshold at 90°C.",
     features: [
       "Fire indication LED",
@@ -1827,7 +1833,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "fusion",
     subcategory: "Door Controller",
-    image: "",
+    image: "/products/FC-60-2000.png",
+    pictures: ["/products/FC-60-2000.png"],
     description: "The FC-60-2000 is a black wireless door controller. It provides full health monitoring via system integration.",
     features: [
       "Combines proven mechanics with wireless system operation",
@@ -1845,7 +1852,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "fusion",
     subcategory: "Notification",
-    image: "",
+    image: "/products/FC-172-001.png",
+    pictures: ["/products/FC-172-001.png"],
     description: "The FC-172-001 is a WHITE, fire alarm sounder to be used with a wireless base. 32 tone sounder suitable for indoor use.",
     features: [
       "32 selectable tones",
@@ -1864,7 +1872,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "fusion",
     subcategory: "Notification",
-    image: "",
+    image: "/products/FC-173-002.png",
+    pictures: ["/products/FC-173-002.png"],
     description: "The FC-173-002 is a RED, fire alarm sounder/VID combination to be used with a wireless base.",
     features: [
       "32 selectable tones",
@@ -1883,7 +1892,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "fusion",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/FC-200-002.png",
+    pictures: ["/products/FC-200-002.png"],
     description: "RED addressable, wireless, resettable manual call point including batteries. Connects to a Fusion gateway.",
     features: [
       "Easy to install",
