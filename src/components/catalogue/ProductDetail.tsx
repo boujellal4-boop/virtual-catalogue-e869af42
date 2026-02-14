@@ -11,8 +11,7 @@ interface ProductDetailProps {
 
 export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
   const { selectedProduct } = useCatalogue();
-  const [showVideo, setShowVideo] = useState(false);
-  const [showQR, setShowQR] = useState(false);
+  const [mediaMode, setMediaMode] = useState<'video' | 'qr'>('video');
 
   const product = selectedProduct ? getProductById(selectedProduct) : null;
   const relatedProducts = selectedProduct ? getRelatedProducts(selectedProduct) : [];
@@ -20,6 +19,10 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
   if (!product) {
     return null;
   }
+
+  const hasVideo = !!product.videoUrl;
+  const hasQR = !!product.vrQrCode;
+  const hasMedia = hasVideo || hasQR;
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
@@ -35,38 +38,82 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
             className="mb-12"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-              {/* Product image/video area */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.1 }}
-                className="relative aspect-square rounded-2xl bg-secondary/50 border border-white/10 overflow-hidden"
-              >
-                {showVideo && product.videoUrl ? (
-                  <iframe
-                    src={product.videoUrl}
-                    className="absolute inset-0 w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                ) : (
+              {/* Product image area */}
+              <div className="space-y-4">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.1 }}
+                  className="relative aspect-square rounded-2xl bg-secondary/50 border border-white/10 overflow-hidden"
+                >
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Package className="h-32 w-32 text-muted-foreground/30" />
                   </div>
-                )}
+                </motion.div>
 
-                {/* Video toggle */}
-                {product.videoUrl && !showVideo && (
-                  <button
-                    onClick={() => setShowVideo(true)}
-                    className="absolute inset-0 flex items-center justify-center bg-background/50 hover:bg-background/30 transition-colors group"
+                {/* Video / VR QR Code section */}
+                {hasMedia && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="rounded-xl bg-secondary/30 border border-white/10 overflow-hidden"
                   >
-                    <div className="h-20 w-20 rounded-full bg-primary/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                      <Play className="h-8 w-8 text-primary-foreground ml-1" />
+                    {/* Toggle buttons */}
+                    <div className="flex border-b border-white/10">
+                      {hasVideo && (
+                        <button
+                          onClick={() => setMediaMode('video')}
+                          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium transition-colors ${
+                            mediaMode === 'video'
+                              ? 'bg-primary/10 text-primary border-b-2 border-primary'
+                              : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                          }`}
+                        >
+                          <Play className="h-4 w-4" />
+                          Video
+                        </button>
+                      )}
+                      {hasQR && (
+                        <button
+                          onClick={() => setMediaMode('qr')}
+                          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium transition-colors ${
+                            mediaMode === 'qr'
+                              ? 'bg-primary/10 text-primary border-b-2 border-primary'
+                              : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                          }`}
+                        >
+                          <QrCode className="h-4 w-4" />
+                          VR QR Code
+                        </button>
+                      )}
                     </div>
-                  </button>
+
+                    {/* Media content */}
+                    <div className="p-4">
+                      {mediaMode === 'video' && hasVideo ? (
+                        <div className="relative aspect-video rounded-lg overflow-hidden bg-background/50">
+                          <iframe
+                            src={product.videoUrl}
+                            className="absolute inset-0 w-full h-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
+                      ) : mediaMode === 'qr' && hasQR ? (
+                        <div className="flex flex-col items-center py-6">
+                          <p className="text-muted-foreground text-sm mb-4">
+                            Scan this QR code for a virtual reality experience
+                          </p>
+                          <div className="w-40 h-40 bg-foreground rounded-lg flex items-center justify-center">
+                            <QrCode className="h-24 w-24 text-background" />
+                          </div>
+                        </div>
+                      ) : null}
+                    </div>
+                  </motion.div>
                 )}
-              </motion.div>
+              </div>
 
               {/* Product info */}
               <motion.div
@@ -82,56 +129,16 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                 <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                   {product.name}
                 </h1>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   {product.description}
                 </p>
-
-                {/* Action buttons */}
-                <div className="flex flex-wrap gap-3">
-                  {product.videoUrl && (
-                    <Button
-                      variant="secondary"
-                      onClick={() => setShowVideo(!showVideo)}
-                      className="gap-2"
-                    >
-                      <Play className="h-4 w-4" />
-                      {showVideo ? 'Hide Video' : 'Watch Video'}
-                    </Button>
-                  )}
-                  {product.vrQrCode && (
-                    <Button
-                      variant="outline"
-                      onClick={() => setShowQR(!showQR)}
-                      className="gap-2"
-                    >
-                      <QrCode className="h-4 w-4" />
-                      VR Experience
-                    </Button>
-                  )}
-                </div>
-
-                {/* QR Code modal */}
-                {showQR && product.vrQrCode && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="mt-6 p-6 rounded-xl bg-foreground text-center"
-                  >
-                    <p className="text-background text-sm mb-4">
-                      Scan this QR code for a virtual reality experience
-                    </p>
-                    <div className="w-40 h-40 mx-auto bg-muted rounded-lg flex items-center justify-center">
-                      <QrCode className="h-24 w-24 text-muted-foreground" />
-                    </div>
-                  </motion.div>
-                )}
               </motion.div>
             </div>
           </motion.div>
 
-          {/* Features and Specifications */}
+          {/* General Overview & Specifications */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* Features */}
+            {/* General Overview (description text) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -139,27 +146,14 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
               <h2 className="text-xl font-semibold text-foreground mb-6">
-                Main Features
+                General Overview
               </h2>
-              <ul className="space-y-3">
-                {product.features.map((feature, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 + index * 0.05 }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
-                      <Check className="h-3 w-3 text-primary" />
-                    </div>
-                    <span className="text-foreground">{feature}</span>
-                  </motion.li>
-                ))}
-              </ul>
+              <p className="text-muted-foreground leading-relaxed">
+                {product.description}
+              </p>
             </motion.div>
 
-            {/* Specifications */}
+            {/* Specifications (feature details) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -169,20 +163,22 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               <h2 className="text-xl font-semibold text-foreground mb-6">
                 Specifications
               </h2>
-              <div className="space-y-3">
-                {Object.entries(product.specifications).map(([key, value], index) => (
-                  <motion.div
-                    key={key}
+              <ul className="space-y-3">
+                {product.features.map((feature, index) => (
+                  <motion.li
+                    key={index}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.5 + index * 0.05 }}
-                    className="flex justify-between items-center py-2 border-b border-white/5 last:border-0"
+                    transition={{ delay: 0.5 + index * 0.03 }}
+                    className="flex items-start gap-3"
                   >
-                    <span className="text-muted-foreground">{key}</span>
-                    <span className="text-foreground font-medium">{value}</span>
-                  </motion.div>
+                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                      <Check className="h-3 w-3 text-primary" />
+                    </div>
+                    <span className="text-foreground text-sm">{feature}</span>
+                  </motion.li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           </div>
 
