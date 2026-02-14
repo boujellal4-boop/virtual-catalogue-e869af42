@@ -16,7 +16,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Premium variants for catalogue
-        hero: "relative overflow-hidden bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold tracking-wide uppercase shadow-lg hover:shadow-xl hover:scale-105 active:scale-100",
+        hero: "relative overflow-hidden bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-semibold tracking-wide uppercase shadow-lg hover:shadow-xl hover:scale-105 active:scale-100",
         glass: "bg-white/10 backdrop-blur-xl border border-white/20 text-foreground hover:bg-white/20 hover:border-white/30",
         glow: "bg-primary text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] hover:scale-105",
       },

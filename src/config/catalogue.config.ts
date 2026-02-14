@@ -34,8 +34,7 @@ export const catalogueConfig = {
         { id: "addressable", name: "Addressable System", icon: "circuit" },
         { id: "conventional", name: "Conventional System", icon: "layers" },
         { id: "wireless", name: "Wireless System", icon: "wifi" },
-        { id: "specialty", name: "Specialty Detection", icon: "shield" },
-        { id: "pava", name: "PAVA", icon: "volume" },
+        { id: "linear-heat", name: "Linear Heat Detection", icon: "thermometer" },
       ],
     },
     {
@@ -55,8 +54,9 @@ export const catalogueConfig = {
       color: "brand-ems",
       logo: "/brands/ems.png",
       systems: [
-        { id: "hybrid-wireless", name: "Hybrid Wireless", icon: "radio" },
-        { id: "full-wireless", name: "Full Wireless", icon: "wifi" },
+        { id: "firecell", name: "FireCell - Full Wireless", icon: "wifi" },
+        { id: "fusion", name: "Fusion - Hybrid Wireless", icon: "radio" },
+        { id: "smartcell", name: "SmartCell - Small Full Wireless", icon: "wifi" },
       ],
     },
     {
@@ -68,6 +68,7 @@ export const catalogueConfig = {
       systems: [
         { id: "high-end-addressable", name: "High-End Addressable System", icon: "cpu" },
         { id: "asd", name: "ASD (Aspirating Smoke Detection)", icon: "wind" },
+        { id: "pava", name: "PAVA", icon: "volume" },
       ],
     },
   ],
