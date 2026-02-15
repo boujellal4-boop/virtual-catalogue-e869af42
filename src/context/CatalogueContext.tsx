@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface UserInfo {
   fullName: string;
@@ -36,6 +36,28 @@ const initialState: CatalogueState = {
 
 export function CatalogueProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<CatalogueState>(initialState);
+
+  // Brand color mapping (HSL values matching index.css brand variables)
+  const brandColors: Record<string, string> = {
+    'kidde-commercial': '356 66% 42%',
+    'airsense': '210 98% 33%',
+    'ems': '357 70% 48%',
+    'edwards': '205 18% 45%',
+  };
+
+  // Dynamically override --primary when brand is selected
+  useEffect(() => {
+    const root = document.documentElement;
+    if (state.selectedBrand && brandColors[state.selectedBrand]) {
+      const color = brandColors[state.selectedBrand];
+      root.style.setProperty('--primary', color);
+      root.style.setProperty('--ring', color);
+    } else {
+      // Reset to default KGS red
+      root.style.setProperty('--primary', '356 66% 42%');
+      root.style.setProperty('--ring', '356 66% 42%');
+    }
+  }, [state.selectedBrand]);
 
   const setUserInfo = (info: UserInfo) => {
     setState(prev => ({ ...prev, userInfo: info }));
