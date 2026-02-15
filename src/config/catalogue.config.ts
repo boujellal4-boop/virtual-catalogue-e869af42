@@ -27,7 +27,7 @@ export const catalogueConfig = {
     {
       id: "kidde-commercial",
       name: "Kidde Commercial",
-      description: "Industry-leading fire detection and suppression solutions",
+      description: "One of the world's leading fire detection brands, incorporating the renowned Aritech Fire, Kilsen, and Ziton brands.\n\nKidde Commercial brings over 100 years of heritage and expertise to the forefront of fire and life safety solutions.",
       color: "brand-kidde",
       logo: "/brands/kidde.png",
       systems: [
@@ -41,7 +41,7 @@ export const catalogueConfig = {
     {
       id: "airsense",
       name: "AirSense",
-      description: "Advanced smoke detection technology",
+      description: "Leading brand in aspirating smoke detection, specializing in providing advanced fire protection solutions for environments where early detection is critical or where traditional fire detection systems struggle to operate effectively.",
       color: "brand-airsense",
       logo: "/brands/airsense.png",
       systems: [
@@ -51,7 +51,7 @@ export const catalogueConfig = {
     {
       id: "ems",
       name: "EMS",
-      description: "Flexible wireless fire detection systems",
+      description: "EMS is a leading life safety technologies brand. We have been specialists in modular wireless systems design, manufacture and support for over 50 years.",
       color: "brand-ems",
       logo: "/brands/ems.png",
       systems: [
@@ -63,7 +63,7 @@ export const catalogueConfig = {
     {
       id: "edwards",
       name: "Edwards",
-      description: "Premium high-end detection solutions",
+      description: "Founded in 1872, Edwards has never stopped pursuing a passion for protection, with innovations in fire and life safety that will future-proof your facility.",
       color: "brand-edwards",
       logo: "/brands/edwards.png",
       systems: [
