@@ -29,7 +29,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Panels",
     image: "/products/2X-AT-FR-S.png",
-    pictures: ["/products/2X-AT-FR-S.png", "/products/2X-AT-FR-S-2.png"],
+    pictures: ["/products/2X-AT-FR-S.png"],
     description: "The new 2X-A series life safety control systems bring the speed and functionality of high-end intelligent processing to small to mid-sized addressable applications. Based on 2X series learned experience and with complete backwards compatibility, the new 2X-A features an attractive contemporary design that fits with any decor.",
     features: [
       "Local or global repeater with or without global control functionality",
@@ -57,7 +57,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Panels",
     image: "/products/2X-AT-FR.png",
-    pictures: ["/products/2X-AT-FR.png", "/products/2X-AT-FR-2.png"],
+    pictures: ["/products/2X-AT-FR.png"],
     description: "The new 2X-A series life safety control systems bring the speed and functionality of high-end intelligent processing to small to mid-sized addressable applications. Based on 2X series learned experience and with complete backwards compatibility, the new 2X-A features an attractive contemporary design that fits with any decor.",
     features: [
       "Local or global repeater with or without global control functionality",
@@ -85,7 +85,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Panels",
     image: "/products/2X-AT-FR-FB-S.png",
-    pictures: ["/products/2X-AT-FR-FB-S.png", "/products/2X-AT-FR-FB-S-2.png"],
+    pictures: ["/products/2X-AT-FR-FB-S.png"],
     description: "The new 2X-A series life safety control systems bring the speed and functionality of high-end intelligent processing to small to mid-sized addressable applications.",
     features: [
       "Local or global repeater with Fire Brigade and Fire Protection controls",
@@ -107,7 +107,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Panels",
     image: "/products/2X-AFR-FB.png",
-    pictures: ["/products/2X-AFR-FB.png", "/products/2X-AFR-FB-2.png"],
+    pictures: ["/products/2X-AFR-FB.png"],
     description: "The new 2X-A series life safety control systems bring the speed and functionality of high-end intelligent processing to small to mid-sized addressable applications.",
     features: [
       "Local or global repeater with Fire Brigade and Fire Protection controls",
@@ -128,7 +128,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Panels",
     image: "/products/2X-AER-C.png",
-    pictures: ["/products/2X-AER-C.png", "/products/2X-AER-C-2.png"],
+    pictures: ["/products/2X-AER-C.png"],
     description: "The new 2X-A series life safety control systems bring the speed and functionality of high-end intelligent processing to small to mid-sized addressable applications.",
     features: [
       "Compact Repeater with integrated Fire Brigade and evacuation user interface",
@@ -211,7 +211,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Manual Call Points",
     image: "/products/ke-dm3010us99.png",
-    pictures: ["/products/ke-dm3010us99.png", "/products/ke-dm3010us99-2.png"],
+    pictures: ["/products/ke-dm3010us99.png"],
     description: "The KE-DM3000 Series is an intelligent range of addressable, Excellence Series manual call points. The KE-DM3010US99 is a blue, single action indoor MCP with an \"EVACUATION ALARM\" functional indication.",
     features: [
       "Reliable single action manual call point for recess or surface mounting",
@@ -230,7 +230,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Manual Call Points",
     image: "/products/ke-dm3010w.png",
-    pictures: ["/products/ke-dm3010w.png", "/products/ke-dm3010w-2.png"],
+    pictures: ["/products/ke-dm3010w.png"],
     description: "The KE-DM3000 Series is an intelligent range of addressable, Excellence Series manual call points. The KE-DM3010W is a white, single action indoor MCP with no functional indication.",
     features: [
       "Reliable single action manual call point for recess or surface mounting",
@@ -288,7 +288,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Detectors",
     image: "/products/KE-DP3120W.png",
-    pictures: ["/products/KE-DP3120W.png", "/products/KE-DP3120W-2.png"],
+    pictures: ["/products/KE-DP3120W.png"],
     description: "The DP3120W is a Kidde Excellence series, traffic white addressable dual optical detector with integrated short circuit isolation. It combines a low profile design with tri-colour status indication with 360° visibility.",
     features: [
       "Integrated loop short circuit isolation",
@@ -313,7 +313,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Detectors",
     image: "/products/KE-DP3121W.png",
-    pictures: ["/products/KE-DP3121W.png", "/products/KE-DP3121W-2.png"],
+    pictures: ["/products/KE-DP3121W.png"],
     description: "The DP3121W is a Kidde Excellence series, traffic white addressable dual optical and heat detector with integrated short circuit isolation.",
     features: [
       "Integrated loop short circuit isolation",
@@ -335,7 +335,7 @@ export const products: Product[] = [
     systemId: "addressable",
     subcategory: "Detectors",
     image: "/products/KE-DP3121B.png",
-    pictures: ["/products/KE-DP3121B.png", "/products/KE-DP3121B-2.png"],
+    pictures: ["/products/KE-DP3121B.png"],
     description: "The DP3121B is a Kidde Excellence series, graphite black addressable dual optical and heat detector with integrated short circuit isolation.",
     features: [
       "Integrated loop short circuit isolation",
@@ -810,7 +810,7 @@ export const products: Product[] = [
     systemId: "conventional",
     subcategory: "Panels",
     image: "/products/nc-pf4_7.png",
-    pictures: ["/products/nc-pf4_7.png", "/products/NC-PF4.png"],
+    pictures: ["/products/nc-pf4_7.png"],
     description: "The New Conventional fire control panels offer state of the art architecture delivering an uncomplicated solution for small to mid-sized conventional applications.",
     features: [
       "Modern, elegant design with intuitive user interface",
@@ -829,7 +829,7 @@ export const products: Product[] = [
     systemId: "conventional",
     subcategory: "Panels",
     image: "/products/nc-pf8_10.png",
-    pictures: ["/products/nc-pf8_10.png", "/products/NC-PF8.png"],
+    pictures: ["/products/nc-pf8_10.png"],
     description: "The New Conventional fire control panels offer state of the art architecture delivering an uncomplicated solution for small to mid-sized conventional applications.",
     features: [
       "Modern, elegant design with intuitive user interface",
@@ -976,7 +976,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Display Module",
     image: "/products/9-30781-KID.png",
-    pictures: ["/products/9-30781-KID.png", "/products/9-30781-KID-2.png"],
+    pictures: ["/products/9-30781-KID.png"],
     description: "ModuLaser is a scalable aspirating smoke detection solution that makes installation easier, maintenance quicker, and takes applications further than traditional air sampling detectors.",
     features: [
       "Modular Design: Separate centrally-controllable detector modules",
@@ -997,7 +997,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Detector Module",
     image: "/products/9-30783-KID.png",
-    pictures: ["/products/9-30783-KID.png", "/products/9-30783-KID-2.png"],
+    pictures: ["/products/9-30783-KID.png"],
     description: "ModuLaser detector module. Each detector module can accommodate up to 250 m of combined sampling pipe.",
     features: [
       "Modular Design",
@@ -1017,7 +1017,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Display Module",
     image: "/products/9-30780-KID.png",
-    pictures: ["/products/9-30780-KID.png", "/products/9-30780-KID-2.png"],
+    pictures: ["/products/9-30780-KID.png"],
     description: "ModuLaser minimum display module with status LED's only.",
     features: [
       "Modular Design",
@@ -1038,7 +1038,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Command Module",
     image: "/products/9-30782-KID.png",
-    pictures: ["/products/9-30782-KID.png", "/products/9-30782-KID-2.png"],
+    pictures: ["/products/9-30782-KID.png"],
     description: "ModuLaser command display module. Similar to Standard but with added functionality to control various modules over SenseNET. Can support up to 127 modules.",
     features: [
       "Modular Design",
@@ -1081,7 +1081,7 @@ export const products: Product[] = [
     systemId: "wireless",
     subcategory: "Door Controller",
     image: "/products/SC-44-0200-0001-99.png",
-    pictures: ["/products/SC-44-0200-0001-99.png", "/products/SH-44-0200-0001-99.png"],
+    pictures: ["/products/SC-44-0200-0001-99.png"],
     description: "SmartDoor is an intelligent wireless door controller in white. It combines industry proven mechanics and SmartCell wireless technology.",
     features: [
       "Fully wireless",
@@ -1100,7 +1100,7 @@ export const products: Product[] = [
     systemId: "wireless",
     subcategory: "Door Controller",
     image: "/products/SC-44-0300-0001-99.png",
-    pictures: ["/products/SC-44-0300-0001-99.png", "/products/SC-44-0300-0001-99-2.png", "/products/SH-44-0300-0001-99.png"],
+    pictures: ["/products/SC-44-0300-0001-99.png"],
     description: "SmartDoor is an intelligent wireless door controller in black. It combines industry proven mechanics and SmartCell wireless technology.",
     features: [
       "Fully wireless",
@@ -1396,7 +1396,7 @@ export const products: Product[] = [
     systemId: "wireless",
     subcategory: "Remote Indicator",
     image: "/products/SH-62-0210-0001-99.png",
-    pictures: ["/products/SH-62-0210-0001-99.png", "/products/SC-62-0210-0001-99-2.png"],
+    pictures: ["/products/SH-62-0210-0001-99.png"],
     description: "The SmartCell wireless remote indicator is quick and easy to install and offers individual addressing.",
     features: [
       "Fully wireless",
@@ -1903,7 +1903,7 @@ export const products: Product[] = [
     systemId: "fusion",
     subcategory: "Door Controller",
     image: "/products/FC-60-2000.png",
-    pictures: ["/products/FC-60-2000.png", "/products/FC-60-2000-2.png"],
+    pictures: ["/products/FC-60-2000.png"],
     description: "The FC-60-2000 is a black wireless door controller. It provides full health monitoring via system integration.",
     features: [
       "Combines proven mechanics with wireless system operation",
@@ -1983,7 +1983,7 @@ export const products: Product[] = [
     systemId: "fusion",
     subcategory: "Radio Loop Module",
     image: "/products/FCX-532-001.png",
-    pictures: ["/products/FCX-532-001.png", "/products/FCX-532-001-2.png"],
+    pictures: ["/products/FCX-532-001.png"],
     description: "The award winning Fusion Radio Loop Module (RLM) connects to the FireCell Control Panel's XP95 loop and can accommodate up to 31 wireless FireCell devices.",
     features: [
       "Internal diversity aerials",
@@ -2007,7 +2007,7 @@ export const products: Product[] = [
     systemId: "smartcell",
     subcategory: "Control Panel",
     image: "/products/SC-11-1201-0001-99.png",
-    pictures: ["/products/SC-11-1201-0001-99.png", "/products/SC-11-1201-0001-99-2.png"],
+    pictures: ["/products/SC-11-1201-0001-99.png"],
     description: "SmartCell is a complete wireless fire detection system. Supports up to 64 wireless devices with maximum of 32 Fire Detection devices.",
     features: [
       "Fully wireless",
@@ -2028,7 +2028,7 @@ export const products: Product[] = [
     systemId: "smartcell",
     subcategory: "Control Panel",
     image: "/products/SC-11-2201-0001-09.png",
-    pictures: ["/products/SC-11-2201-0001-09.png", "/products/SC-11-2201-0001-09-2.png"],
+    pictures: ["/products/SC-11-2201-0001-09.png"],
     description: "SmartCell complete wireless fire detection system. Supports up to 64 wireless devices with maximum of 32 Fire Detection devices. Bidirectional 868MHz communication.",
     features: [
       "Fully wireless",
@@ -2051,7 +2051,7 @@ export const products: Product[] = [
     systemId: "smartcell",
     subcategory: "Door Controller",
     image: "/products/SC-44-0200-0001-99.png",
-    pictures: ["/products/SC-44-0200-0001-99.png", "/products/SH-44-0200-0001-99.png"],
+    pictures: ["/products/SC-44-0200-0001-99.png"],
     description: "SmartDoor is an intelligent wireless door controller in white. It combines industry proven mechanics and SmartCell wireless technology.",
     features: ["Fully wireless", "Quick and easy to install", "Fully addressable", "Controlled by the SmartCell control panel"],
     specifications: {},
@@ -2065,7 +2065,7 @@ export const products: Product[] = [
     systemId: "smartcell",
     subcategory: "Door Controller",
     image: "/products/SC-44-0300-0001-99.png",
-    pictures: ["/products/SC-44-0300-0001-99.png", "/products/SH-44-0300-0001-99.png"],
+    pictures: ["/products/SC-44-0300-0001-99.png"],
     description: "SmartDoor is an intelligent wireless door controller in black. It combines industry proven mechanics and SmartCell wireless technology.",
     features: ["Fully wireless", "Quick and easy to install", "Fully addressable", "Controlled by the SmartCell control panel"],
     specifications: {},
@@ -2274,7 +2274,7 @@ export const products: Product[] = [
     systemId: "smartcell",
     subcategory: "Remote Indicator",
     image: "/products/SC-62-0210-0001-99.png",
-    pictures: ["/products/SC-62-0210-0001-99.png", "/products/SC-62-0210-0001-99-2.png"],
+    pictures: ["/products/SC-62-0210-0001-99.png"],
     description: "The SmartCell wireless remote indicator is quick and easy to install and offers individual addressing.",
     features: ["Fully wireless", "Quick and easy to install", "Red fire indication LED", "Unique design", "Inbuilt locking mechanism"],
     specifications: {},
@@ -2290,7 +2290,7 @@ export const products: Product[] = [
     systemId: "high-end-addressable",
     subcategory: "EST4",
     image: "/products/EST4.png",
-    pictures: ["/products/EST4.png", "/products/EST4-2.png", "/products/EST4-3.png"],
+    pictures: ["/products/EST4.png"],
     description: "EST4 is the premier emergency communications system from EDWARDS. This exciting flagship system features a whole new network architecture that makes fire alarm, mass notification, and building integration easy to implement, quick to service, and secure in the face of today's cyberthreats.",
     features: [
       "Investment-forward Platform Designed for the Future",
@@ -2316,7 +2316,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Display Module",
     image: "/products/FHSD8320.png",
-    pictures: ["/products/FHSD8320.png", "/products/FHSD8320-2.png"],
+    pictures: ["/products/FHSD8320.png"],
     description: "ModuLaser is a scalable aspirating smoke detection solution. Command display module with SenseNET functionality.",
     features: [
       "Modular Design",
@@ -2337,7 +2337,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Detector Module",
     image: "/products/FHSD8330.png",
-    pictures: ["/products/FHSD8330.png", "/products/FHSD8330-2.png"],
+    pictures: ["/products/FHSD8330.png"],
     description: "ModuLaser detector module. Each detector module can accommodate up to 250 m of combined sampling pipe.",
     features: [
       "Modular Design",
@@ -2357,7 +2357,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Display Module",
     image: "/products/FHSD8310.png",
-    pictures: ["/products/FHSD8310.png", "/products/FHSD8310-2.png"],
+    pictures: ["/products/FHSD8310.png"],
     description: "ModuLaser standard display module with TFT color display, status LED's and navigation buttons.",
     features: [
       "Modular Design",
@@ -2378,7 +2378,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Display Module",
     image: "/products/FHSD8300.png",
-    pictures: ["/products/FHSD8300.png", "/products/FHSD8300-2.png"],
+    pictures: ["/products/FHSD8300.png"],
     description: "ModuLaser minimum display module with status LED's only.",
     features: [
       "Modular Design",
@@ -2401,7 +2401,7 @@ export const products: Product[] = [
     systemId: "pava",
     subcategory: "PAVA Unit",
     image: "/products/EST-VES-8003-LN.png",
-    pictures: ["/products/EST-VES-8003-LN.png", "/products/EST-VES-8003-LN-2.png"],
+    pictures: ["/products/EST-VES-8003-LN.png"],
     description: "EST-VES are scalable Public Address & Voice Alarm units suitable for multi-purpose architectures. Meet all requirements of EN 54-16 and EN 54-4.",
     features: [
       "Stand alone or TCP/IP network architecture",
@@ -2424,7 +2424,7 @@ export const products: Product[] = [
     systemId: "pava",
     subcategory: "PAVA Unit",
     image: "/products/EST-VES-4002-LNR.png",
-    pictures: ["/products/EST-VES-4002-LNR.png", "/products/EST-VES-4002-L-2.png", "/products/EST-VES-4002-LNR-2.png"],
+    pictures: ["/products/EST-VES-4002-LNR.png"],
     description: "EST-VES scalable Public Address & Voice Alarm units. Rack-mounting version with 2x320W amplifiers.",
     features: [
       "Stand alone or TCP/IP network architecture",
@@ -2445,7 +2445,7 @@ export const products: Product[] = [
     systemId: "pava",
     subcategory: "Microphone",
     image: "/products/EST-M04.png",
-    pictures: ["/products/EST-M04.png", "/products/EST-M04-2.png"],
+    pictures: ["/products/EST-M04.png"],
     description: "4 button analog microphone with built in gong, push to talk and bi-color LED indicating the ready-to-speak status.",
     features: [
       "Solid construction",
@@ -2466,7 +2466,7 @@ export const products: Product[] = [
     systemId: "pava",
     subcategory: "Power Amplifier",
     image: "/products/EST-PA2650B.png",
-    pictures: ["/products/EST-PA2650B.png", "/products/EST-PA2650B-2.png"],
+    pictures: ["/products/EST-PA2650B.png"],
     description: "2U rackmountable 2-channel class-D transformer isolated power amplifier for 50V and 100V distributed loudspeaker systems.",
     features: [
       "Front panel indicators: Supply / Active / Fault",
@@ -2485,7 +2485,7 @@ export const products: Product[] = [
     systemId: "pava",
     subcategory: "Noise Sensing Mic",
     image: "/products/ABT-NSM-A.png",
-    pictures: ["/products/ABT-NSM-A.png", "/products/ABT-NSM-A-2.png"],
+    pictures: ["/products/ABT-NSM-A.png"],
     description: "Measurement microphone designed to operate under extreme temperatures. Up to 6 microphones can be connected to ABT-NSC6 via 2-wire cable.",
     features: [
       "Operate under extreme temperatures",
@@ -2502,7 +2502,7 @@ export const products: Product[] = [
     systemId: "pava",
     subcategory: "PAVA Unit",
     image: "/products/EST-VES-2001-L.png",
-    pictures: ["/products/EST-VES-2001-L.png", "/products/EST-VES-2001-L-2.png"],
+    pictures: ["/products/EST-VES-2001-L.png"],
     description: "EST-VES scalable Public Address & Voice Alarm units. Mini version with 2x160W amplifiers.",
     features: [
       "Stand alone or TCP/IP network architecture",
