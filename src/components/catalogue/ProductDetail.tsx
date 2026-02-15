@@ -232,7 +232,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               transition={{ delay: 0.3 }}
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
-              <h2 className="text-base font-semibold text-foreground mb-4 uppercase">
+              <h2 className="text-xl font-semibold text-foreground mb-4 uppercase">
                 Quick Features
               </h2>
               <ul className="space-y-3">
@@ -247,7 +247,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                         <Check className="h-3 w-3 text-primary" />
                       </div>
-                      <span className="text-foreground text-lg">{point}</span>
+                      <span className="text-foreground text-sm">{point}</span>
                     </li>
                   ));
                 })()}
@@ -261,7 +261,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               transition={{ delay: 0.4 }}
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
-              <h2 className="text-base font-semibold text-foreground mb-6 uppercase">
+              <h2 className="text-xl font-semibold text-foreground mb-6 uppercase">
                 Specifications
               </h2>
               <ul className="space-y-3">
@@ -276,7 +276,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                     <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                       <Check className="h-3 w-3 text-primary" />
                     </div>
-                    <span className="text-foreground text-lg">{feature}</span>
+                    <span className="text-foreground text-sm">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -290,7 +290,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <h2 className="text-lg font-semibold text-foreground mb-6 uppercase">
+              <h2 className="text-xl font-semibold text-foreground mb-6 uppercase">
                 Similar Products
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
