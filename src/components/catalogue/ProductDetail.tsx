@@ -247,7 +247,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                         <Check className="h-3 w-3 text-primary" />
                       </div>
-                      <span className="text-foreground text-xl">{point}</span>
+                      <span className="text-foreground text-lg">{point}</span>
                     </li>
                   ));
                 })()}
@@ -276,7 +276,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                     <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                       <Check className="h-3 w-3 text-primary" />
                     </div>
-                    <span className="text-foreground text-xl">{feature}</span>
+                    <span className="text-foreground text-lg">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
