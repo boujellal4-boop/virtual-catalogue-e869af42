@@ -216,9 +216,6 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                 <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                   {product.name}
                 </h1>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  {product.description}
-                </p>
               </motion.div>
             </div>
           </motion.div>
@@ -232,23 +229,12 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               transition={{ delay: 0.3 }}
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
-              <h2 className="text-xl font-semibold text-foreground mb-6">
+              <h2 className="text-xl font-semibold text-foreground mb-4">
                 Quick Features
               </h2>
-              <div className="flex flex-wrap gap-2">
-                {product.features.slice(0, 6).map((feature, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.4 + index * 0.05 }}
-                    className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 border border-primary/20 text-sm text-foreground"
-                  >
-                    <Check className="h-3.5 w-3.5 text-primary flex-shrink-0" />
-                    {extractQuickLabel(feature)}
-                  </motion.span>
-                ))}
-              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
+                {product.description}
+              </p>
             </motion.div>
 
             {/* Specifications */}
