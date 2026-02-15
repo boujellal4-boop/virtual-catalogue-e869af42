@@ -249,6 +249,23 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                 <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                   {product.name}
                 </h1>
+                {(() => {
+                  const certRegex = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)\b/gi;
+                  const allText = product.description + ' ' + product.features.join(' ');
+                  const certs = [...new Set(
+                    (allText.match(certRegex) || []).map(c => c.toUpperCase().trim())
+                  )];
+                  return certs.length > 0 ? (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {certs.map(cert => (
+                        <span key={cert} className="inline-flex items-center gap-1 text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-full whitespace-nowrap">
+                          <Award className="h-3 w-3" />
+                          {cert}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null;
+                })()}
                 <p className="text-muted-foreground text-xl leading-relaxed">
                   {formatText(product.description.split(/\.\s+/).slice(0, 2).join('. ').replace(/\.?$/, '.'))}
                 </p>
