@@ -810,7 +810,7 @@ export const products: Product[] = [
     systemId: "conventional",
     subcategory: "Panels",
     image: "/products/nc-pf4_7.png",
-    pictures: ["/products/nc-pf4_7.png"],
+    pictures: ["/products/nc-pf4_7.png", "/products/NC-PF4.png"],
     description: "The New Conventional fire control panels offer state of the art architecture delivering an uncomplicated solution for small to mid-sized conventional applications.",
     features: [
       "Modern, elegant design with intuitive user interface",
@@ -829,7 +829,7 @@ export const products: Product[] = [
     systemId: "conventional",
     subcategory: "Panels",
     image: "/products/nc-pf8_10.png",
-    pictures: ["/products/nc-pf8_10.png"],
+    pictures: ["/products/nc-pf8_10.png", "/products/NC-PF8.png"],
     description: "The New Conventional fire control panels offer state of the art architecture delivering an uncomplicated solution for small to mid-sized conventional applications.",
     features: [
       "Modern, elegant design with intuitive user interface",
@@ -847,7 +847,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "conventional",
     subcategory: "Panels",
-    image: "",
+    image: "/products/NC-PX3.png",
+    pictures: ["/products/NC-PX3.png"],
     description: "The New Conventional fire control panels offer state of the art architecture. With support for multiple lines of conventional detectors and accessories.",
     features: [
       "Three detection zones",
@@ -1016,7 +1017,7 @@ export const products: Product[] = [
     systemId: "asd",
     subcategory: "Display Module",
     image: "/products/9-30780-KID.png",
-    pictures: ["/products/9-30780-KID.png"],
+    pictures: ["/products/9-30780-KID.png", "/products/9-30780-KID-2.png"],
     description: "ModuLaser minimum display module with status LED's only.",
     features: [
       "Modular Design",
@@ -1080,7 +1081,7 @@ export const products: Product[] = [
     systemId: "wireless",
     subcategory: "Door Controller",
     image: "/products/SC-44-0200-0001-99.png",
-    pictures: ["/products/SC-44-0200-0001-99.png"],
+    pictures: ["/products/SC-44-0200-0001-99.png", "/products/SH-44-0200-0001-99.png"],
     description: "SmartDoor is an intelligent wireless door controller in white. It combines industry proven mechanics and SmartCell wireless technology.",
     features: [
       "Fully wireless",
@@ -1099,7 +1100,7 @@ export const products: Product[] = [
     systemId: "wireless",
     subcategory: "Door Controller",
     image: "/products/SC-44-0300-0001-99.png",
-    pictures: ["/products/SC-44-0300-0001-99.png", "/products/SC-44-0300-0001-99-2.png"],
+    pictures: ["/products/SC-44-0300-0001-99.png", "/products/SC-44-0300-0001-99-2.png", "/products/SH-44-0300-0001-99.png"],
     description: "SmartDoor is an intelligent wireless door controller in black. It combines industry proven mechanics and SmartCell wireless technology.",
     features: [
       "Fully wireless",
@@ -1581,7 +1582,8 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Detector Module",
-    image: "",
+    image: "/products/9-30783.png",
+    pictures: ["/products/9-30783.png"],
     description: "ModuLaser is a scalable aspirating smoke detection solution. Each detector module can accommodate up to 250 meters combined sampling pipe.",
     features: [
       "Modular Design: Separate centrally-controllable detector modules",
@@ -1901,7 +1903,7 @@ export const products: Product[] = [
     systemId: "fusion",
     subcategory: "Door Controller",
     image: "/products/FC-60-2000.png",
-    pictures: ["/products/FC-60-2000.png"],
+    pictures: ["/products/FC-60-2000.png", "/products/FC-60-2000-2.png"],
     description: "The FC-60-2000 is a black wireless door controller. It provides full health monitoring via system integration.",
     features: [
       "Combines proven mechanics with wireless system operation",
@@ -2049,7 +2051,7 @@ export const products: Product[] = [
     systemId: "smartcell",
     subcategory: "Door Controller",
     image: "/products/SC-44-0200-0001-99.png",
-    pictures: ["/products/SC-44-0200-0001-99.png"],
+    pictures: ["/products/SC-44-0200-0001-99.png", "/products/SH-44-0200-0001-99.png"],
     description: "SmartDoor is an intelligent wireless door controller in white. It combines industry proven mechanics and SmartCell wireless technology.",
     features: ["Fully wireless", "Quick and easy to install", "Fully addressable", "Controlled by the SmartCell control panel"],
     specifications: {},
@@ -2063,7 +2065,7 @@ export const products: Product[] = [
     systemId: "smartcell",
     subcategory: "Door Controller",
     image: "/products/SC-44-0300-0001-99.png",
-    pictures: ["/products/SC-44-0300-0001-99.png"],
+    pictures: ["/products/SC-44-0300-0001-99.png", "/products/SH-44-0300-0001-99.png"],
     description: "SmartDoor is an intelligent wireless door controller in black. It combines industry proven mechanics and SmartCell wireless technology.",
     features: ["Fully wireless", "Quick and easy to install", "Fully addressable", "Controlled by the SmartCell control panel"],
     specifications: {},
@@ -2288,7 +2290,7 @@ export const products: Product[] = [
     systemId: "high-end-addressable",
     subcategory: "EST4",
     image: "/products/EST4.png",
-    pictures: ["/products/EST4.png", "/products/EST4-2.png"],
+    pictures: ["/products/EST4.png", "/products/EST4-2.png", "/products/EST4-3.png"],
     description: "EST4 is the premier emergency communications system from EDWARDS. This exciting flagship system features a whole new network architecture that makes fire alarm, mass notification, and building integration easy to implement, quick to service, and secure in the face of today's cyberthreats.",
     features: [
       "Investment-forward Platform Designed for the Future",
