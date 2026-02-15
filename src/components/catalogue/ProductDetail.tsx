@@ -216,6 +216,9 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                 <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                   {product.name}
                 </h1>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {product.description}
+                </p>
               </motion.div>
             </div>
           </motion.div>
@@ -232,9 +235,20 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               <h2 className="text-xl font-semibold text-foreground mb-4">
                 Quick Features
               </h2>
-              <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
-                {product.description}
-              </p>
+              <ul className="space-y-2">
+                {product.description
+                  .split(/\.\s+/)
+                  .map(s => s.replace(/\.$/, '').trim())
+                  .filter(s => s.length > 10)
+                  .map((point, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                        <Check className="h-3 w-3 text-primary" />
+                      </div>
+                      <span className="text-muted-foreground text-sm">{point}</span>
+                    </li>
+                  ))}
+              </ul>
             </motion.div>
 
             {/* Specifications */}
