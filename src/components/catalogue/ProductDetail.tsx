@@ -8,7 +8,7 @@ import React from 'react';
 
 // Highlight certifications and wrap SKU-like codes so they never break across lines
 function formatText(text: string): React.ReactNode[] {
-  const certPattern = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)\b/i;
+  const certPattern = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|EN\b|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)/i;
   const skuPattern = /(\b\d+[A-Z]+-[A-Z0-9-]+\b|\b[A-Z]{2,}-[A-Z0-9-]+\b|\b[A-Z]+\d+[A-Z]*\b)/;
   const combined = new RegExp(`${certPattern.source}|${skuPattern.source}`, 'gi');
 
@@ -25,7 +25,8 @@ function formatText(text: string): React.ReactNode[] {
     const isCert = certPattern.test(matched);
     certPattern.lastIndex = 0;
     if (isCert) {
-      result.push(<span key={`m${match.index}`} className="whitespace-nowrap font-semibold text-primary bg-primary/10 px-1.5 py-0.5 rounded">{matched}</span>);
+      const displayText = /^EN$/i.test(matched) ? 'EN54' : matched;
+      result.push(<span key={`m${match.index}`} className="whitespace-nowrap font-semibold text-primary bg-primary/10 px-1.5 py-0.5 rounded">{displayText}</span>);
     } else {
       result.push(<span key={`m${match.index}`} className="whitespace-nowrap">{matched}</span>);
     }
@@ -250,10 +251,10 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                   {product.name}
                 </h1>
                 {(() => {
-                  const certRegex = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)\b/gi;
+                  const certRegex = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|EN\b|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)/gi;
                   const allText = product.description + ' ' + product.features.join(' ');
                   const certs = [...new Set(
-                    (allText.match(certRegex) || []).map(c => c.toUpperCase().trim())
+                    (allText.match(certRegex) || []).map(c => /^EN$/i.test(c.trim()) ? 'EN54' : c.toUpperCase().trim())
                   )];
                   return certs.length > 0 ? (
                     <div className="flex flex-wrap gap-2 mb-4">
