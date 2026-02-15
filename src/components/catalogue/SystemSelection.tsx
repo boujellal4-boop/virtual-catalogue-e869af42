@@ -30,9 +30,9 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background">
+    <div className="relative min-h-screen overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-secondary/20" />
       <motion.div
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ duration: 15, repeat: Infinity }}

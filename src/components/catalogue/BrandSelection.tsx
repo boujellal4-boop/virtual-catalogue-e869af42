@@ -25,9 +25,9 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
   const { userInfo } = useCatalogue();
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background">
+    <div className="relative min-h-screen overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-secondary/20" />
       
       <div className="relative min-h-screen px-6 py-20">
         <div className="mx-auto max-w-5xl">

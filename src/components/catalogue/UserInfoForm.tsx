@@ -85,9 +85,9 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background">
+    <div className="relative min-h-screen overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-secondary/20" />
       <motion.div
         animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
         transition={{ duration: 10, repeat: Infinity }}

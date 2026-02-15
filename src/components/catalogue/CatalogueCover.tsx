@@ -9,9 +9,9 @@ interface CatalogueCoverProps {
 
 export function CatalogueCover({ onStart }: CatalogueCoverProps) {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background">
+    <div className="relative min-h-screen overflow-hidden">
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-secondary/20" />
       
       {/* Animated particles/glow effects */}
       <div className="absolute inset-0 overflow-hidden">
