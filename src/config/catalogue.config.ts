@@ -7,7 +7,7 @@ export const catalogueConfig = {
   // Company branding
   company: {
     name: "Fire Detection Solutions",
-    tagline: "Whatever you fire detection need is, we have a solution for you!",
+    tagline: "Whatever your fire detection need is, we have a solution for you!",
     logo: "/logo-kgs-white.png",
   },
 
