@@ -167,18 +167,16 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                         const safeIndex = pictureIndex % pictures.length;
                         return (
                           <div className="relative w-full h-full">
-                            <AnimatePresence mode="wait">
-                              <motion.img
-                                key={safeIndex}
-                                src={pictures[safeIndex]}
-                                alt={product.name}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="absolute inset-0 w-full h-full object-contain p-6"
-                              />
-                            </AnimatePresence>
+                            <img
+                              key={safeIndex}
+                              src={pictures[safeIndex]}
+                              alt={product.name}
+                              width={400}
+                              height={400}
+                              fetchPriority="high"
+                              decoding="async"
+                              className="absolute inset-0 w-full h-full object-contain p-6 animate-fade-in"
+                            />
                             {pictures.length > 1 && (
                               <>
                                 <button

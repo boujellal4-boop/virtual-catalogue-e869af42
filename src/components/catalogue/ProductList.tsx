@@ -143,7 +143,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                       {/* Product image */}
                       <div className="flex-shrink-0 h-16 w-16 rounded-lg bg-secondary border border-white/10 flex items-center justify-center overflow-hidden">
                         {product.image ? (
-                          <img src={product.image} alt={product.name} className="h-full w-full object-contain p-1" loading="lazy" decoding="async" />
+                          <img src={product.image} alt={product.name} className="h-full w-full object-contain p-1" loading="lazy" decoding="async" width={64} height={64} />
                         ) : (
                           <Package className="h-8 w-8 text-muted-foreground" />
                         )}
