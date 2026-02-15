@@ -8,7 +8,7 @@ import React from 'react';
 
 // Highlight certifications and wrap SKU-like codes so they never break across lines
 function formatText(text: string): React.ReactNode[] {
-  const certPattern = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|EN\b|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)/i;
+  const certPattern = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|EN|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)\b/i;
   const skuPattern = /(\b\d+[A-Z]+-[A-Z0-9-]+\b|\b[A-Z]{2,}-[A-Z0-9-]+\b|\b[A-Z]+\d+[A-Z]*\b)/;
   const combined = new RegExp(`${certPattern.source}|${skuPattern.source}`, 'gi');
 
@@ -251,7 +251,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                   {product.name}
                 </h1>
                 {(() => {
-                  const certRegex = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|EN\b|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)/gi;
+                  const certRegex = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|EN|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)\b/gi;
                   const allText = product.description + ' ' + product.features.join(' ');
                   const certs = [...new Set(
                     (allText.match(certRegex) || []).map(c => /^EN$/i.test(c.trim()) ? 'EN54' : c.toUpperCase().trim())
