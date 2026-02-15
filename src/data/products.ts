@@ -3239,9 +3239,24 @@ export const getProductById = (id: string): Product | undefined => {
 export const getRelatedProducts = (productId: string): Product[] => {
   const product = getProductById(productId);
   if (!product) return [];
-  return product.relatedProducts
+  
+  // Start with explicitly defined related products
+  const related = product.relatedProducts
     .map(id => getProductById(id))
     .filter((p): p is Product => p !== undefined);
+  
+  // If fewer than 3, fill from same brand+system
+  if (related.length < 3) {
+    const sameBrandSystem = products.filter(
+      p => p.brandId === product.brandId && p.systemId === product.systemId && p.id !== productId && !related.some(r => r.id === p.id)
+    );
+    for (const p of sameBrandSystem) {
+      if (related.length >= 3) break;
+      related.push(p);
+    }
+  }
+  
+  return related.slice(0, 3);
 };
 
 export const getSubcategories = (brandId: string, systemId: string): string[] => {
