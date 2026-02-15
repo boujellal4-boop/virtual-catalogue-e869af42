@@ -216,7 +216,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                 <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                   {product.name}
                 </h1>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-xs leading-relaxed opacity-80">
                   {product.description}
                 </p>
               </motion.div>
@@ -240,12 +240,26 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                   .split(/\.\s+/)
                   .map(s => s.replace(/\.$/, '').trim())
                   .filter(s => s.length > 10)
+                  .map(s => {
+                    // Extract the core point - take first clause or shorten
+                    let point = s.replace(/\s*\(.*?\)/g, '');
+                    const cutWords = /\s+(which |that |and also |this |these |it |they |providing |allowing |ensuring |offering |making )/i;
+                    const cutMatch = point.match(cutWords);
+                    if (cutMatch && cutMatch.index && cutMatch.index > 8) {
+                      point = point.substring(0, cutMatch.index);
+                    }
+                    if (point.length > 50) {
+                      point = point.substring(0, 47).replace(/\s+\S*$/, '') + '…';
+                    }
+                    return point.trim();
+                  })
+                  .filter(s => s.length > 5)
                   .map((point, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
-                        <Check className="h-3 w-3 text-primary" />
+                    <li key={index} className="flex items-start gap-2">
+                      <div className="flex-shrink-0 h-4 w-4 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                        <Check className="h-2.5 w-2.5 text-primary" />
                       </div>
-                      <span className="text-muted-foreground text-sm">{point}</span>
+                      <span className="text-muted-foreground text-xs">{point}</span>
                     </li>
                   ))}
               </ul>
