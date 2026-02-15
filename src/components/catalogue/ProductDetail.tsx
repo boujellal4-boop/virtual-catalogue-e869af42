@@ -8,24 +8,34 @@ import React from 'react';
 
 // Highlight certifications and wrap SKU-like codes so they never break across lines
 function formatText(text: string): React.ReactNode[] {
-  // Match certifications and SKU codes
-  const certPattern = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)\b/gi;
-  const skuPattern = /(\b\d+[A-Z]+-[A-Z0-9-]+\b|\b[A-Z]{2,}-[A-Z0-9-]+\b|\b[A-Z]+\d+[A-Z]*\b)/g;
-  const combined = new RegExp(`(${certPattern.source})|(${skuPattern.source})`, 'gi');
-  
-  const parts = text.split(combined).filter(p => p !== undefined);
-  return parts.map((part, i) => {
-    if (!part) return null;
-    if (certPattern.test(part)) {
-      certPattern.lastIndex = 0;
-      return <span key={i} className="whitespace-nowrap font-semibold text-primary bg-primary/10 px-1.5 py-0.5 rounded">{part}</span>;
+  const certPattern = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)\b/i;
+  const skuPattern = /(\b\d+[A-Z]+-[A-Z0-9-]+\b|\b[A-Z]{2,}-[A-Z0-9-]+\b|\b[A-Z]+\d+[A-Z]*\b)/;
+  const combined = new RegExp(`${certPattern.source}|${skuPattern.source}`, 'gi');
+
+  const result: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = combined.exec(text)) !== null) {
+    // Add text before match
+    if (match.index > lastIndex) {
+      result.push(<span key={`t${lastIndex}`}>{text.slice(lastIndex, match.index)}</span>);
     }
-    if (skuPattern.test(part)) {
-      skuPattern.lastIndex = 0;
-      return <span key={i} className="whitespace-nowrap">{part}</span>;
+    const matched = match[0];
+    const isCert = certPattern.test(matched);
+    certPattern.lastIndex = 0;
+    if (isCert) {
+      result.push(<span key={`m${match.index}`} className="whitespace-nowrap font-semibold text-primary bg-primary/10 px-1.5 py-0.5 rounded">{matched}</span>);
+    } else {
+      result.push(<span key={`m${match.index}`} className="whitespace-nowrap">{matched}</span>);
     }
-    return <span key={i}>{part}</span>;
-  }).filter(Boolean);
+    lastIndex = combined.lastIndex;
+  }
+  // Add remaining text
+  if (lastIndex < text.length) {
+    result.push(<span key={`t${lastIndex}`}>{text.slice(lastIndex)}</span>);
+  }
+  return result;
 }
 
 // Extract a concise label from a detailed feature string
