@@ -267,7 +267,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "addressable",
     subcategory: "Manual Call Points",
-    image: "",
+    image: "/products/KE-DM3110US99.png",
+    pictures: ["/products/KE-DM3110US99.png"],
     description: "The KE-DM3100 Series is an intelligent range of addressable, Excellence Series manual call points with integrated isolation. Blue, single action indoor MCP with an English \"EVACUATION ALARM\" functional indicator.",
     features: [
       "Reliable single action manual call point for recess or surface mounting",
