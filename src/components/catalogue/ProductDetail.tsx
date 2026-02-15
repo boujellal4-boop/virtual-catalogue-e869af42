@@ -216,8 +216,8 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                 <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                   {product.name}
                 </h1>
-                <p className="text-muted-foreground text-xs leading-relaxed opacity-80">
-                  {product.description}
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {product.description.split(/\.\s+/).slice(0, 2).join('. ').replace(/\.?$/, '.')}
                 </p>
               </motion.div>
             </div>
