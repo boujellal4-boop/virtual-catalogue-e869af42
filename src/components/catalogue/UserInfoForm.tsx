@@ -51,9 +51,9 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
       // Submit to Forminit
       const forminit = new (window as any).Forminit();
       const submitData = new FormData();
-      submitData.append('fullName', formData.fullName);
-      submitData.append('company', formData.company);
-      submitData.append('email', formData.email);
+      submitData.append('fi-text-fullName', formData.fullName);
+      submitData.append('fi-text-company', formData.company);
+      submitData.append('fi-text-email', formData.email);
       
       const { error } = await forminit.submit("ms16c0mbc8i", submitData);
       if (error) {
