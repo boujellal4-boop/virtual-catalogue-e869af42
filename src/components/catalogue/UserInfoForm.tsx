@@ -48,17 +48,16 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
     setIsSubmitting(true);
 
     try {
-      // Submit to MS Forms (replace with actual endpoint)
-      // This creates a POST request to MS Forms
-      if (catalogueConfig.msFormsEndpoint && catalogueConfig.msFormsEndpoint !== 'https://forms.office.com/your-form-endpoint') {
-        await fetch(catalogueConfig.msFormsEndpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-          mode: 'no-cors', // MS Forms may require this
-        });
+      // Submit to Forminit
+      const forminit = new (window as any).Forminit();
+      const submitData = new FormData();
+      submitData.append('fullName', formData.fullName);
+      submitData.append('company', formData.company);
+      submitData.append('email', formData.email);
+      
+      const { error } = await forminit.submit("ms16c0mbc8i", submitData);
+      if (error) {
+        console.error('Forminit error:', error);
       }
 
       // Store user info in context
