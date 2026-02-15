@@ -152,7 +152,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                       {/* Product info */}
                       <div className="flex-grow min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">
+                          <span className="text-sm font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">
                             {product.sku}
                           </span>
                         </div>
