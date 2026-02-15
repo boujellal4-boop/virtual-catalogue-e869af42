@@ -235,13 +235,14 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               <h2 className="text-xl font-semibold text-foreground mb-4">
                 Quick Features
               </h2>
-              <ul className="space-y-2">
-                {product.description
-                  .split(/\.\s+/)
-                  .map(s => s.replace(/\.$/, '').trim())
-                  .filter(s => s.length > 10)
-                  .map(s => {
-                    // Extract the core point - take first clause or shorten
+              <ul className="space-y-3">
+                {(() => {
+                  const allSentences = product.description
+                    .split(/\.\s+/)
+                    .map(s => s.replace(/\.$/, '').trim())
+                    .filter(s => s.length > 10);
+                  // Skip the first 2 sentences (already shown in description)
+                  return allSentences.slice(2).map(s => {
                     let point = s.replace(/\s*\(.*?\)/g, '');
                     const cutWords = /\s+(which |that |and also |this |these |it |they |providing |allowing |ensuring |offering |making )/i;
                     const cutMatch = point.match(cutWords);
@@ -255,13 +256,14 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                   })
                   .filter(s => s.length > 5)
                   .map((point, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <div className="flex-shrink-0 h-4 w-4 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
-                        <Check className="h-2.5 w-2.5 text-primary" />
+                    <li key={index} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                        <Check className="h-3 w-3 text-primary" />
                       </div>
-                      <span className="text-muted-foreground text-xs">{point}</span>
+                      <span className="text-foreground text-sm">{point}</span>
                     </li>
-                  ))}
+                  ));
+                })()}
               </ul>
             </motion.div>
 
