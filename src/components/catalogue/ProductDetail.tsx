@@ -4,6 +4,18 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { getProductById, getRelatedProducts } from '@/data/products';
 import { useCatalogue } from '@/context/CatalogueContext';
+import React from 'react';
+
+// Wrap SKU-like codes so they never break across lines
+function wrapSkuCodes(text: string): React.ReactNode[] {
+  const pattern = /(\b\d+[A-Z]+-[A-Z0-9-]+\b|\b[A-Z]{2,}-[A-Z0-9-]+\b|\b[A-Z]+\d+[A-Z]*\b)/g;
+  const parts = text.split(pattern);
+  return parts.map((part, i) =>
+    pattern.test(part)
+      ? <span key={i} className="whitespace-nowrap">{part}</span>
+      : <span key={i}>{part}</span>
+  );
+}
 
 // Extract a concise label from a detailed feature string
 function extractQuickLabel(feature: string): string {
@@ -217,7 +229,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                   {product.name}
                 </h1>
                 <p className="text-muted-foreground text-xl leading-relaxed">
-                  {product.description.split(/\.\s+/).slice(0, 2).join('. ').replace(/\.?$/, '.')}
+                  {wrapSkuCodes(product.description.split(/\.\s+/).slice(0, 2).join('. ').replace(/\.?$/, '.'))}
                 </p>
               </motion.div>
             </div>
@@ -247,7 +259,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                         <Check className="h-3 w-3 text-primary" />
                       </div>
-                      <span className="text-foreground text-base">{point}</span>
+                      <span className="text-foreground text-base">{wrapSkuCodes(point)}</span>
                     </li>
                   ));
                 })()}
@@ -276,7 +288,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                     <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                       <Check className="h-3 w-3 text-primary" />
                     </div>
-                    <span className="text-foreground text-base">{feature}</span>
+                    <span className="text-foreground text-base">{wrapSkuCodes(feature)}</span>
                   </motion.li>
                 ))}
               </ul>
