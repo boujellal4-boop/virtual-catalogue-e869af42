@@ -1394,7 +1394,7 @@ export const products: Product[] = [
     systemId: "wireless",
     subcategory: "Remote Indicator",
     image: "/products/SH-62-0210-0001-99.png",
-    pictures: ["/products/SH-62-0210-0001-99.png"],
+    pictures: ["/products/SH-62-0210-0001-99.png", "/products/SC-62-0210-0001-99-2.png"],
     description: "The SmartCell wireless remote indicator is quick and easy to install and offers individual addressing.",
     features: [
       "Fully wireless",
@@ -2271,7 +2271,7 @@ export const products: Product[] = [
     systemId: "smartcell",
     subcategory: "Remote Indicator",
     image: "/products/SC-62-0210-0001-99.png",
-    pictures: ["/products/SC-62-0210-0001-99.png"],
+    pictures: ["/products/SC-62-0210-0001-99.png", "/products/SC-62-0210-0001-99-2.png"],
     description: "The SmartCell wireless remote indicator is quick and easy to install and offers individual addressing.",
     features: ["Fully wireless", "Quick and easy to install", "Red fire indication LED", "Unique design", "Inbuilt locking mechanism"],
     specifications: {},
