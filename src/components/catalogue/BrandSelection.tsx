@@ -21,13 +21,20 @@ const brandTextColors: Record<string, string> = {
   'edwards': 'text-brand-edwards',
 };
 
+const brandWhiteLogos: Record<string, string> = {
+  'kidde-commercial': '/brands/kidde-white.png',
+  'airsense': '/brands/airsense-white.png',
+  'ems': '/brands/ems-white.png',
+  'edwards': '/brands/edwards-white.png',
+};
+
 export function BrandSelection({ onSelect }: BrandSelectionProps) {
   const { userInfo } = useCatalogue();
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-secondary/20" />
+    <div className="relative min-h-screen overflow-hidden bg-black">
+      {/* Solid black background */}
+      <div className="absolute inset-0 bg-black" />
       
       <div className="relative min-h-screen px-6 py-20">
         <div className="mx-auto max-w-5xl">
@@ -80,7 +87,7 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                     {/* Brand Logo */}
                     <div className="mb-6 h-16 flex items-center">
                       <img 
-                        src={brand.logo} 
+                        src={brandWhiteLogos[brand.id] || brand.logo} 
                         alt={brand.name}
                         className="h-full w-auto max-w-[180px] object-contain"
                       />
