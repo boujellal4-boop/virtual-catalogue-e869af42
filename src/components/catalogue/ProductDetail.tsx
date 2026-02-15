@@ -258,7 +258,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                   return certs.length > 0 ? (
                     <div className="flex flex-wrap gap-2 mb-4">
                       {certs.map(cert => (
-                        <span key={cert} className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full whitespace-nowrap">
+                        <span key={cert} className="inline-flex items-center gap-2 text-base font-semibold text-primary bg-primary/10 border border-primary/20 px-4 py-2 rounded-full whitespace-nowrap">
                           <Award className="h-3 w-3" />
                           {cert}
                         </span>
