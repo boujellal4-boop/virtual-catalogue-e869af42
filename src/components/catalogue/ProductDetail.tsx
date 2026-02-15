@@ -242,7 +242,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                 transition={{ delay: 0.2 }}
               >
                 <div className="mb-4">
-                  <span className="font-mono text-sm text-primary bg-primary/10 px-3 py-1 rounded-full">
+                  <span className="font-mono text-base text-primary bg-primary/10 px-3 py-1 rounded-full">
                     {product.sku}
                   </span>
                 </div>
@@ -361,7 +361,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                         <Package className="h-10 w-10 text-muted-foreground/30" />
                       )}
                     </div>
-                    <span className="text-xs font-mono text-primary">{relatedProduct.sku}</span>
+                    <span className="text-sm font-mono text-primary">{relatedProduct.sku}</span>
                     <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors mt-1">
                       {relatedProduct.name}
                     </h3>
