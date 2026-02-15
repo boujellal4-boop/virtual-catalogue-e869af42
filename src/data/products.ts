@@ -969,7 +969,7 @@ export const products: Product[] = [
   // ===== KIDDE COMMERCIAL - ASPIRATING SMOKE DETECTION =====
   {
     id: "kc-asd-001",
-    sku: "9-30781-KID-ULF",
+    sku: "9-30781-KID",
     name: "Kidde ModuLaser, Standard display module",
     brandId: "kidde-commercial",
     systemId: "asd",
@@ -990,7 +990,7 @@ export const products: Product[] = [
   },
   {
     id: "kc-asd-002",
-    sku: "9-30783-KID-ULF",
+    sku: "9-30783-KID",
     name: "Kidde ModuLaser, Detector module",
     brandId: "kidde-commercial",
     systemId: "asd",
@@ -1010,7 +1010,7 @@ export const products: Product[] = [
   },
   {
     id: "kc-asd-003",
-    sku: "9-30780-KID-ULF",
+    sku: "9-30780-KID",
     name: "Kidde ModuLaser, Minimum display module",
     brandId: "kidde-commercial",
     systemId: "asd",
@@ -1031,7 +1031,7 @@ export const products: Product[] = [
   },
   {
     id: "kc-asd-004",
-    sku: "9-30782-KID-ULF",
+    sku: "9-30782-KID",
     name: "Kidde ModuLaser, Command display module",
     brandId: "kidde-commercial",
     systemId: "asd",
