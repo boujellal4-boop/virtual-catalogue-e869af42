@@ -5,6 +5,23 @@ import { Button } from '@/components/ui/button';
 import { getProductById, getRelatedProducts } from '@/data/products';
 import { useCatalogue } from '@/context/CatalogueContext';
 
+// Extract a concise label from a detailed feature string
+function extractQuickLabel(feature: string): string {
+  // Remove parenthetical details
+  let label = feature.replace(/\s*\(.*?\)/g, '');
+  // Take text before "for", "ensures", "offers", "takes", "means", "when", "where"
+  const cutWords = /\s+(for |ensures |offers |takes |means |when |where |that )/i;
+  const cutMatch = label.match(cutWords);
+  if (cutMatch && cutMatch.index && cutMatch.index > 10) {
+    label = label.substring(0, cutMatch.index);
+  }
+  // Trim to max ~60 chars at word boundary
+  if (label.length > 60) {
+    label = label.substring(0, 57).replace(/\s+\S*$/, '') + '…';
+  }
+  return label.trim();
+}
+
 // Maps keywords in feature text to meaningful icons
 function getFeatureIcon(feature: string): LucideIcon {
   return Check;
@@ -218,25 +235,20 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               <h2 className="text-xl font-semibold text-foreground mb-6">
                 Quick Features
               </h2>
-              <ul className="space-y-3">
-                {product.features.slice(0, 6).map((feature, index) => {
-                  const IconComponent = getFeatureIcon(feature);
-                  return (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 + index * 0.05 }}
-                      className="flex items-start gap-3"
-                    >
-                      <div className="flex-shrink-0 h-6 w-6 rounded-md bg-primary/15 flex items-center justify-center mt-0.5">
-                        <IconComponent className="h-3.5 w-3.5 text-primary" />
-                      </div>
-                      <span className="text-muted-foreground text-sm">{feature}</span>
-                    </motion.li>
-                  );
-                })}
-              </ul>
+              <div className="flex flex-wrap gap-2">
+                {product.features.slice(0, 6).map((feature, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.4 + index * 0.05 }}
+                    className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 border border-primary/20 text-sm text-foreground"
+                  >
+                    <Check className="h-3.5 w-3.5 text-primary flex-shrink-0" />
+                    {extractQuickLabel(feature)}
+                  </motion.span>
+                ))}
+              </div>
             </motion.div>
 
             {/* Specifications */}
@@ -250,23 +262,20 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                 Specifications
               </h2>
               <ul className="space-y-3">
-                {product.features.map((feature, index) => {
-                  const IconComponent = getFeatureIcon(feature);
-                  return (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5 + index * 0.03 }}
-                      className="flex items-start gap-3"
-                    >
-                      <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
-                        <IconComponent className="h-3 w-3 text-primary" />
-                      </div>
-                      <span className="text-foreground text-sm">{feature}</span>
-                    </motion.li>
-                  );
-                })}
+                {product.features.map((feature, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5 + index * 0.03 }}
+                    className="flex items-start gap-3"
+                  >
+                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                      <Check className="h-3 w-3 text-primary" />
+                    </div>
+                    <span className="text-foreground text-sm">{feature}</span>
+                  </motion.li>
+                ))}
               </ul>
             </motion.div>
           </div>
