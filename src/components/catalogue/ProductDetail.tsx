@@ -6,15 +6,26 @@ import { getProductById, getRelatedProducts } from '@/data/products';
 import { useCatalogue } from '@/context/CatalogueContext';
 import React from 'react';
 
-// Wrap SKU-like codes so they never break across lines
-function wrapSkuCodes(text: string): React.ReactNode[] {
-  const pattern = /(\b\d+[A-Z]+-[A-Z0-9-]+\b|\b[A-Z]{2,}-[A-Z0-9-]+\b|\b[A-Z]+\d+[A-Z]*\b)/g;
-  const parts = text.split(pattern);
-  return parts.map((part, i) =>
-    pattern.test(part)
-      ? <span key={i} className="whitespace-nowrap">{part}</span>
-      : <span key={i}>{part}</span>
-  );
+// Highlight certifications and wrap SKU-like codes so they never break across lines
+function formatText(text: string): React.ReactNode[] {
+  // Match certifications and SKU codes
+  const certPattern = /\b(UL|ULC|FM|CE|EN\s?54[-\d]*|LPCB|CPD|SIL|NFPA|ISO\s?\d+|CSFM|MEA|ATEX|IECEx|AS\s?\d+|NF|VdS|BSI|CNPP|CCC|GOST)\b/gi;
+  const skuPattern = /(\b\d+[A-Z]+-[A-Z0-9-]+\b|\b[A-Z]{2,}-[A-Z0-9-]+\b|\b[A-Z]+\d+[A-Z]*\b)/g;
+  const combined = new RegExp(`(${certPattern.source})|(${skuPattern.source})`, 'gi');
+  
+  const parts = text.split(combined).filter(p => p !== undefined);
+  return parts.map((part, i) => {
+    if (!part) return null;
+    if (certPattern.test(part)) {
+      certPattern.lastIndex = 0;
+      return <span key={i} className="whitespace-nowrap font-semibold text-primary bg-primary/10 px-1.5 py-0.5 rounded">{part}</span>;
+    }
+    if (skuPattern.test(part)) {
+      skuPattern.lastIndex = 0;
+      return <span key={i} className="whitespace-nowrap">{part}</span>;
+    }
+    return <span key={i}>{part}</span>;
+  }).filter(Boolean);
 }
 
 // Extract a concise label from a detailed feature string
@@ -229,7 +240,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                   {product.name}
                 </h1>
                 <p className="text-muted-foreground text-xl leading-relaxed">
-                  {wrapSkuCodes(product.description.split(/\.\s+/).slice(0, 2).join('. ').replace(/\.?$/, '.'))}
+                  {formatText(product.description.split(/\.\s+/).slice(0, 2).join('. ').replace(/\.?$/, '.'))}
                 </p>
               </motion.div>
             </div>
@@ -259,7 +270,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                         <Check className="h-3 w-3 text-primary" />
                       </div>
-                      <span className="text-foreground text-base">{wrapSkuCodes(point)}</span>
+                      <span className="text-foreground text-base">{formatText(point)}</span>
                     </li>
                   ));
                 })()}
@@ -288,7 +299,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                     <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                       <Check className="h-3 w-3 text-primary" />
                     </div>
-                    <span className="text-foreground text-base">{wrapSkuCodes(feature)}</span>
+                    <span className="text-foreground text-base">{formatText(feature)}</span>
                   </motion.li>
                 ))}
               </ul>
