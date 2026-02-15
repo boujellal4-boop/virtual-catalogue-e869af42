@@ -241,20 +241,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                     .split(/\.\s+/)
                     .map(s => s.replace(/\.$/, '').trim())
                     .filter(s => s.length > 10);
-                  // Skip the first 2 sentences (already shown in description)
-                  return allSentences.slice(2).map(s => {
-                    let point = s.replace(/\s*\(.*?\)/g, '');
-                    const cutWords = /\s+(which |that |and also |this |these |it |they |providing |allowing |ensuring |offering |making )/i;
-                    const cutMatch = point.match(cutWords);
-                    if (cutMatch && cutMatch.index && cutMatch.index > 8) {
-                      point = point.substring(0, cutMatch.index);
-                    }
-                    if (point.length > 50) {
-                      point = point.substring(0, 47).replace(/\s+\S*$/, '') + '…';
-                    }
-                    return point.trim();
-                  })
-                  .filter(s => s.length > 5)
+                  return allSentences.slice(2)
                   .map((point, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
