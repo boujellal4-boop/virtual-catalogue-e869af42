@@ -69,6 +69,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
   const { selectedProduct } = useCatalogue();
   const [mediaMode, setMediaMode] = useState<'picture' | 'video' | 'qr'>('picture');
   const [pictureIndex, setPictureIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
 
   useEffect(() => { setPictureIndex(0); }, [selectedProduct]);
 
@@ -166,7 +167,19 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                         }
                         const safeIndex = pictureIndex % pictures.length;
                         return (
-                          <div className="relative w-full h-full">
+                          <div
+                            className="relative w-full h-full touch-pan-y"
+                            onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
+                            onTouchEnd={(e) => {
+                              if (touchStart === null) return;
+                              const diff = e.changedTouches[0].clientX - touchStart;
+                              if (Math.abs(diff) > 50) {
+                                if (diff < 0) setPictureIndex((safeIndex + 1) % pictures.length);
+                                else setPictureIndex((safeIndex - 1 + pictures.length) % pictures.length);
+                              }
+                              setTouchStart(null);
+                            }}
+                          >
                             <img
                               key={safeIndex}
                               src={pictures[safeIndex]}
@@ -175,19 +188,20 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                               height={400}
                               fetchPriority="high"
                               decoding="async"
-                              className="absolute inset-0 w-full h-full object-contain p-6 animate-fade-in"
+                              className="absolute inset-0 w-full h-full object-contain p-6 animate-fade-in select-none"
+                              draggable={false}
                             />
                             {pictures.length > 1 && (
                               <>
                                 <button
                                   onClick={() => setPictureIndex((safeIndex - 1 + pictures.length) % pictures.length)}
-                                  className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-background/80 border border-white/10 flex items-center justify-center hover:bg-background transition-colors"
+                                  className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/80 border border-white/10 flex items-center justify-center hover:bg-background active:scale-95 transition-all"
                                 >
-                                  <ChevronLeft className="h-4 w-4 text-foreground" />
+                                  <ChevronLeft className="h-5 w-5 text-foreground" />
                                 </button>
                                 <button
                                   onClick={() => setPictureIndex((safeIndex + 1) % pictures.length)}
-                                  className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-background/80 border border-white/10 flex items-center justify-center hover:bg-background transition-colors"
+                                  className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/80 border border-white/10 flex items-center justify-center hover:bg-background active:scale-95 transition-all"
                                 >
                                   <ChevronRight className="h-4 w-4 text-foreground" />
                                 </button>
@@ -346,7 +360,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                     transition={{ delay: 0.6 + index * 0.1 }}
                     whileHover={{ y: -4 }}
                     onClick={() => onSelectProduct(relatedProduct.id)}
-                    className="group rounded-xl bg-secondary/30 border border-white/10 p-4 text-left transition-all hover:bg-secondary/50 hover:border-primary/30"
+                    className="group rounded-xl bg-secondary/30 border border-white/10 p-4 text-left transition-all hover:bg-secondary/50 hover:border-primary/30 active:scale-[0.97]"
                   >
                     <div className="h-24 rounded-lg bg-secondary/50 mb-4 flex items-center justify-center overflow-hidden">
                       {relatedProduct.image ? (

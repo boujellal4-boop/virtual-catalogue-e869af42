@@ -138,7 +138,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                       transition={{ delay: 0.3 + index * 0.05 }}
                       whileHover={{ x: 4 }}
                       onClick={() => onSelectProduct(product.id)}
-                      className="group w-full flex items-center gap-4 rounded-xl bg-secondary/30 border border-white/5 p-4 text-left transition-all duration-300 hover:bg-secondary/50 hover:border-primary/20 hover:shadow-lg"
+                      className="group w-full flex items-center gap-4 rounded-xl bg-secondary/30 border border-white/5 p-4 text-left transition-all duration-300 hover:bg-secondary/50 hover:border-primary/20 hover:shadow-lg active:scale-[0.98]"
                     >
                       {/* Product image */}
                       <div className="flex-shrink-0 h-16 w-16 rounded-lg bg-secondary border border-white/10 flex items-center justify-center overflow-hidden">
