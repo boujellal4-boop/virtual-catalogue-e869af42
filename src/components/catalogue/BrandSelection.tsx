@@ -90,6 +90,11 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                         src={brandWhiteLogos[brand.id] || brand.logo} 
                         alt={brand.name}
                         className="h-full w-auto max-w-[180px] object-contain"
+                        loading="eager"
+                        decoding="async"
+                        fetchPriority="high"
+                        width={180}
+                        height={64}
                       />
                     </div>
 
