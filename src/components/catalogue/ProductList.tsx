@@ -75,7 +75,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
               Productos
             </h1>
             <p className="text-muted-foreground 2xl:text-lg">
-              Estos son solo una parte de nuestros productos — muchos más están disponibles para tus necesidades.
+              tenemos muchos más a tu disposición para cubrir todas tus necesidades. Puedes consultarlos en nuestra web <a href="https://www.firesecurityproducts.com" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80 transition-colors">www.firesecurityproducts.com</a>
             </p>
           </motion.div>
 
