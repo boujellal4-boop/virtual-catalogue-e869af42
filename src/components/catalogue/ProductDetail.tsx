@@ -102,7 +102,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-secondary/20" />
 
       <div className="relative min-h-screen px-6 py-20">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-5xl 2xl:max-w-7xl">
           {/* Product header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -271,10 +271,10 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                     {product.sku}
                   </span>
                 </div>
-                <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                <h1 className="text-3xl sm:text-4xl 2xl:text-5xl font-bold text-foreground mb-4">
                   {product.name}
                 </h1>
-                <p className="text-muted-foreground text-xl leading-relaxed">
+                <p className="text-muted-foreground text-xl 2xl:text-2xl leading-relaxed">
                   {formatText(product.description.split(/\.\s+/).slice(0, 2).join('. ').replace(/\.?$/, '.'))}
                 </p>
               </motion.div>
@@ -351,7 +351,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               <h2 className="text-xl font-semibold text-foreground mb-6 uppercase">
                 Productos Similares
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 2xl:gap-6">
                 {relatedProducts.map((relatedProduct, index) => (
                   <motion.button
                     key={relatedProduct.id}

@@ -99,7 +99,7 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full max-w-md"
+          className="w-full max-w-md 2xl:max-w-xl"
         >
           {/* Header */}
           <div className="text-center mb-10">
@@ -111,10 +111,10 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
             >
               <User className="h-8 w-8 text-primary" />
             </motion.div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
+            <h1 className="text-3xl sm:text-4xl 2xl:text-5xl font-bold text-foreground mb-3">
               Bienvenido
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground 2xl:text-lg">
               Comparte tus datos para continuar explorando nuestro catálogo
             </p>
           </div>
