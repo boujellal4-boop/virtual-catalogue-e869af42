@@ -62,10 +62,10 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
               </span>
             </div>
             <h1 className="text-4xl font-bold text-foreground mb-4">
-              Products
+              Productos
             </h1>
             <p className="text-muted-foreground">
-              These are only a part of our products — many more are available to suit your needs.
+              Estos son solo una parte de nuestros productos — muchos más están disponibles para tus necesidades.
             </p>
           </motion.div>
 
@@ -80,7 +80,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
-                placeholder="Search by name or SKU..."
+                placeholder="Buscar por nombre o SKU..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-12 h-12 bg-secondary/50 border-white/10 text-foreground"
@@ -98,7 +98,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                       : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
                   }`}
                 >
-                  All
+                  Todos
                 </button>
                 {subcategories.map(category => (
                   <button
@@ -181,7 +181,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                 className="text-center py-12"
               >
                 <Package className="h-16 w-16 text-muted-foreground/30 mx-auto mb-4" />
-                <p className="text-muted-foreground">No products found matching your criteria</p>
+                <p className="text-muted-foreground">No se encontraron productos que coincidan con tu búsqueda</p>
               </motion.div>
             )}
           </div>

@@ -41,8 +41,8 @@ export function FloatingNav() {
   };
 
   const menuItems = [
-    { icon: Home, label: 'Start Over', action: handleGoHome },
-    { icon: Building2, label: 'Select Brand', action: handleGoToBrands },
+    { icon: Home, label: 'Volver al Inicio', action: handleGoHome },
+    { icon: Building2, label: 'Seleccionar Marca', action: handleGoToBrands },
   ];
 
   if (!showNav) return null;
@@ -88,7 +88,7 @@ export function FloatingNav() {
               className="fixed right-0 top-0 z-40 h-full w-80 bg-card/95 backdrop-blur-xl border-l border-white/10 p-8 pt-24"
             >
               <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground mb-6">
-                Navigation
+                Navegación
               </h3>
               <nav className="space-y-2">
                 {menuItems.map((item, index) => (
@@ -108,7 +108,7 @@ export function FloatingNav() {
 
               {selectedBrand && (
                 <div className="mt-8 pt-8 border-t border-white/10">
-                  <p className="text-sm text-muted-foreground mb-2">Current Brand</p>
+                  <p className="text-sm text-muted-foreground mb-2">Marca Actual</p>
                   <p className="text-foreground font-medium capitalize">
                     {selectedBrand.replace('-', ' ')}
                   </p>

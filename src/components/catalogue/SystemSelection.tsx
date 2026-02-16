@@ -61,10 +61,10 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
               <span className="text-sm font-medium" style={{ color: `hsl(var(--${brand.color}))` }}>{brand.name}</span>
             </motion.div>
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-              Select Detection System
+              Selecciona el Sistema de Detección
             </h1>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-              Choose the type of fire detection system that best suits your requirements.
+              Elige el tipo de sistema de detección de incendios que mejor se adapte a tus necesidades.
             </p>
           </motion.div>
 
@@ -120,7 +120,7 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
                         {system.name}
                       </h3>
                       <p className="text-sm text-muted-foreground">
-                        Browse available products
+                        Ver productos disponibles
                       </p>
                     </div>
 

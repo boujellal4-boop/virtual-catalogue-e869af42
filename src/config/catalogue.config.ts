@@ -7,13 +7,13 @@ export const catalogueConfig = {
   // Company branding
   company: {
     name: "Fire Detection Solutions",
-    tagline: "Whatever your fire detection need is, we have a solution for you!",
+    tagline: "Sea cual sea tu necesidad de detección de incendios, ¡tenemos una solución para ti!",
     logo: "/logo-kgs-white.png",
   },
 
   // Cover page settings
   cover: {
-    title: "KGS Product Catalogue",
+    title: "Catálogo de Productos KGS",
     subtitle: "2026",
     backgroundImage: "", // Optional: Add background image URL
   },
@@ -27,7 +27,7 @@ export const catalogueConfig = {
     {
       id: "kidde-commercial",
       name: "Kidde Commercial",
-      description: "One of the world's leading fire detection brands, incorporating the renowned Aritech Fire, Kilsen, and Ziton brands.\n\nKidde Commercial brings over 100 years of heritage and expertise to the forefront of fire and life safety solutions.",
+      description: "Una de las marcas líderes mundiales en detección de incendios, que incorpora las reconocidas marcas Aritech Fire, Kilsen y Ziton.\n\nKidde Commercial aporta más de 100 años de herencia y experiencia a la vanguardia de las soluciones de seguridad contra incendios.",
       color: "brand-kidde",
       logo: "/brands/kidde.png",
       systems: [
@@ -41,7 +41,7 @@ export const catalogueConfig = {
     {
       id: "airsense",
       name: "AirSense",
-      description: "Leading brand in aspirating smoke detection, specializing in providing advanced fire protection solutions for environments where early detection is critical or where traditional fire detection systems struggle to operate effectively.",
+      description: "Marca líder en detección de humo por aspiración, especializada en proporcionar soluciones avanzadas de protección contra incendios para entornos donde la detección temprana es crítica o donde los sistemas tradicionales no operan eficazmente.",
       color: "brand-airsense",
       logo: "/brands/airsense.png",
       systems: [
@@ -51,7 +51,7 @@ export const catalogueConfig = {
     {
       id: "ems",
       name: "EMS",
-      description: "EMS is a leading life safety technologies brand. We have been specialists in modular wireless systems design, manufacture and support for over 50 years.",
+      description: "EMS es una marca líder en tecnologías de seguridad. Somos especialistas en diseño, fabricación y soporte de sistemas wireless modulares desde hace más de 50 años.",
       color: "brand-ems",
       logo: "/brands/ems.png",
       systems: [
@@ -63,7 +63,7 @@ export const catalogueConfig = {
     {
       id: "edwards",
       name: "Edwards",
-      description: "Founded in 1872, Edwards has never stopped pursuing a passion for protection, with innovations in fire and life safety that will future-proof your facility.",
+      description: "Fundada en 1872, Edwards nunca ha dejado de perseguir su pasión por la protección, con innovaciones en seguridad contra incendios que preparan tus instalaciones para el futuro.",
       color: "brand-edwards",
       logo: "/brands/edwards.png",
       systems: [
