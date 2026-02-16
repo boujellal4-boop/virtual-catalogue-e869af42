@@ -128,7 +128,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       }`}
                     >
                       <Image className="h-4 w-4" />
-                      Picture
+                      Imagen
                     </button>
                     <button
                       onClick={() => setMediaMode('video')}
@@ -221,7 +221,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       ) : (
                         <div className="flex flex-col items-center text-center">
                           <Play className="h-16 w-16 text-muted-foreground/30 mb-2" />
-                          <p className="text-muted-foreground text-sm">Video coming soon</p>
+                          <p className="text-muted-foreground text-sm">Video próximamente</p>
                         </div>
                       )
                     )}
@@ -229,7 +229,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       hasQR ? (
                         <div className="flex flex-col items-center">
                           <p className="text-muted-foreground text-sm mb-4 text-center">
-                            Scan for VR experience
+                            Escanea para experiencia VR
                           </p>
                           <div className="w-40 h-40 bg-foreground rounded-lg flex items-center justify-center">
                             <QrCode className="h-24 w-24 text-background" />
@@ -238,7 +238,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       ) : (
                         <div className="flex flex-col items-center text-center">
                           <QrCode className="h-16 w-16 text-muted-foreground/30 mb-2" />
-                          <p className="text-muted-foreground text-sm">QR code coming soon</p>
+                          <p className="text-muted-foreground text-sm">Código QR próximamente</p>
                         </div>
                       )
                     )}
@@ -277,7 +277,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
               <h2 className="text-xl font-semibold text-foreground mb-4 uppercase">
-                Quick Features
+                Características Principales
               </h2>
               <ul className="space-y-3">
                 {(() => {
@@ -306,7 +306,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
               <h2 className="text-xl font-semibold text-foreground mb-6 uppercase">
-                Specifications
+                Especificaciones
               </h2>
               <ul className="space-y-3">
                 {product.features.map((feature, index) => (
@@ -335,7 +335,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               transition={{ delay: 0.5 }}
             >
               <h2 className="text-xl font-semibold text-foreground mb-6 uppercase">
-                Similar Products
+                Productos Similares
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {relatedProducts.map((relatedProduct, index) => (

@@ -25,15 +25,15 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
     const newErrors: Record<string, string> = {};
     
     if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Full name is required';
+      newErrors.fullName = 'El nombre completo es obligatorio';
     }
     if (!formData.company.trim()) {
-      newErrors.company = 'Company name is required';
+      newErrors.company = 'El nombre de la empresa es obligatorio';
     }
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'El correo electrónico es obligatorio';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = 'Introduce una dirección de correo válida';
     }
 
     setErrors(newErrors);
@@ -79,9 +79,9 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
   };
 
   const inputFields = [
-    { id: 'fullName', label: 'Full Name', icon: User, type: 'text', placeholder: 'John Doe' },
-    { id: 'company', label: 'Company', icon: Building2, type: 'text', placeholder: 'Your Company Ltd.' },
-    { id: 'email', label: 'Email Address', icon: Mail, type: 'email', placeholder: 'john@company.com' },
+    { id: 'fullName', label: 'Nombre Completo', icon: User, type: 'text', placeholder: 'Juan Pérez' },
+    { id: 'company', label: 'Empresa', icon: Building2, type: 'text', placeholder: 'Tu Empresa S.L.' },
+    { id: 'email', label: 'Correo Electrónico', icon: Mail, type: 'email', placeholder: 'juan@empresa.com' },
   ];
 
   return (
@@ -112,10 +112,10 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
               <User className="h-8 w-8 text-primary" />
             </motion.div>
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
-              Welcome
+              Bienvenido
             </h1>
             <p className="text-muted-foreground">
-              Please share your details to continue exploring our catalogue
+              Comparte tus datos para continuar explorando nuestro catálogo
             </p>
           </div>
 
@@ -176,11 +176,11 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
               >
                 {isSubmitting ? (
                   <>
-                    <span className="animate-pulse">Submitting...</span>
+                    <span className="animate-pulse">Enviando...</span>
                   </>
                 ) : (
                   <>
-                    <span>Continue</span>
+                    <span>Continuar</span>
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </>
                 )}
@@ -195,7 +195,7 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
             transition={{ delay: 0.8 }}
             className="mt-6 text-center text-xs text-muted-foreground"
           >
-            Your information is securely stored and will not be shared with third parties.
+            Tu información se almacena de forma segura y no se compartirá con terceros.
           </motion.p>
         </motion.div>
       </div>

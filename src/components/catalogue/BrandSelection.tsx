@@ -51,14 +51,14 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                 transition={{ delay: 0.2 }}
                 className="text-primary text-sm font-medium uppercase tracking-wider mb-4"
               >
-                Welcome, {userInfo.fullName.split(' ')[0]}
+                Bienvenido, {userInfo.fullName.split(' ')[0]}
               </motion.p>
             )}
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-              Select Your Brand
+              Selecciona Tu Marca
             </h1>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-              Choose the brand you'd like to explore. Each offers unique solutions for your fire detection needs.
+              Elige la marca que deseas explorar. Cada una ofrece soluciones únicas para tus necesidades de detección de incendios.
             </p>
           </motion.div>
 
@@ -104,10 +104,10 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                     {/* Systems count */}
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">
-                        {brand.systems.length} system{brand.systems.length > 1 ? 's' : ''} available
+                        {brand.systems.length} sistema{brand.systems.length > 1 ? 's' : ''} disponible{brand.systems.length > 1 ? 's' : ''}
                       </span>
                       <div className={`flex items-center gap-2 ${textColor} transition-transform group-hover:translate-x-1`}>
-                        <span className="text-sm font-medium">Explore</span>
+                        <span className="text-sm font-medium">Explorar</span>
                         <ArrowRight className="h-4 w-4" />
                       </div>
                     </div>

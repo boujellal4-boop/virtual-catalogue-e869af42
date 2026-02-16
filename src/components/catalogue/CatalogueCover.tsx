@@ -89,7 +89,7 @@ export function CatalogueCover({ onStart }: CatalogueCoverProps) {
             onClick={onStart}
             className="group animate-pulse-glow"
           >
-            <span>Start Exploring</span>
+            <span>Comenzar a Explorar</span>
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
         </motion.div>
@@ -106,7 +106,7 @@ export function CatalogueCover({ onStart }: CatalogueCoverProps) {
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             className="flex flex-col items-center gap-2 text-muted-foreground"
           >
-            <span className="text-xs uppercase tracking-widest">Scroll to begin</span>
+            <span className="text-xs uppercase tracking-widest">Desplaza para comenzar</span>
             <div className="h-8 w-[1px] bg-gradient-to-b from-muted-foreground/50 to-transparent" />
           </motion.div>
         </motion.div>
