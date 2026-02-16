@@ -31,11 +31,11 @@ export const catalogueConfig = {
       color: "brand-kidde",
       logo: "/brands/kidde.png",
       systems: [
-        { id: "addressable", name: "Addressable System", icon: "circuit" },
-        { id: "conventional", name: "Conventional System", icon: "layers" },
-        { id: "wireless", name: "Wireless System", icon: "wifi" },
-        { id: "linear-heat", name: "Linear Heat Detection", icon: "thermometer" },
-        { id: "asd", name: "Aspirating Smoke Detection", icon: "wind" },
+        { id: "addressable", name: "Sistema Direccionable", icon: "circuit" },
+        { id: "conventional", name: "Sistema Convencional", icon: "layers" },
+        { id: "wireless", name: "Sistema Inalámbrico", icon: "wifi" },
+        { id: "linear-heat", name: "Detección Lineal de Calor", icon: "thermometer" },
+        { id: "asd", name: "Detección de Humo por Aspiración", icon: "wind" },
       ],
     },
     {
@@ -45,7 +45,7 @@ export const catalogueConfig = {
       color: "brand-airsense",
       logo: "/brands/airsense.png",
       systems: [
-        { id: "asd", name: "ASD (Aspirating Smoke Detection)", icon: "wind" },
+        { id: "asd", name: "ASD (Detección de Humo por Aspiración)", icon: "wind" },
       ],
     },
     {
@@ -55,9 +55,9 @@ export const catalogueConfig = {
       color: "brand-ems",
       logo: "/brands/ems.png",
       systems: [
-        { id: "firecell", name: "FireCell - Full Wireless", icon: "wifi" },
-        { id: "fusion", name: "Fusion - Hybrid Wireless", icon: "radio" },
-        { id: "smartcell", name: "SmartCell - Small Full Wireless", icon: "wifi" },
+        { id: "firecell", name: "FireCell - Inalámbrico Completo", icon: "wifi" },
+        { id: "fusion", name: "Fusion - Inalámbrico Híbrido", icon: "radio" },
+        { id: "smartcell", name: "SmartCell - Inalámbrico Compacto", icon: "wifi" },
       ],
     },
     {
@@ -67,9 +67,9 @@ export const catalogueConfig = {
       color: "brand-edwards",
       logo: "/brands/edwards.png",
       systems: [
-        { id: "high-end-addressable", name: "High-End Addressable System", icon: "cpu" },
-        { id: "asd", name: "ASD (Aspirating Smoke Detection)", icon: "wind" },
-        { id: "pava", name: "PAVA", icon: "volume" },
+        { id: "high-end-addressable", name: "Sistema Direccionable de Alta Gama", icon: "cpu" },
+        { id: "asd", name: "ASD (Detección de Humo por Aspiración)", icon: "wind" },
+        { id: "pava", name: "PAVA (Megafonía y Alarma por Voz)", icon: "volume" },
       ],
     },
   ],
