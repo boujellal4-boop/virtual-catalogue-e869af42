@@ -37,7 +37,7 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
       <div className="absolute inset-0 bg-black" />
       
       <div className="relative min-h-screen px-6 py-20">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-5xl 2xl:max-w-7xl">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -54,15 +54,15 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                 Bienvenido, {userInfo.fullName.split(' ')[0]}
               </motion.p>
             )}
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl sm:text-5xl 2xl:text-6xl font-bold text-foreground mb-4 2xl:mb-6">
               Selecciona Tu Marca
             </h1>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            <p className="text-muted-foreground text-lg 2xl:text-xl max-w-xl 2xl:max-w-2xl mx-auto">
               Elige la marca que deseas explorar. Cada una ofrece soluciones únicas para tus necesidades de detección de incendios.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 2xl:gap-8">
             {catalogueConfig.brands.map((brand, index) => {
               const colorClass = brandColors[brand.id] || 'from-primary/20 to-accent/10 border-primary/30';
               const textColor = brandTextColors[brand.id] || 'text-primary';
@@ -76,7 +76,7 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => onSelect(brand.id)}
-                  className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${colorClass} border p-8 text-left transition-all duration-300 hover:shadow-2xl`}
+                  className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${colorClass} border p-8 2xl:p-12 text-left transition-all duration-300 hover:shadow-2xl`}
                 >
                   {/* Background glow */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -85,11 +85,11 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
 
                   <div className="relative">
                     {/* Brand Logo */}
-                    <div className="mb-6 h-16 flex items-center">
+                    <div className="mb-6 h-16 2xl:h-24 flex items-center">
                       <img 
                         src={brandWhiteLogos[brand.id] || brand.logo} 
                         alt={brand.name}
-                        className="h-full w-auto max-w-[180px] object-contain"
+                        className="h-full w-auto max-w-[180px] 2xl:max-w-[260px] object-contain"
                         loading="eager"
                         decoding="async"
                         fetchPriority="high"
@@ -99,10 +99,10 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
+                    <h3 className="text-2xl 2xl:text-3xl font-bold text-foreground mb-2">
                       {brand.name}
                     </h3>
-                    <p className="text-muted-foreground mb-6">
+                    <p className="text-muted-foreground 2xl:text-lg mb-6">
                       {brand.description}
                     </p>
 

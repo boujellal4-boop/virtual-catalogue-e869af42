@@ -54,7 +54,7 @@ export function CatalogueCover({ onStart }: CatalogueCoverProps) {
           <img 
             src={catalogueConfig.company.logo} 
             alt={catalogueConfig.company.name}
-            className="h-24 sm:h-32 md:h-40 w-auto object-contain"
+            className="h-24 sm:h-32 md:h-40 2xl:h-56 w-auto object-contain"
           />
         </motion.div>
 
@@ -65,13 +65,13 @@ export function CatalogueCover({ onStart }: CatalogueCoverProps) {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center"
         >
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-4 glow-text">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold tracking-tight text-foreground mb-4 2xl:mb-8 glow-text">
             {catalogueConfig.cover.title}
           </h1>
-          <p className="text-2xl sm:text-3xl md:text-4xl text-primary font-medium mb-4">
+          <p className="text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl text-primary font-medium mb-4 2xl:mb-6">
             {catalogueConfig.cover.subtitle}
           </p>
-          <p className="text-muted-foreground text-lg max-w-md mx-auto">
+          <p className="text-muted-foreground text-lg 2xl:text-2xl max-w-md 2xl:max-w-2xl mx-auto">
             {catalogueConfig.company.tagline}
           </p>
         </motion.div>

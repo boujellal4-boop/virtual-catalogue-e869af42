@@ -40,7 +40,7 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
       />
 
       <div className="relative min-h-screen px-6 py-20">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-4xl 2xl:max-w-6xl">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -60,16 +60,16 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
             >
               <span className="text-sm font-medium" style={{ color: `hsl(var(--${brand.color}))` }}>{brand.name}</span>
             </motion.div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl sm:text-5xl 2xl:text-6xl font-bold text-foreground mb-4 2xl:mb-6">
               Selecciona el Sistema de Detección
             </h1>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            <p className="text-muted-foreground text-lg 2xl:text-xl max-w-xl 2xl:max-w-2xl mx-auto">
               Elige el tipo de sistema de detección de incendios que mejor se adapte a tus necesidades.
             </p>
           </motion.div>
 
           {/* Systems grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-4 2xl:gap-6">
             {brand.systems.map((system, index) => {
               const Icon = systemIcons[system.id] || CircuitBoard;
 
@@ -82,7 +82,7 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => onSelect(system.id)}
-                  className="group relative overflow-hidden rounded-xl bg-secondary/50 border border-white/10 p-6 text-left transition-all duration-300 hover:bg-secondary hover:shadow-xl"
+                  className="group relative overflow-hidden rounded-xl bg-secondary/50 border border-white/10 p-6 2xl:p-8 text-left transition-all duration-300 hover:bg-secondary hover:shadow-xl"
                   style={{
                     '--brand-color': `var(--${brand.color})`,
                   } as React.CSSProperties}
@@ -98,7 +98,7 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
                   <div className="relative flex items-start gap-4">
                     {/* Icon */}
                     <div 
-                      className="flex-shrink-0 h-12 w-12 rounded-lg flex items-center justify-center transition-colors"
+                      className="flex-shrink-0 h-12 w-12 2xl:h-16 2xl:w-16 rounded-lg flex items-center justify-center transition-colors"
                       style={{
                         backgroundColor: `hsl(var(--${brand.color}) / 0.1)`,
                         borderWidth: '1px',
@@ -106,13 +106,13 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
                         color: `hsl(var(--${brand.color}))`,
                       }}
                     >
-                      <Icon className="h-6 w-6" />
+                      <Icon className="h-6 w-6 2xl:h-8 2xl:w-8" />
                     </div>
 
                     {/* Content */}
                     <div className="flex-grow">
                       <h3 
-                        className="font-semibold text-lg text-foreground mb-1 transition-colors group-hover:opacity-90"
+                        className="font-semibold text-lg 2xl:text-xl text-foreground mb-1 transition-colors group-hover:opacity-90"
                         style={{ 
                           color: `hsl(var(--${brand.color}))` 
                         }}

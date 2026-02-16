@@ -55,7 +55,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-secondary/20" />
 
       <div className="relative min-h-screen px-6 py-20">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-5xl 2xl:max-w-7xl">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -71,10 +71,10 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                 {system?.name}
               </span>
             </div>
-            <h1 className="text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl 2xl:text-5xl font-bold text-foreground mb-4">
               Productos
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground 2xl:text-lg">
               Estos son solo una parte de nuestros productos — muchos más están disponibles para tus necesidades.
             </p>
           </motion.div>
@@ -151,7 +151,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                       className="group w-full flex items-center gap-4 rounded-xl bg-secondary/30 border border-white/5 p-4 text-left transition-all duration-300 hover:bg-secondary/50 hover:border-primary/20 hover:shadow-lg active:scale-[0.98]"
                     >
                       {/* Product image */}
-                      <div className="flex-shrink-0 h-16 w-16 rounded-lg bg-secondary border border-white/10 flex items-center justify-center overflow-hidden">
+                      <div className="flex-shrink-0 h-16 w-16 2xl:h-24 2xl:w-24 rounded-lg bg-secondary border border-white/10 flex items-center justify-center overflow-hidden">
                         {product.image ? (
                           <img src={product.image} alt={product.name} className="h-full w-full object-contain p-1" loading="lazy" decoding="async" width={64} height={64} fetchPriority="low" />
                         ) : (
@@ -166,10 +166,10 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                             {product.sku}
                           </span>
                         </div>
-                        <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                        <h3 className="font-semibold 2xl:text-lg text-foreground group-hover:text-primary transition-colors truncate">
                           {product.name}
                         </h3>
-                        <p className="text-sm text-muted-foreground truncate">
+                        <p className="text-sm 2xl:text-base text-muted-foreground truncate">
                           {product.description.slice(0, 80)}...
                         </p>
                       </div>
