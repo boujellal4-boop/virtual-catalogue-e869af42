@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Package, ArrowRight, Search } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useCatalogue } from '@/context/CatalogueContext';
 import { catalogueConfig } from '@/config/catalogue.config';
 import { getProductsByBrandAndSystem, getSubcategories, Product } from '@/data/products';
@@ -15,14 +15,24 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
+  const brand = selectedBrand ? catalogueConfig.brands.find(b => b.id === selectedBrand) : undefined;
+  const system = brand?.systems.find(s => s.id === selectedSystem);
+  const products = selectedBrand && selectedSystem ? getProductsByBrandAndSystem(selectedBrand, selectedSystem) : [];
+  const subcategories = selectedBrand && selectedSystem ? getSubcategories(selectedBrand, selectedSystem) : [];
+
+  // Preload all product thumbnails for instant display
+  useEffect(() => {
+    products.forEach(p => {
+      if (p.image) {
+        const img = new window.Image();
+        img.src = p.image;
+      }
+    });
+  }, [selectedBrand, selectedSystem]);
+
   if (!selectedBrand || !selectedSystem) {
     return null;
   }
-
-  const brand = catalogueConfig.brands.find(b => b.id === selectedBrand);
-  const system = brand?.systems.find(s => s.id === selectedSystem);
-  const products = getProductsByBrandAndSystem(selectedBrand, selectedSystem);
-  const subcategories = getSubcategories(selectedBrand, selectedSystem);
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -143,7 +153,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                       {/* Product image */}
                       <div className="flex-shrink-0 h-16 w-16 rounded-lg bg-secondary border border-white/10 flex items-center justify-center overflow-hidden">
                         {product.image ? (
-                          <img src={product.image} alt={product.name} className="h-full w-full object-contain p-1" loading="lazy" decoding="async" width={64} height={64} />
+                          <img src={product.image} alt={product.name} className="h-full w-full object-contain p-1" loading="lazy" decoding="async" width={64} height={64} fetchPriority="low" />
                         ) : (
                           <Package className="h-8 w-8 text-muted-foreground" />
                         )}

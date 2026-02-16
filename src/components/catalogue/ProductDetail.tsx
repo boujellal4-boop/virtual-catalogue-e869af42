@@ -364,7 +364,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                   >
                     <div className="h-24 rounded-lg bg-secondary/50 mb-4 flex items-center justify-center overflow-hidden">
                       {relatedProduct.image ? (
-                        <img src={relatedProduct.image} alt={relatedProduct.name} className="h-full w-full object-contain p-2" loading="lazy" decoding="async" />
+                        <img src={relatedProduct.image} alt={relatedProduct.name} className="h-full w-full object-contain p-2" loading="lazy" decoding="async" width={96} height={96} />
                       ) : (
                         <Package className="h-10 w-10 text-muted-foreground/30" />
                       )}
