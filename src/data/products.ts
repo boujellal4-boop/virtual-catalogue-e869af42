@@ -2649,7 +2649,8 @@ export const products: Product[] = [
     brandId: "ems",
     systemId: "smartcell",
     subcategory: "Pulsadores Manuales",
-    image: "",
+    image: "/products/SH-51-0300-0001-04.png",
+    pictures: ["/products/SH-51-0300-0001-04.png"],
     description: "El pulsador manual SmartCell Hausalarm utiliza una designación azul \"Hausalarm\" para alarmas locales en hoteles pequeños no conectados a Bomberos. Es completamente inalámbrico, eliminando los requisitos de cableado. La instalación rápida y sencilla reduce el tiempo de configuración. Una carcasa compacta asegura una instalación discreta. Una tapa protectora transparente incluida previene la activación accidental. El mecanismo de bloqueo integrado proporciona protección anti-manipulación. La comunicación bidireccional de 868 MHz asegura un funcionamiento fiable. El color azul identifica claramente su propósito de alarma local.",
     features: [
       "Completamente inalámbrico - no requiere cableado",
