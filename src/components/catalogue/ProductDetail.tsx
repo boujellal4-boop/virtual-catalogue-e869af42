@@ -241,13 +241,15 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                     )}
                     {mediaMode === 'qr' && (
                       hasQR ? (
-                        <div className="flex flex-col items-center">
-                          <p className="text-muted-foreground text-sm mb-4 text-center">
+                        <div className="flex flex-col items-center justify-center gap-4 p-6 w-full h-full">
+                          <p className="text-muted-foreground text-sm text-center">
                             Escanea para experiencia VR
                           </p>
-                          <div className="w-40 h-40 bg-foreground rounded-lg flex items-center justify-center">
-                            <QrCode className="h-24 w-24 text-background" />
-                          </div>
+                          <img
+                            src={product.vrQrCode}
+                            alt="VR QR Code"
+                            className="w-56 h-56 object-contain"
+                          />
                         </div>
                       ) : (
                         <div className="flex flex-col items-center text-center">
