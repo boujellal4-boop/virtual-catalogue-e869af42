@@ -127,61 +127,60 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
             )}
           </motion.div>
 
-          {/* Products grid */}
-          <div className="space-y-10">
+          {/* Products list */}
+          <div className="space-y-2">
             {Object.entries(groupedProducts).map(([category, categoryProducts], categoryIndex) => (
               <motion.div
                 key={category}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 + categoryIndex * 0.1 }}
+                className="mb-6"
               >
-                <h2 className="text-xl 2xl:text-2xl font-semibold text-foreground mb-5 pl-3 border-l-2 border-primary">
+                <h2 className="text-xl 2xl:text-2xl font-semibold text-foreground mb-3 pl-3 border-l-2 border-primary">
                   {category}
                 </h2>
-                <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 2xl:gap-6">
+                <div className="space-y-2">
                   {categoryProducts.map((product, index) => (
                     <motion.button
                       key={product.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 + index * 0.05 }}
-                      whileHover={{ y: -4 }}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.3 + index * 0.03 }}
+                      whileHover={{ x: 4 }}
                       onClick={() => onSelectProduct(product.id)}
-                      className="group rounded-xl bg-secondary/30 border border-white/5 p-4 2xl:p-6 text-left transition-all duration-300 hover:bg-secondary/50 hover:border-primary/20 hover:shadow-lg active:scale-[0.98] flex flex-col"
+                      className="group w-full rounded-xl bg-secondary/30 border border-white/5 px-4 py-3 2xl:px-6 2xl:py-4 text-left transition-all duration-300 hover:bg-secondary/50 hover:border-primary/20 hover:shadow-lg active:scale-[0.99] flex items-center gap-4"
                     >
                       {/* Product image */}
-                      <div className="w-full aspect-square rounded-lg bg-secondary border border-white/10 flex items-center justify-center overflow-hidden mb-4">
+                      <div className="w-14 h-14 2xl:w-20 2xl:h-20 flex-shrink-0 rounded-lg bg-secondary border border-white/10 flex items-center justify-center overflow-hidden">
                         {product.image ? (
                           <img
                             src={product.image}
                             alt={product.name}
-                            className="h-full w-full object-contain p-3 2xl:p-4"
+                            className="h-full w-full object-contain p-1.5"
                             loading="lazy"
                             decoding="async"
                           />
                         ) : (
-                          <Package className="h-12 w-12 text-muted-foreground" />
+                          <Package className="h-6 w-6 text-muted-foreground" />
                         )}
                       </div>
 
                       {/* Product info */}
-                      <div className="flex-grow flex flex-col gap-2">
-                        <span className="text-xs 2xl:text-sm font-mono text-primary bg-primary/10 px-2 py-0.5 rounded self-start">
+                      <div className="flex-grow min-w-0 flex flex-col gap-0.5">
+                        <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded self-start">
                           {product.sku}
                         </span>
-                        <h3 className="font-semibold text-base 2xl:text-lg text-foreground group-hover:text-primary transition-colors leading-snug">
+                        <h3 className="font-semibold text-base 2xl:text-lg text-foreground group-hover:text-primary transition-colors truncate">
                           {product.name}
                         </h3>
-                        <p className="text-sm 2xl:text-base text-muted-foreground line-clamp-2 flex-grow">
+                        <p className="text-sm text-muted-foreground line-clamp-1">
                           {product.description.split('. ')[0]}
                         </p>
                       </div>
 
                       {/* Arrow */}
-                      <div className="flex items-center justify-end mt-4 text-muted-foreground group-hover:text-primary transition-all">
-                        <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                      </div>
+                      <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0" />
                     </motion.button>
                   ))}
                 </div>
