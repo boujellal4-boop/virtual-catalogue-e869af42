@@ -67,6 +67,7 @@ export const products: Product[] = [
       "Red": "Firenet con productos heredados",
       "Dispositivos": "Protocolo EXCELLENCE, Protocolo ARITECH**",
     },
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-Ariel-2.mp4",
     relatedProducts: ["kc-addr-001", "kc-addr-002"],
   },
   {
