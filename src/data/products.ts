@@ -68,6 +68,7 @@ export const products: Product[] = [
       "Dispositivos": "Protocolo EXCELLENCE, Protocolo ARITECH**",
     },
     videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-Ariel-2.mp4",
+    vrQrCode: "/products/qr-excellence-panel.svg",
     relatedProducts: ["kc-addr-001", "kc-addr-002"],
   },
   {
