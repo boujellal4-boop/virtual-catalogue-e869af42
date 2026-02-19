@@ -1230,7 +1230,7 @@ export const products: Product[] = [
   {
     id: "kc-asd-minilaser",
     sku: "KC-MINILASER",
-    name: "Kidde MiniLaser",
+    name: "MiniLaser",
     brandId: "kidde-commercial",
     systemId: "asd",
     subcategory: "Módulo Detector",
@@ -2011,7 +2011,7 @@ export const products: Product[] = [
   {
     id: "as-asd-minilaser",
     sku: "AS-MINILASER",
-    name: "AirSense MiniLaser",
+    name: "MiniLaser",
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Módulo Detector",
@@ -3049,7 +3049,7 @@ export const products: Product[] = [
   {
     id: "ed-asd-minilaser",
     sku: "ED-MINILASER",
-    name: "Edwards MiniLaser",
+    name: "MiniLaser",
     brandId: "edwards",
     systemId: "asd",
     subcategory: "Módulo Detector",
