@@ -3504,7 +3504,7 @@ products.forEach(p => {
 const QR_EXCELLENCE_IO = "/products/qr-excellence-io.svg";
 const IO_PATTERN = /módulo.*(?:entrada|salida|input|output)|(?:entrada|salida|input|output).*módulo/i;
 products.forEach(p => {
-  if (!p.vrQrCode && p.brandId === "kidde-commercial" && (IO_PATTERN.test(p.name) || p.subcategory === "Módulos de E/S" || p.subcategory === "Módulos")) {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && p.systemId === "addressable" && (IO_PATTERN.test(p.name) || p.subcategory === "Módulos de E/S" || p.subcategory === "Módulos")) {
     p.vrQrCode = QR_EXCELLENCE_IO;
   }
 });
@@ -3513,7 +3513,7 @@ products.forEach(p => {
 const QR_EXCELLENCE_MCP = "/products/qr-excellence-mcp.svg";
 const MCP_PATTERN = /pulsador|call point|manual call/i;
 products.forEach(p => {
-  if (!p.vrQrCode && p.brandId === "kidde-commercial" && MCP_PATTERN.test(p.name)) {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && p.systemId === "addressable" && MCP_PATTERN.test(p.name)) {
     p.vrQrCode = QR_EXCELLENCE_MCP;
   }
 });
@@ -3553,7 +3553,7 @@ products.forEach(p => {
 // Auto-assign QR code to Kidde NC Series products
 const QR_NC_SERIES = "/products/qr-nc-series.svg";
 products.forEach(p => {
-  if (!p.vrQrCode && p.brandId === "kidde-commercial" && /^NC-/i.test(p.sku)) {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && p.systemId === "addressable" && /^NC-/i.test(p.sku)) {
     p.vrQrCode = QR_NC_SERIES;
   }
 });
