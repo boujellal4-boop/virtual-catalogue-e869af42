@@ -3392,6 +3392,14 @@ products.forEach(p => {
   }
 });
 
+// Auto-assign QR code to Kidde black multi-detectors
+const QR_EXCELLENCE_MULTI_BLACK = "/products/qr-excellence-multi-black.svg";
+products.forEach(p => {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && /negro|black/i.test(p.name) && /detector|multi/i.test(p.name)) {
+    p.vrQrCode = QR_EXCELLENCE_MULTI_BLACK;
+  }
+});
+
 export const getProductsByBrandAndSystem = (brandId: string, systemId: string): Product[] => {
   return products.filter(p => p.brandId === brandId && p.systemId === systemId);
 };
