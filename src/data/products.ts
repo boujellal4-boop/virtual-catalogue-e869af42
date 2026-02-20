@@ -3365,6 +3365,15 @@ products.forEach(p => {
   }
 });
 
+// Auto-assign QR code to heat detector products
+const QR_EXCELLENCE_HEAT = "/products/qr-excellence-heat.svg";
+const HEAT_PATTERN = /calor|heat|térmic/i;
+products.forEach(p => {
+  if (!p.vrQrCode && HEAT_PATTERN.test(p.name)) {
+    p.vrQrCode = QR_EXCELLENCE_HEAT;
+  }
+});
+
 export const getProductsByBrandAndSystem = (brandId: string, systemId: string): Product[] => {
   return products.filter(p => p.brandId === brandId && p.systemId === systemId);
 };
