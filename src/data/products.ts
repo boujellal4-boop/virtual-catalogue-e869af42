@@ -3423,6 +3423,14 @@ products.forEach(p => {
   }
 });
 
+// Auto-assign QR code to ModuLaser detector modules (all brands)
+const QR_MODULASER_DETECTOR = "/products/qr-modulaser-detector.svg";
+products.forEach(p => {
+  if (!p.vrQrCode && /modulaser/i.test(p.name) && /detector/i.test(p.name)) {
+    p.vrQrCode = QR_MODULASER_DETECTOR;
+  }
+});
+
 export const getProductsByBrandAndSystem = (brandId: string, systemId: string): Product[] => {
   return products.filter(p => p.brandId === brandId && p.systemId === systemId);
 };
