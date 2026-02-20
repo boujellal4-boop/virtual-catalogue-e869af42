@@ -3358,10 +3358,17 @@ export const products: Product[] = [
   },
 ];
 
-// Auto-assign QR code to notification/sounder/beacon products that don't already have one
+// Auto-assign QR code to notification/sounder/beacon products
+const QR_EXCELLENCE_SOUNDER_BEACON = "/products/qr-excellence-sounder-beacon.svg";
 products.forEach(p => {
   if (!p.vrQrCode && (NOTIFICATION_PATTERN.test(p.name) || p.subcategory === "Notificación")) {
-    p.vrQrCode = QR_EXCELLENCE_AIO;
+    // Standalone notification devices (subcategory "Notificación") get sounder-beacon QR
+    // Detectors with built-in notification get AIO QR
+    if (p.subcategory === "Notificación") {
+      p.vrQrCode = QR_EXCELLENCE_SOUNDER_BEACON;
+    } else {
+      p.vrQrCode = QR_EXCELLENCE_AIO;
+    }
   }
 });
 
