@@ -3431,6 +3431,14 @@ products.forEach(p => {
   }
 });
 
+// Auto-assign QR code to Kidde NC Series products
+const QR_NC_SERIES = "/products/qr-nc-series.svg";
+products.forEach(p => {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && /^NC-/i.test(p.sku)) {
+    p.vrQrCode = QR_NC_SERIES;
+  }
+});
+
 export const getProductsByBrandAndSystem = (brandId: string, systemId: string): Product[] => {
   return products.filter(p => p.brandId === brandId && p.systemId === systemId);
 };
