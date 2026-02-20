@@ -3374,6 +3374,15 @@ products.forEach(p => {
   }
 });
 
+// Auto-assign QR code to Kidde input/output modules
+const QR_EXCELLENCE_IO = "/products/qr-excellence-io.svg";
+const IO_PATTERN = /módulo.*(?:entrada|salida|input|output)|(?:entrada|salida|input|output).*módulo/i;
+products.forEach(p => {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && (IO_PATTERN.test(p.name) || p.subcategory === "Módulos de E/S" || p.subcategory === "Módulos")) {
+    p.vrQrCode = QR_EXCELLENCE_IO;
+  }
+});
+
 export const getProductsByBrandAndSystem = (brandId: string, systemId: string): Product[] => {
   return products.filter(p => p.brandId === brandId && p.systemId === systemId);
 };
