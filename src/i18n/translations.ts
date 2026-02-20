@@ -126,7 +126,7 @@ const es: TranslationKeys = {
   'register.email': 'Correo Electrónico',
   'register.fullNamePlaceholder': 'María García',
   'register.companyPlaceholder': 'Tu Empresa S.L.',
-  'register.emailPlaceholder': 'juan@empresa.com',
+  'register.emailPlaceholder': 'maria@empresa.com',
   'register.continue': 'Continuar',
   'register.sending': 'Enviando...',
   'register.privacy': 'Tu información se almacena de forma segura y no se compartirá con terceros.',
