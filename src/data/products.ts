@@ -2594,6 +2594,7 @@ export const products: Product[] = [
       "Direccionamiento individual de dispositivos",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Panel.mp4",
     relatedProducts: ["ems-sc-002"],
   },
   {
@@ -2619,6 +2620,7 @@ export const products: Product[] = [
       "Alimentación 24 VDC",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Panel.mp4",
     relatedProducts: ["ems-sc-001"],
   },
 
