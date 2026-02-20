@@ -504,6 +504,7 @@ export const products: Product[] = [
       "Compatible con tester Scorpion",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-AIO.mp4",
     relatedProducts: ["kc-addr-013"],
   },
   {
@@ -531,6 +532,7 @@ export const products: Product[] = [
       "Compatible con tester Scorpion",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-AIO.mp4",
     relatedProducts: ["kc-addr-014"],
   },
   {
@@ -558,6 +560,7 @@ export const products: Product[] = [
       "Acabado traffic white",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-AIO.mp4",
     relatedProducts: ["kc-addr-017"],
   },
   {
@@ -585,6 +588,7 @@ export const products: Product[] = [
       "Acabado negro grafito",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-AIO.mp4",
     relatedProducts: ["kc-addr-018"],
   },
   {
