@@ -1405,7 +1405,13 @@ export const products: Product[] = [
       "Enables direct addressing of each detector in the cluster or SenseNET network",
       "Communicates with the main fire control panel via the Excellence protocol",
     ],
-    specifications: {},
+    specifications: {
+      "Addressing": "Simple addressing onto the addressable loop",
+      "Connection": "Ribbon cable connection – no hard wiring",
+      "Installation": "Piggy backs onto ModuLaser display module",
+      "Configuration": "Ease of address setting",
+      "Wiring": "Avoids the need to manually wire inputs and outputs",
+    },
     relatedProducts: ["kc-asd-001", "kc-asd-002"],
   },
 
@@ -2285,7 +2291,13 @@ export const products: Product[] = [
       "Enables direct addressing of each detector in the cluster or SenseNET network",
       "Communicates with the main fire control panel via the Excellence protocol",
     ],
-    specifications: {},
+    specifications: {
+      "Addressing": "Simple addressing onto the addressable loop",
+      "Connection": "Ribbon cable connection – no hard wiring",
+      "Installation": "Piggy backs onto ModuLaser display module",
+      "Configuration": "Ease of address setting",
+      "Wiring": "Avoids the need to manually wire inputs and outputs",
+    },
     relatedProducts: ["as-asd-001", "as-asd-002"],
   },
 
