@@ -735,6 +735,7 @@ export const products: Product[] = [
       "Diseño compacto de perfil bajo",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-Gripen.mp4",
     relatedProducts: ["kc-addr-026", "kc-addr-027"],
   },
   {
@@ -760,6 +761,7 @@ export const products: Product[] = [
       "Diseño compacto de perfil bajo",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-Gripen.mp4",
     relatedProducts: ["kc-addr-025"],
   },
   {
@@ -837,6 +839,7 @@ export const products: Product[] = [
       "Diseño compacto de perfil bajo",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-Gripen.mp4",
     relatedProducts: ["kc-addr-025"],
   },
   {
@@ -888,6 +891,7 @@ export const products: Product[] = [
       "Compatible con paneles de control de incendios Excellence Series",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-Gripen.mp4",
     relatedProducts: ["kc-addr-032"],
   },
   {
