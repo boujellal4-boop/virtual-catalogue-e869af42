@@ -1,7 +1,7 @@
 export type Language = 'es' | 'pt' | 'en';
 
 export const languageNames: Record<Language, string> = {
-  es: 'Castellano',
+  es: 'Spanish',
   pt: 'Português',
   en: 'English',
 };
