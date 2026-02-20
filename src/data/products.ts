@@ -3400,6 +3400,14 @@ products.forEach(p => {
   }
 });
 
+// Auto-assign QR code to Kidde optical detectors (not already assigned by other patterns)
+const QR_EXCELLENCE_OPTICAL = "/products/qr-excellence-optical.svg";
+products.forEach(p => {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && /óptic|optical/i.test(p.name)) {
+    p.vrQrCode = QR_EXCELLENCE_OPTICAL;
+  }
+});
+
 export const getProductsByBrandAndSystem = (brandId: string, systemId: string): Product[] => {
   return products.filter(p => p.brandId === brandId && p.systemId === systemId);
 };
