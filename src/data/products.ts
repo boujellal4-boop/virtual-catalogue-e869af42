@@ -1307,6 +1307,7 @@ export const products: Product[] = [
       "Certificado EN54-20",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["kc-asd-002", "kc-asd-003"],
   },
   {
@@ -1332,6 +1333,7 @@ export const products: Product[] = [
       "Diseño autónomo compacto",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["kc-asd-001", "kc-asd-003"],
   },
   {
@@ -1357,6 +1359,7 @@ export const products: Product[] = [
       "Diseño compacto para instalaciones con espacio limitado",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["kc-asd-001", "kc-asd-004"],
   },
   {
@@ -1382,6 +1385,7 @@ export const products: Product[] = [
       "Control y estado completo del sistema",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["kc-asd-001", "kc-asd-002"],
   },
 
@@ -2088,6 +2092,7 @@ export const products: Product[] = [
       "Bajo consumo de energía",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["as-asd-002", "as-asd-003"],
   },
   {
@@ -2113,6 +2118,7 @@ export const products: Product[] = [
       "Diseño compacto para instalaciones con espacio limitado",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["as-asd-001", "as-asd-003"],
   },
   {
@@ -2138,6 +2144,7 @@ export const products: Product[] = [
       "Control y estado completo del sistema",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["as-asd-001", "as-asd-002"],
   },
   {
@@ -2163,6 +2170,7 @@ export const products: Product[] = [
       "Hasta 250 m de tubería de muestreo combinada por módulo",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["as-asd-001", "as-asd-002"],
   },
   {
@@ -3145,6 +3153,7 @@ export const products: Product[] = [
       "Control y estado completo del sistema",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["ed-asd-002", "ed-asd-003"],
   },
   {
@@ -3170,6 +3179,7 @@ export const products: Product[] = [
       "Diseño autónomo compacto",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["ed-asd-001", "ed-asd-003"],
   },
   {
@@ -3195,6 +3205,7 @@ export const products: Product[] = [
       "Hasta 250 m de tubería de muestreo combinada por módulo",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["ed-asd-001", "ed-asd-002"],
   },
   {
@@ -3220,6 +3231,7 @@ export const products: Product[] = [
       "Diseño compacto para instalaciones con espacio limitado",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["ed-asd-001", "ed-asd-003"],
   },
 
