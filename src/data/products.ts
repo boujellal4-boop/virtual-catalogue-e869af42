@@ -1389,6 +1389,25 @@ export const products: Product[] = [
     videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-ModuLaser-1.mp4",
     relatedProducts: ["kc-asd-001", "kc-asd-002"],
   },
+  {
+    id: "kc-asd-interface-001",
+    sku: "9-30441",
+    name: "Excellence Addressable Panel Interface Card (APIC)",
+    brandId: "kidde-commercial",
+    systemId: "asd",
+    subcategory: "Interface",
+    image: "/products/9-30441.png",
+    pictures: ["/products/9-30441.png"],
+    description: "The 9-30441 is an interface which can be fitted directly into the ModuLaser display module. The card plugs into the main control board inside the display module enclosure. The board enables each detector (in the cluster or on the SenseNET network) to be directly addressed and communicate with the main fire control panel via the Excellence protocol.",
+    features: [
+      "Fits directly into the ModuLaser display module",
+      "Plugs into the main control board inside the display module enclosure",
+      "Enables direct addressing of each detector in the cluster or SenseNET network",
+      "Communicates with the main fire control panel via the Excellence protocol",
+    ],
+    specifications: {},
+    relatedProducts: ["kc-asd-001", "kc-asd-002"],
+  },
 
   // ===== KIDDE COMMERCIAL - WIRELESS =====
   {
@@ -2249,6 +2268,25 @@ export const products: Product[] = [
     ],
     specifications: {},
     relatedProducts: ["as-asd-005", "as-asd-006"],
+  },
+  {
+    id: "as-asd-interface-001",
+    sku: "9-30441",
+    name: "Excellence Addressable Panel Interface Card (APIC)",
+    brandId: "airsense",
+    systemId: "asd",
+    subcategory: "Interface",
+    image: "/products/9-30441.png",
+    pictures: ["/products/9-30441.png"],
+    description: "The 9-30441 is an interface which can be fitted directly into the ModuLaser display module. The card plugs into the main control board inside the display module enclosure. The board enables each detector (in the cluster or on the SenseNET network) to be directly addressed and communicate with the main fire control panel via the Excellence protocol.",
+    features: [
+      "Fits directly into the ModuLaser display module",
+      "Plugs into the main control board inside the display module enclosure",
+      "Enables direct addressing of each detector in the cluster or SenseNET network",
+      "Communicates with the main fire control panel via the Excellence protocol",
+    ],
+    specifications: {},
+    relatedProducts: ["as-asd-001", "as-asd-002"],
   },
 
   // ===== EMS - FIRECELL (FULL WIRELESS) =====
