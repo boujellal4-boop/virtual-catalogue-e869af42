@@ -239,6 +239,7 @@ export const products: Product[] = [
       "Compatible con paneles de control de incendios Excellence Series",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-MCP.mp4",
     relatedProducts: ["kc-addr-007", "kc-addr-008"],
   },
   {
@@ -264,6 +265,7 @@ export const products: Product[] = [
       "Compatible con paneles de control de incendios Excellence Series",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-MCP.mp4",
     relatedProducts: ["kc-addr-006", "kc-addr-008"],
   },
   {
@@ -289,6 +291,7 @@ export const products: Product[] = [
       "Compatible con paneles de control de incendios Excellence Series",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-MCP.mp4",
     relatedProducts: ["kc-addr-006", "kc-addr-007"],
   },
   {
@@ -314,6 +317,7 @@ export const products: Product[] = [
       "Compatible con paneles de control de incendios Excellence Series",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-MCP.mp4",
     relatedProducts: ["kc-addr-006"],
   },
   {
@@ -339,6 +343,7 @@ export const products: Product[] = [
       "Compatible con paneles de control de incendios Excellence Series",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-MCP.mp4",
     relatedProducts: ["kc-addr-006"],
   },
   {
@@ -364,6 +369,7 @@ export const products: Product[] = [
       "Compatible con paneles de control de incendios Excellence Series",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-MCP.mp4",
     relatedProducts: ["kc-addr-006"],
   },
   {
@@ -389,6 +395,7 @@ export const products: Product[] = [
       "Cuerpo azul con indicación funcional EVACUATION ALARM",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-MCP.mp4",
     relatedProducts: ["kc-addr-008"],
   },
   {
