@@ -19,6 +19,10 @@ export interface Product {
   relatedProducts: string[];
 }
 
+// Auto-assign QR codes based on product characteristics
+const QR_EXCELLENCE_AIO = "/products/qr-excellence-aio.svg";
+const NOTIFICATION_PATTERN = /sirena|sounder|beacon|VAD|baliza|indicador visual|notificaci/i;
+
 export const products: Product[] = [
   // ===== KIDDE COMMERCIAL - ADDRESSABLE =====
   {
@@ -3353,6 +3357,13 @@ export const products: Product[] = [
     relatedProducts: ["ed-pava-001", "ed-pava-002"],
   },
 ];
+
+// Auto-assign QR code to notification/sounder/beacon products that don't already have one
+products.forEach(p => {
+  if (!p.vrQrCode && (NOTIFICATION_PATTERN.test(p.name) || p.subcategory === "Notificación")) {
+    p.vrQrCode = QR_EXCELLENCE_AIO;
+  }
+});
 
 export const getProductsByBrandAndSystem = (brandId: string, systemId: string): Product[] => {
   return products.filter(p => p.brandId === brandId && p.systemId === systemId);
