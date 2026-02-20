@@ -1415,6 +1415,7 @@ export const products: Product[] = [
       "Modo Display Individual": "Cada módulo aparece como una dirección en el lazo",
       "Modo Display de Comando": "Monitorea múltiples detectores/clústeres con direcciones consecutivas",
     },
+    vrQrCode: "/products/qr-apic.svg",
     relatedProducts: ["kc-asd-001", "kc-asd-002"],
   },
 
@@ -2304,6 +2305,7 @@ export const products: Product[] = [
       "Modo Display Individual": "Cada módulo aparece como una dirección en el lazo",
       "Modo Display de Comando": "Monitorea múltiples detectores/clústeres con direcciones consecutivas",
     },
+    vrQrCode: "/products/qr-apic.svg",
     relatedProducts: ["as-asd-001", "as-asd-002"],
   },
 
