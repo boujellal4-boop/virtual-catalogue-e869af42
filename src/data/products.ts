@@ -3383,6 +3383,15 @@ products.forEach(p => {
   }
 });
 
+// Auto-assign QR code to Kidde manual call points
+const QR_EXCELLENCE_MCP = "/products/qr-excellence-mcp.svg";
+const MCP_PATTERN = /pulsador|call point|manual call/i;
+products.forEach(p => {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && MCP_PATTERN.test(p.name)) {
+    p.vrQrCode = QR_EXCELLENCE_MCP;
+  }
+});
+
 export const getProductsByBrandAndSystem = (brandId: string, systemId: string): Product[] => {
   return products.filter(p => p.brandId === brandId && p.systemId === systemId);
 };
