@@ -1392,7 +1392,7 @@ export const products: Product[] = [
   {
     id: "kc-asd-interface-001",
     sku: "9-30441",
-    name: "Tarjeta de Interfaz de Panel Direccionable Excellence (APIC)",
+    name: "Tarjeta de Interfaz de Panel Direccionable (APIC)",
     brandId: "kidde-commercial",
     systemId: "asd",
     subcategory: "Interfaz",
@@ -2282,7 +2282,7 @@ export const products: Product[] = [
   {
     id: "as-asd-interface-001",
     sku: "9-30441",
-    name: "Tarjeta de Interfaz de Panel Direccionable Excellence (APIC)",
+    name: "Tarjeta de Interfaz de Panel Direccionable (APIC)",
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Interfaz",
