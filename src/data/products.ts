@@ -3439,6 +3439,14 @@ products.forEach(p => {
   }
 });
 
+// Auto-assign QR code to Kidde SmartCell Excellence Gateway
+const QR_SMARTCELL_GATEWAY = "/products/qr-smartcell-gateway.svg";
+products.forEach(p => {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && /smartcell/i.test(p.name) && /gateway/i.test(p.name)) {
+    p.vrQrCode = QR_SMARTCELL_GATEWAY;
+  }
+});
+
 export const getProductsByBrandAndSystem = (brandId: string, systemId: string): Product[] => {
   return products.filter(p => p.brandId === brandId && p.systemId === systemId);
 };
