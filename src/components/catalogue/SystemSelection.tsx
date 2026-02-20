@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CircuitBoard, Layers, Wifi, Volume2, Wind, Radio, Cpu, Cable } from 'lucide-react';
 import { catalogueConfig } from '@/config/catalogue.config';
 import { useCatalogue } from '@/context/CatalogueContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface SystemSelectionProps {
   onSelect: (systemId: string) => void;
@@ -22,6 +23,7 @@ const systemIcons: Record<string, React.ElementType> = {
 
 export function SystemSelection({ onSelect }: SystemSelectionProps) {
   const { selectedBrand } = useCatalogue();
+  const { t, tSystemName } = useLanguage();
   
   const brand = catalogueConfig.brands.find(b => b.id === selectedBrand);
   
@@ -31,7 +33,6 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-secondary/20" />
       <motion.div
         animate={{ scale: [1, 1.1, 1] }}
@@ -41,7 +42,6 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
 
       <div className="relative min-h-screen px-6 py-20">
         <div className="mx-auto max-w-4xl 2xl:max-w-6xl">
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: 'spring', delay: 0.1 }}
-              className={`inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6`}
+              className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6"
               style={{
                 backgroundColor: `hsl(var(--${brand.color}) / 0.1)`,
                 borderWidth: '1px',
@@ -61,14 +61,13 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
               <span className="text-sm font-medium" style={{ color: `hsl(var(--${brand.color}))` }}>{brand.name}</span>
             </motion.div>
             <h1 className="text-4xl sm:text-5xl 2xl:text-6xl font-bold text-foreground mb-4 2xl:mb-6">
-              Selecciona el Sistema de Detección
+              {t('system.title')}
             </h1>
             <p className="text-muted-foreground text-lg 2xl:text-xl max-w-xl 2xl:max-w-2xl mx-auto">
-              Elige el tipo de sistema de detección de incendios que mejor se adapte a tus necesidades.
+              {t('system.subtitle')}
             </p>
           </motion.div>
 
-          {/* Systems grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-4 2xl:gap-6">
             {brand.systems.map((system, index) => {
               const Icon = systemIcons[system.id] || CircuitBoard;
@@ -87,7 +86,6 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
                     '--brand-color': `var(--${brand.color})`,
                   } as React.CSSProperties}
                 >
-                  {/* Hover glow effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div 
                       className="absolute top-0 right-0 h-24 w-24 rounded-full blur-2xl" 
@@ -96,7 +94,6 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
                   </div>
 
                   <div className="relative flex items-start gap-4">
-                    {/* Icon */}
                     <div 
                       className="flex-shrink-0 h-12 w-12 2xl:h-16 2xl:w-16 rounded-lg flex items-center justify-center transition-colors"
                       style={{
@@ -109,22 +106,18 @@ export function SystemSelection({ onSelect }: SystemSelectionProps) {
                       <Icon className="h-6 w-6 2xl:h-8 2xl:w-8" />
                     </div>
 
-                    {/* Content */}
                     <div className="flex-grow">
                       <h3 
                         className="font-semibold text-lg 2xl:text-xl text-foreground mb-1 transition-colors group-hover:opacity-90"
-                        style={{ 
-                          color: `hsl(var(--${brand.color}))` 
-                        }}
+                        style={{ color: `hsl(var(--${brand.color}))` }}
                       >
-                        {system.name}
+                        {tSystemName(system.id, system.name)}
                       </h3>
                       <p className="text-sm text-muted-foreground">
-                        Ver productos disponibles
+                        {t('system.viewProducts')}
                       </p>
                     </div>
 
-                    {/* Arrow */}
                     <div 
                       className="flex-shrink-0 self-center transition-all group-hover:translate-x-1"
                       style={{ color: `hsl(var(--${brand.color}))` }}
