@@ -2071,8 +2071,8 @@ export const products: Product[] = [
     brandId: "airsense",
     systemId: "asd",
     subcategory: "Módulo de Display",
-    image: "/products/9-30780-KID-3.png",
-    pictures: ["/products/9-30780-KID-3.png"],
+    image: "/products/9-30780.png",
+    pictures: ["/products/9-30780.png"],
     description: "El módulo de display mínimo ModuLaser proporciona indicación esencial de estado únicamente mediante LEDs universales. Esta opción económica es ideal para instalaciones donde no se requiere un display TFT completo. El diseño modular permite que los módulos detectores independientes controlables centralmente se configuren de forma independiente. La instalación simplificada con el ingenioso diseño de estación de acoplamiento reduce el tiempo de puesta en marcha. La conexión fácil de tubería con sistema de adaptador de ajuste rápido permite una configuración rápida. Los módulos detectores autónomos permiten una localización rápida del humo. La detección de humo por aspiración zonificada proporciona cobertura específica. El módulo se integra perfectamente con otros componentes ModuLaser mediante SenseNET.",
     features: [
       "Diseño Modular: Módulos detectores independientes controlables centralmente",
