@@ -1282,6 +1282,7 @@ export const products: Product[] = [
       "Aprobaciones globales para cumplimiento normativo internacional",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-MiniLaser.mp4",
     relatedProducts: ["kc-asd-001", "kc-asd-002"],
   },
   {
@@ -2067,6 +2068,7 @@ export const products: Product[] = [
       "Aprobaciones globales para cumplimiento normativo internacional",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-MiniLaser.mp4",
     relatedProducts: ["as-asd-001", "as-asd-002"],
   },
   {
@@ -3128,6 +3130,7 @@ export const products: Product[] = [
       "Aprobaciones globales para cumplimiento normativo internacional",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/AirSense-MiniLaser.mp4",
     relatedProducts: ["ed-asd-001", "ed-asd-002"],
   },
   {
