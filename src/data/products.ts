@@ -97,6 +97,7 @@ export const products: Product[] = [
       "Incluye tarjeta de red de serie",
     ],
     specifications: {},
+    vrQrCode: "/products/qr-2x-at-panels.svg",
     relatedProducts: ["kc-addr-002", "kc-addr-003"],
   },
   {
@@ -125,6 +126,7 @@ export const products: Product[] = [
       "Incluye tarjeta de red de serie",
     ],
     specifications: {},
+    vrQrCode: "/products/qr-2x-at-panels.svg",
     relatedProducts: ["kc-addr-001", "kc-addr-003"],
   },
   {
@@ -153,6 +155,7 @@ export const products: Product[] = [
       "Incluye tarjeta de red de serie",
     ],
     specifications: {},
+    vrQrCode: "/products/qr-2x-at-panels.svg",
     relatedProducts: ["kc-addr-001", "kc-addr-002"],
   },
   {
@@ -180,6 +183,7 @@ export const products: Product[] = [
       "Incluye tarjeta de red de serie",
     ],
     specifications: {},
+    vrQrCode: "/products/qr-2x-at-panels.svg",
     relatedProducts: ["kc-addr-001", "kc-addr-003"],
   },
   {
@@ -205,6 +209,7 @@ export const products: Product[] = [
       "Memoria de registro de historial para seguimiento de eventos",
     ],
     specifications: {},
+    vrQrCode: "/products/qr-2x-at-panels.svg",
     relatedProducts: ["kc-addr-001"],
   },
   {
