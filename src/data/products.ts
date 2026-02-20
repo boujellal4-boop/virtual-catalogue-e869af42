@@ -1291,8 +1291,8 @@ export const products: Product[] = [
     brandId: "kidde-commercial",
     systemId: "asd",
     subcategory: "Módulo Detector",
-    image: "/products/9-30783-2.png",
-    pictures: ["/products/9-30783-2.png"],
+    image: "/products/9-30783-KID.png",
+    pictures: ["/products/9-30783-KID.png", "/products/9-30783-KID-2.png"],
     description: "El módulo detector ModuLaser es una unidad autónoma de detección de humo por aspiración que puede albergar hasta 250 metros de tubería de muestreo combinada. El diseño modular permite que los módulos detectores independientes controlables centralmente se configuren de forma independiente. La instalación simplificada con el ingenioso diseño de estación de acoplamiento reduce significativamente el tiempo de puesta en marcha. La conexión fácil de tubería con sistema de adaptador de ajuste rápido permite un enrutamiento rápido. Los módulos detectores autónomos permiten una localización rápida del humo para una respuesta más veloz. La detección de humo por aspiración zonificada proporciona cobertura específica de áreas críticas. El módulo se integra con otros módulos de display ModuLaser mediante SenseNET. Certificado EN54-20 para cumplimiento con las normas europeas.",
     features: [
       "Diseño Modular: Módulos detectores independientes controlables centralmente",
