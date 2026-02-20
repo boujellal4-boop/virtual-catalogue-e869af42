@@ -1400,10 +1400,8 @@ export const products: Product[] = [
     pictures: ["/products/9-30441.png"],
     description: "The 9-30441 is an interface which can be fitted directly into the ModuLaser display module. The card plugs into the main control board inside the display module enclosure. The board enables each detector (in the cluster or on the SenseNET network) to be directly addressed and communicate with the main fire control panel via the Excellence protocol.",
     features: [
-      "Fits directly into the ModuLaser display module",
-      "Plugs into the main control board inside the display module enclosure",
-      "Enables direct addressing of each detector in the cluster or SenseNET network",
-      "Communicates with the main fire control panel via the Excellence protocol",
+      "Plug in terminals: Wiring onto the addressable loop is by way of plug in terminals located on the ModuLaser Minimum display or ModuLaser Standard display backplane. The APIC address range is easily adjusted by switch settings prominently positioned on the APIC card. The start and stop address of the range must be selected during installation, and mimics the SenseNet address range.",
+      "Single Display and Command Display modes: The Excellence APIC has two distinct modes of operation; single display and command display. When the interface is mounted in a ModuLaser Minimum or Standard Display module, each module in the cluster appear as a single address on the Excellence loop and the detector status is read from that address. Command Display mode is used when monitoring the status of multiple detectors and/or ModuLaser clusters with consecutive addresses from a single Excellence APIC card.",
     ],
     specifications: {
       "Addressing": "Simple addressing onto the addressable loop",
@@ -2286,10 +2284,8 @@ export const products: Product[] = [
     pictures: ["/products/9-30441.png"],
     description: "The 9-30441 is an interface which can be fitted directly into the ModuLaser display module. The card plugs into the main control board inside the display module enclosure. The board enables each detector (in the cluster or on the SenseNET network) to be directly addressed and communicate with the main fire control panel via the Excellence protocol.",
     features: [
-      "Fits directly into the ModuLaser display module",
-      "Plugs into the main control board inside the display module enclosure",
-      "Enables direct addressing of each detector in the cluster or SenseNET network",
-      "Communicates with the main fire control panel via the Excellence protocol",
+      "Plug in terminals: Wiring onto the addressable loop is by way of plug in terminals located on the ModuLaser Minimum display or ModuLaser Standard display backplane. The APIC address range is easily adjusted by switch settings prominently positioned on the APIC card. The start and stop address of the range must be selected during installation, and mimics the SenseNet address range.",
+      "Single Display and Command Display modes: The Excellence APIC has two distinct modes of operation; single display and command display. When the interface is mounted in a ModuLaser Minimum or Standard Display module, each module in the cluster appear as a single address on the Excellence loop and the detector status is read from that address. Command Display mode is used when monitoring the status of multiple detectors and/or ModuLaser clusters with consecutive addresses from a single Excellence APIC card.",
     ],
     specifications: {
       "Addressing": "Simple addressing onto the addressable loop",
