@@ -2315,6 +2315,7 @@ export const products: Product[] = [
       "Auto-monitorización para detección de averías",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-fc-004"],
   },
   {
@@ -2340,6 +2341,7 @@ export const products: Product[] = [
       "Auto-monitorización para detección de averías",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-fc-003"],
   },
   {
@@ -2392,6 +2394,7 @@ export const products: Product[] = [
       "Bajo consumo de energía",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-fus-002", "ems-fus-003"],
   },
   {
@@ -2417,6 +2420,7 @@ export const products: Product[] = [
       "Funciona con base inalámbrica Fusion",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-fus-001", "ems-fus-003"],
   },
   {
@@ -2442,6 +2446,7 @@ export const products: Product[] = [
       "Funciona con base inalámbrica Fusion",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-fus-001", "ems-fus-002"],
   },
   {
@@ -2492,6 +2497,7 @@ export const products: Product[] = [
       "Funcionamiento con batería",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-fus-006"],
   },
   {
@@ -2517,6 +2523,7 @@ export const products: Product[] = [
       "Funciona con base inalámbrica Fusion",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-fus-005"],
   },
   {
@@ -2698,6 +2705,7 @@ export const products: Product[] = [
       "Detección y sirena combinadas en una unidad",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-006"],
   },
   {
@@ -2723,6 +2731,7 @@ export const products: Product[] = [
       "Alimentación por batería con larga duración",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-005"],
   },
   {
@@ -2773,6 +2782,7 @@ export const products: Product[] = [
       "Auto-monitorización para detección de averías",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-005"],
   },
   {
@@ -2823,6 +2833,7 @@ export const products: Product[] = [
       "Detección, sirena y VAD combinados en una unidad",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-005"],
   },
   {
@@ -2848,6 +2859,7 @@ export const products: Product[] = [
       "Detección, sirena y VAD combinados en una unidad",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-010"],
   },
   {
@@ -2898,6 +2910,7 @@ export const products: Product[] = [
       "Soporte de evacuación multi-etapa",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-006"],
   },
   {
@@ -2923,6 +2936,7 @@ export const products: Product[] = [
       "Auto-monitorización para detección de averías",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-006"],
   },
   {
@@ -2948,6 +2962,7 @@ export const products: Product[] = [
       "Soporte de evacuación multi-etapa",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-013"],
   },
   {
@@ -2973,6 +2988,7 @@ export const products: Product[] = [
       "Soporte de evacuación multi-etapa",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-013"],
   },
   {
@@ -2998,6 +3014,7 @@ export const products: Product[] = [
       "Soporte de evacuación multi-etapa",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-015"],
   },
   {
@@ -3023,6 +3040,7 @@ export const products: Product[] = [
       "Soporte de evacuación multi-etapa",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/EMS-Notification-Detector.mp4",
     relatedProducts: ["ems-sc-017"],
   },
   {
