@@ -124,7 +124,7 @@ const es: TranslationKeys = {
   'register.fullName': 'Nombre Completo',
   'register.company': 'Empresa',
   'register.email': 'Correo Electrónico',
-  'register.fullNamePlaceholder': 'Juan Pérez',
+  'register.fullNamePlaceholder': 'María García',
   'register.companyPlaceholder': 'Tu Empresa S.L.',
   'register.emailPlaceholder': 'juan@empresa.com',
   'register.continue': 'Continuar',
