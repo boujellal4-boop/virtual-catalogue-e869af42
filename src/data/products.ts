@@ -3480,7 +3480,7 @@ export const products: Product[] = [
 // Auto-assign QR code to notification/sounder/beacon products
 const QR_EXCELLENCE_SOUNDER_BEACON = "/products/qr-excellence-sounder-beacon.svg";
 products.forEach(p => {
-  if (!p.vrQrCode && (NOTIFICATION_PATTERN.test(p.name) || p.subcategory === "Notificación")) {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && p.systemId === "addressable" && (NOTIFICATION_PATTERN.test(p.name) || p.subcategory === "Notificación")) {
     // Standalone notification devices (subcategory "Notificación") get sounder-beacon QR
     // Detectors with built-in notification get AIO QR
     if (p.subcategory === "Notificación") {
@@ -3495,7 +3495,7 @@ products.forEach(p => {
 const QR_EXCELLENCE_HEAT = "/products/qr-excellence-heat.svg";
 const HEAT_PATTERN = /calor|heat|térmic/i;
 products.forEach(p => {
-  if (!p.vrQrCode && HEAT_PATTERN.test(p.name)) {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && p.systemId === "addressable" && HEAT_PATTERN.test(p.name)) {
     p.vrQrCode = QR_EXCELLENCE_HEAT;
   }
 });
@@ -3521,7 +3521,7 @@ products.forEach(p => {
 // Auto-assign QR code to Kidde black multi-detectors
 const QR_EXCELLENCE_MULTI_BLACK = "/products/qr-excellence-multi-black.svg";
 products.forEach(p => {
-  if (!p.vrQrCode && p.brandId === "kidde-commercial" && /negro|black/i.test(p.name) && /detector|multi/i.test(p.name)) {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && p.systemId === "addressable" && /negro|black/i.test(p.name) && /detector|multi/i.test(p.name)) {
     p.vrQrCode = QR_EXCELLENCE_MULTI_BLACK;
   }
 });
@@ -3529,7 +3529,7 @@ products.forEach(p => {
 // Auto-assign QR code to Kidde optical detectors (not already assigned by other patterns)
 const QR_EXCELLENCE_OPTICAL = "/products/qr-excellence-optical.svg";
 products.forEach(p => {
-  if (!p.vrQrCode && p.brandId === "kidde-commercial" && /óptic|optical/i.test(p.name)) {
+  if (!p.vrQrCode && p.brandId === "kidde-commercial" && p.systemId === "addressable" && /óptic|optical/i.test(p.name)) {
     p.vrQrCode = QR_EXCELLENCE_OPTICAL;
   }
 });
