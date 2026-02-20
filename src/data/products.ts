@@ -1384,6 +1384,7 @@ export const products: Product[] = [
       "Diseño compacto de montaje en pared",
     ],
     specifications: {},
+    videoUrl: "https://kiddeway.com/wp-content/uploads/2025/03/KC-Stargate.mp4",
     relatedProducts: ["kc-wire-002"],
   },
   {
