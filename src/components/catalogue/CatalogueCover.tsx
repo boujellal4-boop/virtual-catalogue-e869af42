@@ -1,13 +1,17 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { catalogueConfig } from '@/config/catalogue.config';
+import { useLanguage } from '@/context/LanguageContext';
+import { Language, languageNames, languageFlags } from '@/i18n/translations';
 
 interface CatalogueCoverProps {
   onStart: () => void;
 }
 
 export function CatalogueCover({ onStart }: CatalogueCoverProps) {
+  const { language, setLanguage, t } = useLanguage();
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Animated background gradient */}
@@ -44,6 +48,32 @@ export function CatalogueCover({ onStart }: CatalogueCoverProps) {
 
       {/* Content */}
       <div className="relative flex min-h-screen flex-col items-center justify-center px-6">
+        {/* Language Selector */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="absolute top-6 right-6 flex items-center gap-2"
+        >
+          <Globe className="h-4 w-4 text-muted-foreground" />
+          <div className="flex rounded-full bg-secondary/60 backdrop-blur-xl border border-white/10 p-1">
+            {(Object.keys(languageNames) as Language[]).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => setLanguage(lang)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  language === lang
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                <span>{languageFlags[lang]}</span>
+                <span className="hidden sm:inline">{languageNames[lang]}</span>
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,13 +96,13 @@ export function CatalogueCover({ onStart }: CatalogueCoverProps) {
           className="text-center"
         >
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold tracking-tight text-foreground mb-4 2xl:mb-8 glow-text">
-            {catalogueConfig.cover.title}
+            {t('cover.title')}
           </h1>
           <p className="text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl text-primary font-medium mb-4 2xl:mb-6">
             {catalogueConfig.cover.subtitle}
           </p>
           <p className="text-muted-foreground text-lg 2xl:text-2xl max-w-md 2xl:max-w-2xl mx-auto">
-            {catalogueConfig.company.tagline}
+            {t('cover.tagline')}
           </p>
         </motion.div>
 
@@ -89,7 +119,7 @@ export function CatalogueCover({ onStart }: CatalogueCoverProps) {
             onClick={onStart}
             className="group animate-pulse-glow"
           >
-            <span>Comenzar a Explorar</span>
+            <span>{t('cover.start')}</span>
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
         </motion.div>

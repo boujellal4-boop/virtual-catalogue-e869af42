@@ -4,8 +4,8 @@ import { ArrowRight, User, Building2, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { catalogueConfig } from '@/config/catalogue.config';
 import { useCatalogue } from '@/context/CatalogueContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface UserInfoFormProps {
   onSubmit: () => void;
@@ -13,6 +13,7 @@ interface UserInfoFormProps {
 
 export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
   const { setUserInfo } = useCatalogue();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     fullName: '',
     company: '',
@@ -25,15 +26,15 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
     const newErrors: Record<string, string> = {};
     
     if (!formData.fullName.trim()) {
-      newErrors.fullName = 'El nombre completo es obligatorio';
+      newErrors.fullName = t('register.errorFullName');
     }
     if (!formData.company.trim()) {
-      newErrors.company = 'El nombre de la empresa es obligatorio';
+      newErrors.company = t('register.errorCompany');
     }
     if (!formData.email.trim()) {
-      newErrors.email = 'El correo electrónico es obligatorio';
+      newErrors.email = t('register.errorEmail');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Introduce una dirección de correo válida';
+      newErrors.email = t('register.errorEmailInvalid');
     }
 
     setErrors(newErrors);
@@ -48,7 +49,6 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
     setIsSubmitting(true);
 
     try {
-      // Submit to Forminit
       const forminit = new (window as any).Forminit();
       const submitData = new FormData();
       submitData.append('fi-text-fullName', formData.fullName);
@@ -60,16 +60,11 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
         console.error('Forminit error:', error);
       }
 
-      // Store user info in context
       setUserInfo(formData);
-      
-      // Also store in localStorage for persistence
       localStorage.setItem('catalogueUserInfo', JSON.stringify(formData));
-
       onSubmit();
     } catch (error) {
       console.error('Form submission error:', error);
-      // Still proceed even if MS Forms fails
       setUserInfo(formData);
       localStorage.setItem('catalogueUserInfo', JSON.stringify(formData));
       onSubmit();
@@ -79,9 +74,9 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
   };
 
   const inputFields = [
-    { id: 'fullName', label: 'Nombre Completo', icon: User, type: 'text', placeholder: 'Juan Pérez' },
-    { id: 'company', label: 'Empresa', icon: Building2, type: 'text', placeholder: 'Tu Empresa S.L.' },
-    { id: 'email', label: 'Correo Electrónico', icon: Mail, type: 'email', placeholder: 'juan@empresa.com' },
+    { id: 'fullName', label: t('register.fullName'), icon: User, type: 'text', placeholder: t('register.fullNamePlaceholder') },
+    { id: 'company', label: t('register.company'), icon: Building2, type: 'text', placeholder: t('register.companyPlaceholder') },
+    { id: 'email', label: t('register.email'), icon: Mail, type: 'email', placeholder: t('register.emailPlaceholder') },
   ];
 
   return (
@@ -112,10 +107,10 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
               <User className="h-8 w-8 text-primary" />
             </motion.div>
             <h1 className="text-3xl sm:text-4xl 2xl:text-5xl font-bold text-foreground mb-3">
-              Bienvenido
+              {t('register.welcome')}
             </h1>
             <p className="text-muted-foreground 2xl:text-lg">
-              Comparte tus datos para continuar explorando nuestro catálogo
+              {t('register.subtitle')}
             </p>
           </div>
 
@@ -175,12 +170,10 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
-                  <>
-                    <span className="animate-pulse">Enviando...</span>
-                  </>
+                  <span className="animate-pulse">{t('register.sending')}</span>
                 ) : (
                   <>
-                    <span>Continuar</span>
+                    <span>{t('register.continue')}</span>
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </>
                 )}
@@ -195,7 +188,7 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
             transition={{ delay: 0.8 }}
             className="mt-6 text-center text-xs text-muted-foreground"
           >
-            Tu información se almacena de forma segura y no se compartirá con terceros.
+            {t('register.privacy')}
           </motion.p>
         </motion.div>
       </div>

@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CatalogueProvider } from "@/context/CatalogueContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 import { FloatingNav } from "@/components/navigation/FloatingNav";
 import Index from "./pages/Index";
 import RegisterPage from "./pages/RegisterPage";
@@ -17,25 +18,27 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <CatalogueProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <FloatingNav />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/brand" element={<BrandPage />} />
-            <Route path="/system" element={<SystemPage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/product" element={<ProductPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </CatalogueProvider>
+    <LanguageProvider>
+      <CatalogueProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <FloatingNav />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/brand" element={<BrandPage />} />
+              <Route path="/system" element={<SystemPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/product" element={<ProductPage />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </CatalogueProvider>
+    </LanguageProvider>
   </QueryClientProvider>
 );
 

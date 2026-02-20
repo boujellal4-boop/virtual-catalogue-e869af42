@@ -3,12 +3,14 @@ import { ArrowLeft, Menu, X, Home, Package, Building2, LogOut } from 'lucide-rea
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useCatalogue } from '@/context/CatalogueContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 export function FloatingNav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { resetCatalogue, selectedBrand, setSelectedBrand, setSelectedSystem } = useCatalogue();
+  const { t } = useLanguage();
 
   const isHome = location.pathname === '/';
   const showNav = location.pathname !== '/';
@@ -41,15 +43,14 @@ export function FloatingNav() {
   };
 
   const menuItems = [
-    { icon: Home, label: 'Volver al Inicio', action: handleGoHome },
-    { icon: Building2, label: 'Seleccionar Marca', action: handleGoToBrands },
+    { icon: Home, label: t('nav.goHome'), action: handleGoHome },
+    { icon: Building2, label: t('nav.selectBrand'), action: handleGoToBrands },
   ];
 
   if (!showNav) return null;
 
   return (
     <>
-      {/* Back Button */}
       <motion.button
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -59,7 +60,6 @@ export function FloatingNav() {
         <ArrowLeft className="h-5 w-5" />
       </motion.button>
 
-      {/* Menu Button */}
       <motion.button
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -69,7 +69,6 @@ export function FloatingNav() {
         {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </motion.button>
 
-      {/* Menu Overlay */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -88,7 +87,7 @@ export function FloatingNav() {
               className="fixed right-0 top-0 z-40 h-full w-80 bg-card/95 backdrop-blur-xl border-l border-white/10 p-8 pt-24"
             >
               <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground mb-6">
-                Navegación
+                {t('nav.navigation')}
               </h3>
               <nav className="space-y-2">
                 {menuItems.map((item, index) => (
@@ -108,7 +107,7 @@ export function FloatingNav() {
 
               {selectedBrand && (
                 <div className="mt-8 pt-8 border-t border-white/10">
-                  <p className="text-sm text-muted-foreground mb-2">Marca Actual</p>
+                  <p className="text-sm text-muted-foreground mb-2">{t('nav.currentBrand')}</p>
                   <p className="text-foreground font-medium capitalize">
                     {selectedBrand.replace('-', ' ')}
                   </p>

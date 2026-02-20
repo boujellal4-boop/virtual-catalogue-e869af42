@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { catalogueConfig } from '@/config/catalogue.config';
 import { useCatalogue } from '@/context/CatalogueContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface BrandSelectionProps {
   onSelect: (brandId: string) => void;
@@ -30,10 +31,10 @@ const brandWhiteLogos: Record<string, string> = {
 
 export function BrandSelection({ onSelect }: BrandSelectionProps) {
   const { userInfo } = useCatalogue();
+  const { t, tBrandDesc } = useLanguage();
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
-      {/* Solid black background */}
       <div className="absolute inset-0 bg-black" />
       
       <div className="relative min-h-screen px-6 py-20">
@@ -51,14 +52,14 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                 transition={{ delay: 0.2 }}
                 className="text-primary text-sm font-medium uppercase tracking-wider mb-4"
               >
-                Bienvenido, {userInfo.fullName.split(' ')[0]}
+                {t('brand.welcomeUser')}, {userInfo.fullName.split(' ')[0]}
               </motion.p>
             )}
             <h1 className="text-4xl sm:text-5xl 2xl:text-6xl font-bold text-foreground mb-4 2xl:mb-6">
-              Selecciona Tu Marca
+              {t('brand.title')}
             </h1>
             <p className="text-muted-foreground text-lg 2xl:text-xl max-w-xl 2xl:max-w-2xl mx-auto">
-              Elige la marca que deseas explorar. Cada una ofrece soluciones únicas para tus necesidades de detección de incendios.
+              {t('brand.subtitle')}
             </p>
           </motion.div>
 
@@ -66,6 +67,7 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
             {catalogueConfig.brands.map((brand, index) => {
               const colorClass = brandColors[brand.id] || 'from-primary/20 to-accent/10 border-primary/30';
               const textColor = brandTextColors[brand.id] || 'text-primary';
+              const description = tBrandDesc(brand.id);
 
               return (
                 <motion.button
@@ -78,13 +80,11 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                   onClick={() => onSelect(brand.id)}
                   className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${colorClass} border p-8 2xl:p-12 text-left transition-all duration-300 hover:shadow-2xl`}
                 >
-                  {/* Background glow */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-white/5 blur-2xl" />
                   </div>
 
                   <div className="relative">
-                    {/* Brand Logo */}
                     <div className="mb-6 h-16 2xl:h-24 flex items-center">
                       <img 
                         src={brandWhiteLogos[brand.id] || brand.logo} 
@@ -98,21 +98,19 @@ export function BrandSelection({ onSelect }: BrandSelectionProps) {
                       />
                     </div>
 
-                    {/* Content */}
                     <h3 className="text-2xl 2xl:text-3xl font-bold text-foreground mb-2">
                       {brand.name}
                     </h3>
                     <p className="text-muted-foreground 2xl:text-lg mb-6">
-                      {brand.description}
+                      {description}
                     </p>
 
-                    {/* Systems count */}
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">
-                        {brand.systems.length} sistema{brand.systems.length > 1 ? 's' : ''} disponible{brand.systems.length > 1 ? 's' : ''}
+                        {brand.systems.length} {brand.systems.length > 1 ? t('brand.systemsAvailable') : t('brand.systemAvailable')}
                       </span>
                       <div className={`flex items-center gap-2 ${textColor} transition-transform group-hover:translate-x-1`}>
-                        <span className="text-sm font-medium">Explorar</span>
+                        <span className="text-sm font-medium">{t('brand.explore')}</span>
                         <ArrowRight className="h-4 w-4" />
                       </div>
                     </div>

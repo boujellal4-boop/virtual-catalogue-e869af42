@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { getProductById, getRelatedProducts } from '@/data/products';
 import { useCatalogue } from '@/context/CatalogueContext';
+import { useLanguage } from '@/context/LanguageContext';
 import React from 'react';
 
 // Highlight certifications and wrap SKU-like codes so they never break across lines
@@ -67,6 +68,7 @@ interface ProductDetailProps {
 
 export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
   const { selectedProduct } = useCatalogue();
+  const { t } = useLanguage();
   const [mediaMode, setMediaMode] = useState<'picture' | 'video' | 'qr'>('picture');
   const [pictureIndex, setPictureIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -129,7 +131,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       }`}
                     >
                       <Image className="h-4 w-4" />
-                      Imagen
+                      {t('product.image')}
                     </button>
                     <button
                       onClick={() => setMediaMode('video')}
@@ -140,7 +142,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       }`}
                     >
                       <Play className="h-4 w-4" />
-                      Video
+                      {t('product.video')}
                     </button>
                     <button
                       onClick={() => setMediaMode('qr')}
@@ -151,7 +153,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       }`}
                     >
                       <QrCode className="h-4 w-4" />
-                      VR QR
+                      {t('product.vrQr')}
                     </button>
                   </div>
 
@@ -235,7 +237,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       ) : (
                         <div className="flex flex-col items-center text-center">
                           <Play className="h-16 w-16 text-muted-foreground/30 mb-2" />
-                          <p className="text-muted-foreground text-sm">Video próximamente</p>
+                          <p className="text-muted-foreground text-sm">{t('product.videoSoon')}</p>
                         </div>
                       )
                     )}
@@ -243,7 +245,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       hasQR ? (
                         <div className="flex flex-col items-center justify-center gap-2 p-4 w-full h-full">
                           <p className="text-muted-foreground text-sm text-center">
-                            Escanea para experiencia VR
+                            {t('product.scanVr')}
                           </p>
                           <img
                             src={product.vrQrCode}
@@ -254,7 +256,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
                       ) : (
                         <div className="flex flex-col items-center text-center">
                           <QrCode className="h-16 w-16 text-muted-foreground/30 mb-2" />
-                          <p className="text-muted-foreground text-sm">Código QR próximamente</p>
+                          <p className="text-muted-foreground text-sm">{t('product.qrSoon')}</p>
                         </div>
                       )
                     )}
@@ -293,7 +295,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
               <h2 className="text-xl font-semibold text-foreground mb-4 uppercase">
-                Características Principales
+                {t('product.mainFeatures')}
               </h2>
               <ul className="space-y-3">
                 {(() => {
@@ -322,7 +324,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               className="rounded-xl bg-secondary/30 border border-white/10 p-6"
             >
               <h2 className="text-xl font-semibold text-foreground mb-6 uppercase">
-                Especificaciones
+                {t('product.specifications')}
               </h2>
               <ul className="space-y-3">
                 {product.features.map((feature, index) => (
@@ -351,7 +353,7 @@ export function ProductDetail({ onSelectProduct }: ProductDetailProps) {
               transition={{ delay: 0.5 }}
             >
               <h2 className="text-xl font-semibold text-foreground mb-6 uppercase">
-                Productos Similares
+                {t('product.relatedProducts')}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 2xl:gap-6">
                 {relatedProducts.map((relatedProduct, index) => (

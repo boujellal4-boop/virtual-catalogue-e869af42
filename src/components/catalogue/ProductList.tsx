@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Package, ArrowRight, Search } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useCatalogue } from '@/context/CatalogueContext';
+import { useLanguage } from '@/context/LanguageContext';
 import { catalogueConfig } from '@/config/catalogue.config';
 import { getProductsByBrandAndSystem, getSubcategories, Product } from '@/data/products';
 import { Input } from '@/components/ui/input';
@@ -12,6 +13,7 @@ interface ProductListProps {
 
 export function ProductList({ onSelectProduct }: ProductListProps) {
   const { selectedBrand, selectedSystem } = useCatalogue();
+  const { t, tSub, tSystemName } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
@@ -20,7 +22,6 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
   const products = selectedBrand && selectedSystem ? getProductsByBrandAndSystem(selectedBrand, selectedSystem) : [];
   const subcategories = selectedBrand && selectedSystem ? getSubcategories(selectedBrand, selectedSystem) : [];
 
-  // Preload all product thumbnails for instant display
   useEffect(() => {
     products.forEach(p => {
       if (p.image) {
@@ -51,12 +52,10 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-secondary/20" />
 
       <div className="relative min-h-screen px-6 py-20">
         <div className="mx-auto max-w-5xl 2xl:max-w-7xl">
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,36 +67,33 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
               </span>
               <span className="text-muted-foreground">/</span>
               <span className="text-sm font-medium text-muted-foreground">
-                {system?.name}
+                {system ? tSystemName(system.id, system.name) : ''}
               </span>
             </div>
             <h1 className="text-4xl 2xl:text-5xl font-bold text-foreground mb-4">
-              Productos
+              {t('products.title')}
             </h1>
             <p className="text-muted-foreground 2xl:text-lg">
-              tenemos muchos más a tu disposición para cubrir todas tus necesidades. Puedes consultarlos en nuestra web www.firesecurityproducts.com
+              {t('products.subtitle')}
             </p>
           </motion.div>
 
-          {/* Search and filters */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="mb-8 space-y-4"
           >
-            {/* Search */}
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
-                placeholder="Buscar por nombre o SKU..."
+                placeholder={t('products.searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-12 h-12 bg-secondary/50 border-white/10 text-foreground"
               />
             </div>
 
-            {/* Category filters */}
             {subcategories.length > 1 && (
               <div className="flex flex-wrap gap-2">
                 <button
@@ -108,7 +104,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                       : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
                   }`}
                 >
-                  Todos
+                  {t('products.all')}
                 </button>
                 {subcategories.map(category => (
                   <button
@@ -120,14 +116,13 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                         : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
                     }`}
                   >
-                    {category}
+                    {tSub(category)}
                   </button>
                 ))}
               </div>
             )}
           </motion.div>
 
-          {/* Products list */}
           <div className="space-y-2">
             {Object.entries(groupedProducts).map(([category, categoryProducts], categoryIndex) => (
               <motion.div
@@ -138,7 +133,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                 className="mb-6"
               >
                 <h2 className="text-xl 2xl:text-2xl font-semibold text-foreground mb-3 pl-3 border-l-2 border-primary">
-                  {category}
+                  {tSub(category)}
                 </h2>
                 <div className="space-y-2">
                   {categoryProducts.map((product, index) => (
@@ -151,7 +146,6 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                       onClick={() => onSelectProduct(product.id)}
                       className="group w-full rounded-xl bg-secondary/30 border border-white/5 px-4 py-3 2xl:px-6 2xl:py-4 text-left transition-all duration-300 hover:bg-secondary/50 hover:border-primary/20 hover:shadow-lg active:scale-[0.99] flex items-center gap-4"
                     >
-                      {/* Product image */}
                       <div className="w-14 h-14 2xl:w-20 2xl:h-20 flex-shrink-0 rounded-lg bg-secondary border border-white/10 flex items-center justify-center overflow-hidden">
                         {product.image ? (
                           <img
@@ -166,7 +160,6 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                         )}
                       </div>
 
-                      {/* Product info */}
                       <div className="flex-grow min-w-0 flex flex-col gap-0.5">
                         <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded self-start">
                           {product.sku}
@@ -179,7 +172,6 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                         </p>
                       </div>
 
-                      {/* Arrow */}
                       <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0" />
                     </motion.button>
                   ))}
@@ -194,7 +186,7 @@ export function ProductList({ onSelectProduct }: ProductListProps) {
                 className="text-center py-12"
               >
                 <Package className="h-16 w-16 text-muted-foreground/30 mx-auto mb-4" />
-                <p className="text-muted-foreground">No se encontraron productos que coincidan con tu búsqueda</p>
+                <p className="text-muted-foreground">{t('products.noResults')}</p>
               </motion.div>
             )}
           </div>
